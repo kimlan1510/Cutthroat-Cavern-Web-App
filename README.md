@@ -1,28 +1,76 @@
-# CutthroatCaverns
+# _Cutthroat Caverns_
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+#### _A group project for JavaScript course at Epicodus, July 19th 2017_
 
-## Development server
+#### By _**Julian Flood, Corey Redding, Jordan Loop, Kimlan Nguyen**_
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+This game is a recreation of a board game called Cutthroat Caverns. Four players are fighting their way out of a dungeon, and must rely on each other to survive a series of creatures' attacks, while competing against each other to collect prestige points. The player that survives and has the most prestige points, wins.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+https://github.com/kimlan1510/Cutthroat-Cavern-Web-App
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Specifications
 
-## Running unit tests
++ Player selection page.
++ Players must be able to see game board.
++ Players must be able to see deck and hand dealt.
++ Players must be able to take turns.
++ Players will play cards from their hand.
++ Players must be able to respond to specific cards with their own.
++ Creatures must be able to deal damage to players.
++ Life points must be affected by played cards.
++ Final outcome(win or lose) must be displayed.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Future features
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
++ More creatures to battle.
++ More cards of all types with added features.
++ Animations for aesthetics.
++ Sound Effects on actions.
++ More elaboration on layout styling.
++ Health meters implemented.
 
-## Further help
+## Setup/Installation Requirements
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<!-- + Clone the repository
++ Make account with firebase to obtain API credentials
++ Upload deck.jos
++ Insert your personal API credentials in project to Serve
++ Run ng serve
++ Run npm install
++ Run bower install -->
+
+
+
+## Known Bugs
+
+_No known bugs._
+
+## Support and contact details
+
+_Email us at
+
+julianflood@gmail.com,
+coreysnightout@gmail.com,
+jordloop@gmail.com,
+kimlan1510@gmail.com
+
+if you run into any issues_
+
+## Technologies Used
+
+_HTML, CSS, TypeScript, Angular 4, Angular 2 CLI, Firebase_
+
+# AngularProject
+
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
+
+
+### License
+
+*MIT*
+
+Copyright (c) 2017 **_Julian Flood, Corey Redding, Kimlan Nguyen, Jordan Loop_**
