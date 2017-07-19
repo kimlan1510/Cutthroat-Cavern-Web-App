@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 import { GameboardComponent } from './gameboard/gameboard.component';
 
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { CreatePlayerFormComponent } from './create-player-form/create-player-form.component';
 
 
 export const firebaseConfig = {
@@ -28,10 +29,9 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-
-    GameboardComponent
-
-    LandingPageComponent
+    GameboardComponent,
+    LandingPageComponent,
+    CreatePlayerFormComponent
 
   ],
   imports: [
