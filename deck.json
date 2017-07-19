@@ -1,0 +1,48 @@
+{"deck": [
+    {"attack cards": [
+      {
+        "name": "attack 40",
+        "critical attack": 80,
+        "normal attack": 40,
+        "half attack": 20,
+        "null attack":0
+
+      },
+      {
+        "name": "attack 25",
+        "critical attack": 50,
+        "normal attack": 25,
+        "half attack": 15,
+        "null attack":0
+
+      },
+      {
+        "name": "poke with stick 0",
+        "critical attack": 0,
+        "normal attack": 0,
+        "half attack": 0,
+        "null attack": 0
+      }
+    ]},
+    {"action cards": [
+      {
+        "name": "Mixed Signal",
+        "description": "Play at anytime. Swap another player's face downm 'Set' Attack Card with your dace down. 'Set' Attack Card"
+      },
+      {
+        "name": "Edge Out",
+        "description": "Play on another player before they reveal their 'Set' Attack Card. Discard it. They may not attack this turn."
+      }
+
+    ]},
+    {"item cards": [
+      {
+        "name": "Potion Of Healing",
+        "description": "Play this face up immediately when dealt. Tip to gain 25 life points. If used to heal a willing party member other than yourself, place the card in your scoring pile for 3 Prestige. "
+      }
+    ]
+
+    }
+
+  ]
+}
