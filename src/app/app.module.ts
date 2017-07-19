@@ -12,7 +12,11 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 //Components Imports
 import { AppComponent } from './app.component';
+
 import { GameboardComponent } from './gameboard/gameboard.component';
+
+import { LandingPageComponent } from './landing-page/landing-page.component';
+
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -24,7 +28,11 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
+
     GameboardComponent
+
+    LandingPageComponent
+
   ],
   imports: [
     BrowserModule,

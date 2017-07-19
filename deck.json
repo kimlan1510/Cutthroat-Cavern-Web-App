@@ -1,4 +1,4 @@
-{"deck": [
+[{"deck": [
     {"attack cards": [
       {
         "name": "attack 40",
@@ -40,9 +40,42 @@
         "name": "Potion Of Healing",
         "description": "Play this face up immediately when dealt. Tip to gain 25 life points. If used to heal a willing party member other than yourself, place the card in your scoring pile for 3 Prestige. "
       }
-    ]
-
+     ]
     }
+  ]
 
+},
+{"characters": [
+  {
+    "name": "Nyx",
+    "description": "Nyx goes unnoticed, leaves unscathed, lines her pockets and trusts no one.",
+    "image": "https://s-media-cache-ak0.pinimg.com/originals/66/1c/55/661c5554aa2d782c62ae13f6b34dc03f.jpg"
+  },
+  {
+    "name": "Orn HammerFist",
+    "description": "Cold as mountain stone, Orn brawls when he can, levels axe when he must and trusts no one.",
+    "image": "https://www.sideshowtoy.com/wp-content/uploads/2013/06/200130-product-feature.jpg"
+  },
+  {
+    "name": "Vasha The Red",
+    "description": "Vasha spills blood, sunders hearts, takes what she wants and trusts no one.",
+    "image": "https://s-media-cache-ak0.pinimg.com/originals/a0/0f/0c/a00f0c1b7d6b59ed641269ade874f64a.jpg"
+  },
+  {
+    "name": "Talon",
+    "description": "Weilding a blade named Black Claw. Talon says little, smiles less and trusts no one.",
+    "image": "http://cdn1-www.craveonline.com/assets/uploads/2017/03/Beauty-and-the-Beast-Gaston-Best-Disney-Villain-Songs.jpg"
+  },
+  {
+    "name": "Edaiyn Bloodthorn",
+    "description": "Of noble lineagem Edaiyn is sure of aim, sure of himself and trusts no one.",
+    "image": "http://daarken.com/blog/wp-content/uploads/2012/08/Legolas-10.jpg"
+  },
+  {
+    "name": "Nephiedra",
+    "description": "Mage of the distant dunes. Nephiedra honors the dead, adds to their numbers and trusts no one.",
+    "image": "https://s-media-cache-ak0.pinimg.com/736x/c4/bf/79/c4bf79c40a522071ccb084afcd77d3d9.jpg"
+  }
   ]
 }
+]

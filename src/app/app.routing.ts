@@ -1,9 +1,16 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+//import Components
 import { GameboardComponent } from './gameboard/gameboard.component';
-const appRoutes: Routes = [
+import { LandingPageComponent } from './landing-page/landing-page.component';
+
+const appRoutes: Routes= [
   {
     path: '',
+    component: LandingPageComponent
+  },
+  {
+    path: 'gameboard',
     component: GameboardComponent
   }
 ];
