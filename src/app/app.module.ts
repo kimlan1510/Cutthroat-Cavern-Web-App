@@ -28,9 +28,7 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-
-    GameboardComponent
-
+    GameboardComponent,
     LandingPageComponent
 
   ],
