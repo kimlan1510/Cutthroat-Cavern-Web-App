@@ -1,17 +1,18 @@
-#Angular Imports
+//Angular Imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 
-#Firebase Imports
-import { masterFirebaseConfig } from './api-keys';
+//Firebase Imports
+import { masterFirebaseConfig } from './firebase-api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
-#Components Imports
+//Components Imports
 import { AppComponent } from './app.component';
+import { GameboardComponent } from './gameboard/gameboard.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -22,7 +23,8 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GameboardComponent
   ],
   imports: [
     BrowserModule,
