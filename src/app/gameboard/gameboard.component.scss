@@ -33,9 +33,14 @@
 }
 .player-card{
   border: 1px solid black;
+  background-color: yellow;
   width: 100px;
   height: 150px;
   border-radius: 7px;
+  transition: all .3s ease-in-out;
+}
+.player-card:hover{
+  transform: scale(2);
 }
 
 .profile{
