@@ -46,7 +46,81 @@
 .profile-picture {
   height: 450px;
   border-radius: 5px;
-  width: 40%;
+  width: 340px;
   border: 1px solid black;
   margin: 10px;
+}
+
+.profile-stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  height: 15%;
+  width: 450px;
+}
+.profile-health {
+  height: 15%;
+  width: 450px;
+}
+.profile-turn {
+  height: 15%;
+  width: 450px;
+}
+.profile-prestige {
+  height: 15%;
+  width: 450px;
+}
+
+h1{
+  text-align: center;
+  font-size: 70px;
+}
+
+.battle-zone{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.monster {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  height: 70%;
+  width: 100%;
+  .monster-name{
+    height:10%;
+    width: 100%;
+    border: 1px solid black;
+  }
+  .monster-image {
+    align-self: center;
+    width: 60%;
+    height: 75%;
+    border: 1px solid black;
+  }
+  .monster-hp{
+    height:8%;
+    width: 60%;
+    border: 1px solid black;
+    align-self: center;
+  }
+  .monster-prestige{
+    height:7%;
+    width: 60%;
+    border: 1px solid black;
+    align-self: center;
+  }
+}
+.play-zone{
+  align-self: flex-start;
+  width: 100%;
+  height: 200px;
+  flex-grow: 1;
+  border: 1px solid red;
+}
+.battle-zone h2, h3 {
+  text-align: center;
 }
