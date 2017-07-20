@@ -17,8 +17,8 @@ export class PlayerService {
     var hand: any[] = null;
     var hp: number = 100;
     var initiative: number = null;
-    if(chosenCharacter == null) {
-      alert("Please Pick A Character.");
+    if(chosenCharacter == null || name == '') {
+      alert("Please Enter Your Name And Pick A Character.");
     } else {
       let newPlayer: Player = new Player(name, prestige, hand, hp, initiative, chosenCharacter);
       this.players.push(newPlayer);
