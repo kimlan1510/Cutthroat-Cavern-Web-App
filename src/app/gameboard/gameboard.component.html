@@ -19,20 +19,27 @@
           </div>
         </div>
       </div>
-      <div class="hand">
+      <div class="hand" *ngIf="localPlayers.length">
         <div class="player-card">
+          <p>{{localPlayers[0].hand[1].name}}</p>
         </div>
         <div class="player-card">
+          <p>{{localPlayers[0].hand[2].name}}</p>
         </div>
         <div class="player-card">
+          <p>{{localPlayers[0].hand[3].name}}</p>
         </div>
         <div class="player-card">
+          <p>{{localPlayers[0].hand[4].name}}</p>
         </div>
         <div class="player-card">
+          <p>{{localPlayers[0].hand[5].name}}</p>
         </div>
         <div class="player-card">
+          <p>{{localPlayers[0].hand[6].name}}</p>
         </div>
         <div class="player-card">
+          <p>{{localPlayers[0].hand[7].name}}</p>
         </div>
       </div>
     </div>

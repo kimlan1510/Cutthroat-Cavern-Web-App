@@ -72,6 +72,7 @@ export class GameboardComponent implements OnInit {
       }
     }
     console.log(this.localPlayers);
+    console.log(this.shuffleDeck);
   }
 
 }
