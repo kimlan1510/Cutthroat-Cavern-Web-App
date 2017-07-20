@@ -8,6 +8,9 @@ h1 {
 }
 
 .background {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   background-image: url('https://s-media-cache-ak0.pinimg.com/originals/81/3f/86/813f861ae7532162ea486ab2bc1399b6.jpg');
   background-position: center;
   background-repeat: repeat-y;
@@ -142,5 +145,28 @@ app-gameboard{
   right: 50%;
   transform: translate(-50%, -50%);
   font-family: magicBoy;
-  font-weight: bold white;
+  font-weight: bold;
+  font-size: 2em;
+  color: ivory;
+  box-shadow: 2px 2px 15px black;
+  transition: all .3s ease-in-out;
+}
+
+// .startButton:hover {
+//   transform: scale(1.05);
+// }
+
+
+.choice {
+  font-family: magicBoy;
+  text-transform: uppercase;
+  letter-spacing: .2px;
+  font-weight: bold;
+  color: black;
+  background-image: url('http://2.bp.blogspot.com/-hbtq61HGDJk/T2HQ-e4ieTI/AAAAAAAABNA/wvak1oNrur8/s1600/Seamless+marble+texture+%252814%2529.jpg');
+  width: 750px;
+  text-align: center;
+  border-radius: 25px;
+  border: 3.75px solid grey;
+  border-top-margin: 3.75px white;
 }
