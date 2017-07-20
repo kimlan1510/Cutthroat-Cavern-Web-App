@@ -41,11 +41,8 @@ export class LandingPageComponent implements OnInit {
   }
 
   createPlayer(name: string){
-
-    this.players = this.playerService.createPlayer(name, this.chosenCharacter);
     this.characters.splice(this.characters.indexOf(this.chosenCharacter), 1);
     console.log(this.players);
-
     this.playerService.createPlayer(name, this.chosenCharacter);
   }
 

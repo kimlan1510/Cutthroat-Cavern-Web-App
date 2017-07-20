@@ -1,3 +1,15 @@
+h1 {
+  margin-top: 0;
+}
+
+.background {
+  background-image: url('https://s-media-cache-ak0.pinimg.com/originals/81/3f/86/813f861ae7532162ea486ab2bc1399b6.jpg');
+  background-position: center;
+  background-repeat: repeat;
+  background-origin: border-box;
+  background-size: 100%;
+}
+
 .panel:hover {
   transform: scale(1.05);
 }
@@ -13,7 +25,7 @@
   display: flex;
   justify-content: center;
   margin: 15px;
-  box-shadow: 2px 2px 10px lightgray;
+  box-shadow: 2px 2px 15px black;
   transition: all .3s ease-in-out;
 }
 
@@ -42,5 +54,42 @@ app-gameboard{
   height: 600px;
   width: 1100px;
   align-self: center;
-  border: 25px solid #130d0d;
+}
+
+.border {
+  position: absolute;
+  top: 300px;
+  left: 225px;
+  z-index: 1000;
+  margin: 0;
+  clear: both;
+}
+
+.border2 {
+  position: absolute;
+  top: 30px;
+  left: 225px;
+  z-index: 1000;
+  margin: 0;
+  clear: both
+}
+
+.border2 img {
+  width: 110%;
+  height: 110%;
+}
+
+
+.border img {
+  width: 110%;
+  height: 110%;
+}
+
+.selected {
+  display: flex;
+  justify-content: center;
+}
+
+.party {
+  text-align: center;
 }

@@ -1,39 +1,44 @@
 
 <div class="splash" *ngIf="splash" (click)="splashClicked()">
+  <div class="border">
+    <img src="http://worldartsme.com/images/gold-filigree-clipart-1.jpg" alt="" />
+  </div>
+  <div class="border2">
+    <img src="http://worldartsme.com/images/gold-filigree-clipart-1.jpg" alt="" />
+  </div>
   <img src="http://www.orderofgamers.com/wordpress/wp-content/uploads/2013/04/cutthroatcaverns.jpg" alt="" />
 </div>
 
-<div *ngIf="characterSelect">
+<div class="background" *ngIf="characterSelect">
   <h1>Enter Your Name</h1>
   <input type="text" name="name" #Name>
   <button type="button" name="button" (click)="createPlayer(Name.value)" (click)="getLocalPlayers()">Create Player</button>
 
-  <div *ngIf="players != 'undefined'">
-    <h3>Your Party</h3>
+  <h3 class="party">Your Party</h3>
+  <div class="selected" *ngIf="players != 'undefined'">
     <div *ngFor="let player of localPlayers">
       <div class="panel panel-default">
         <div class="panel-body">
-            <img src={{player.character.image}} />
-            <h3>{{player.name}} as {{player.character.name}}</h3>
-            <p>{{player.character.description}}</p>
+          <img src={{player.character.image}} />
+          <h3>{{player.name}} as {{player.character.name}}</h3>
+          <p>{{player.character.description}}</p>
         </div>
       </div>
     </div>
   </div>
 
 
-  <h1>Choose Your Characters</h1>
-  <div class="panel-section" >
-    <div *ngFor="let character of characters" class="panel panel-default" (click)="selectThisCharacter(character)">
-      <div class="panel-body">
+    <h1>Choose Your Characters</h1>
+    <div class="panel-section">
+      <div *ngFor="let character of characters" class="panel panel-default" (click)="selectThisCharacter(character)">
+        <div class="panel-body">
           <img src={{character.image}} />
           <h3>{{character.name}}</h3>
           <p>{{character.description}}</p>
+        </div>
       </div>
     </div>
   </div>
 
 
   <button type="button" name="button" routerLink='gameboard'>Start Game</button>
-
-
