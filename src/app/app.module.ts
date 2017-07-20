@@ -31,8 +31,8 @@ export const firebaseConfig = {
     AppComponent,
     GameboardComponent,
     LandingPageComponent,
-    CreatePlayerFormComponent
-
+    CreatePlayerFormComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
