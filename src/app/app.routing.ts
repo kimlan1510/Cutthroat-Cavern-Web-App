@@ -6,11 +6,11 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 
 const appRoutes: Routes= [
   {
-    path: '',
+    path: 'landing-page',
     component: LandingPageComponent
   },
   {
-    path: 'gameboard',
+    path: 'landing-page/gameboard',
     component: GameboardComponent
   }
 ];
