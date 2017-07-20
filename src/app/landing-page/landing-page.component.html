@@ -13,7 +13,7 @@
 
 
 
-    <h1>Choose Your Characters</h1>
+    <h1 class="choice">Choose Your Characters</h1>
     <div class="panel-section">
       <div *ngFor="let character of characters" class="panel panel-default" (click)="selectThisCharacter(character)">
         <div class="panel-body">
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-    <h1>Enter Your Name</h1>
+    <h1 class="choice">Enter Your Name</h1>
     <input type="text" name="name" #Name>
     <button type="button" name="button" (click)="createPlayer(Name.value)" (click)="getLocalPlayers()">Create Player</button>
 
