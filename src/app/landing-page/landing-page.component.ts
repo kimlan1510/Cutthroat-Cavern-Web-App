@@ -17,7 +17,8 @@ import { PlayerService } from '../player.service';
 export class LandingPageComponent implements OnInit {
   characters;
   chosenCharacter: Character;
-  players: Player[] = [];
+  players: FirebaseListObservable<any[]>;
+  localPlayers: Player[] = [];
 
   constructor(private firebaseService: FirebaseService, private playerService: PlayerService) { }
 
@@ -34,8 +35,13 @@ export class LandingPageComponent implements OnInit {
   }
 
   createPlayer(name: string){
-    this.players = this.playerService.createPlayer(name, this.chosenCharacter);
-    console.log(this.players);
+    this.playerService.createPlayer(name, this.chosenCharacter);
   }
+
+  getLocalPlayers(){
+    this.localPlayers = this.playerService.getLocalPlayers();
+  }
+
+
 
 }
