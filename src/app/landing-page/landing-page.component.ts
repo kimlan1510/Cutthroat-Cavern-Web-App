@@ -17,11 +17,11 @@ import { PlayerService } from '../player.service';
 export class LandingPageComponent implements OnInit {
   characters;
   chosenCharacter: Character;
-  splash: boolean = true;
-  characterSelect: boolean = null;
-  players: FirebaseListObservable<any[]>;
   localPlayers: Player[] = [];
+  players: FirebaseListObservable<any[]>;
+  splash: boolean = true;
   startGame: boolean = null;
+  characterSelect: boolean = null;
 
   constructor(private firebaseService: FirebaseService, private playerService: PlayerService) { }
 
@@ -42,19 +42,18 @@ export class LandingPageComponent implements OnInit {
 
   createPlayer(name: string){    
     this.playerService.createPlayer(name, this.chosenCharacter);
-    if(name != "") {
+    if(name != "" ) {
       this.characters.splice(this.characters.indexOf(this.chosenCharacter), 1);
     }
+    this.chosenCharacter = Character;
     if(this.localPlayers.length === 4){
       this.startGame = true;
     }
+    console.log(this.localPlayers);
   }
 
   getLocalPlayers(){
     this.localPlayers = this.playerService.getLocalPlayers();
   }
-
-
-
 
 }
