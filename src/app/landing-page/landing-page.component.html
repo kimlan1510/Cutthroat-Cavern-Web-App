@@ -1,29 +1,42 @@
-<h1>Enter Your Name</h1>
-<input type="text" name="name" #Name>
-<button type="button" name="button" (click)="createPlayer(Name.value)">Create Player</button>
-
-<div *ngIf="players != 'undefined'">
-  <h3>Your Party</h3>
-  <div *ngFor="let player of players">
-    <p>{{player.name}} picks {{player.character.name}}</p>
-  </div>
+<div class="splash" *ngIf="splash" (click)="splashClicked()">
+  <img src="http://www.orderofgamers.com/wordpress/wp-content/uploads/2013/04/cutthroatcaverns.jpg" alt="" />
 </div>
 
+<div *ngIf="characterSelect">
+  <h1>Enter Your Name</h1>
+  <input type="text" name="name" #Name>
+  <button type="button" name="button" (click)="createPlayer(Name.value)">Create Player</button>
 
-<h1>Choose Your Characters</h1>
-<div class="panel-section" >
-  <div *ngFor="let character of characters" class="panel panel-default" (click)="selectThisCharacter(character)">
-    <div class="panel-body">
-        <img src={{character.image}} />
-        <h3>{{character.name}}</h3>
-        <p>{{character.description}}</p>
+  <div *ngIf="players != 'undefined'">
+    <h3>Your Party</h3>
+    <div *ngFor="let player of players">
+      <div class="panel panel-default">
+        <div class="panel-body">
+            <img src={{player.character.image}} />
+            <h3>{{player.name}} as {{player.character.name}}</h3>
+            <p>{{player.character.description}}</p>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<!-- <div class="" *ngIf="players != 'undefined && players.length >= 4'"> -->
 
-  <button type="button" name="button" routerLink='gameboard'>Start Game</button>
-  <!-- <div *ngIf="players != 'undefined'"> -->
-    <app-gameboard [childPlayersList]="players"></app-gameboard>
+
+  <h1>Choose Your Characters</h1>
+  <div class="panel-section" >
+    <div *ngFor="let character of characters" class="panel panel-default" (click)="selectThisCharacter(character)">
+      <div class="panel-body">
+          <img src={{character.image}} />
+          <h3>{{character.name}}</h3>
+          <p>{{character.description}}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="" *ngIf="players != 'undefined && players.length >= 4'"> -->
+
+    <button type="button" name="button" routerLink='gameboard'>Start Game</button>
+    <!-- <div *ngIf="players != 'undefined'"> -->
+      <app-gameboard [childPlayersList]="players"></app-gameboard>
+    <!-- </div> -->
   <!-- </div> -->
-<!-- </div> -->
+</div>

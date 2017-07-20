@@ -18,6 +18,8 @@ export class LandingPageComponent implements OnInit {
   characters;
   chosenCharacter: Character;
   players: Player[] = [];
+  splash: boolean = true;
+  characterSelect: boolean = null;
 
   constructor(private firebaseService: FirebaseService, private playerService: PlayerService) { }
 
@@ -27,15 +29,20 @@ export class LandingPageComponent implements OnInit {
     })
   }
 
+  splashClicked() {
+    this.splash = null;
+    this.characterSelect = true;
+  }
+
   selectThisCharacter(selectedCharacter){
     this.chosenCharacter = selectedCharacter;
-    this.characters.splice(this.characters.indexOf(selectedCharacter), 1);
-
   }
 
   createPlayer(name: string){
     this.players = this.playerService.createPlayer(name, this.chosenCharacter);
+    this.characters.splice(this.characters.indexOf(this.chosenCharacter), 1);
     console.log(this.players);
   }
+
 
 }
