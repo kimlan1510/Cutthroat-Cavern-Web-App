@@ -1,3 +1,4 @@
+
 .column{
   display: flex;
   flex-grow: 1;
@@ -54,6 +55,11 @@
   width: 340px;
   border: 1px solid black;
   margin: 10px;
+  img {
+    height: 450px;
+    width: 340px;
+    border-radius: 5px;
+  }
 }
 
 .profile-stats {
@@ -81,6 +87,7 @@
 h1{
   text-align: center;
   font-size: 70px;
+  font-family: medieval;
 }
 
 .battle-zone{
