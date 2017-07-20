@@ -1,3 +1,4 @@
+
 <div class="splash" *ngIf="splash" (click)="splashClicked()">
   <img src="http://www.orderofgamers.com/wordpress/wp-content/uploads/2013/04/cutthroatcaverns.jpg" alt="" />
 </div>
@@ -5,11 +6,11 @@
 <div *ngIf="characterSelect">
   <h1>Enter Your Name</h1>
   <input type="text" name="name" #Name>
-  <button type="button" name="button" (click)="createPlayer(Name.value)">Create Player</button>
+  <button type="button" name="button" (click)="createPlayer(Name.value)" (click)="getLocalPlayers()">Create Player</button>
 
   <div *ngIf="players != 'undefined'">
     <h3>Your Party</h3>
-    <div *ngFor="let player of players">
+    <div *ngFor="let player of localPlayers">
       <div class="panel panel-default">
         <div class="panel-body">
             <img src={{player.character.image}} />
@@ -32,11 +33,7 @@
     </div>
   </div>
 
-  <!-- <div class="" *ngIf="players != 'undefined && players.length >= 4'"> -->
 
-    <button type="button" name="button" routerLink='gameboard'>Start Game</button>
-    <!-- <div *ngIf="players != 'undefined'"> -->
-      <app-gameboard [childPlayersList]="players"></app-gameboard>
-    <!-- </div> -->
-  <!-- </div> -->
-</div>
+  <button type="button" name="button" routerLink='gameboard'>Start Game</button>
+
+

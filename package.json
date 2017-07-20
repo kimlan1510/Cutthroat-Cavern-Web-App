@@ -27,7 +27,7 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0",
+    "@angular/cli": "^1.2.1",
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
@@ -42,8 +42,11 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "node-sass": "^4.5.3",
     "protractor": "~5.1.0",
+    "sass-loader": "^6.0.6",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
-    "typescript": "~2.2.0"
+    "typescript": "~2.2.0",
+    "webpack": "^3.3.0",
+    "webpack-dev-middleware": "^1.11.0"
   }
 }
