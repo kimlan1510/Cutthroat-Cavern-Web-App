@@ -5,12 +5,18 @@ import { Player } from './player.model';
 @Injectable()
 export class FirebaseService {
   characters: FirebaseListObservable<any[]>;
+  cards: FirebaseListObservable<any[]>;
 
   constructor(private firebase: AngularFireDatabase) {
-    this.characters = firebase.list('1')
+    this.characters = firebase.list('1');
+    this.cards = firebase.list('0');
   }
 
   getCharacters(){
     return this.characters;
+  }
+
+  getCards(){
+    return this.cards;
   }
 }

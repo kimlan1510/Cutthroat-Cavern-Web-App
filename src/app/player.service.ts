@@ -16,11 +16,11 @@ export class PlayerService {
     var prestige: number = 0;
     var hand: any[] = ["cards"];
     var hp: number = 100;
-    var initiative: number = null;
+    var initiative: number = 0;
     if(chosenCharacter == null || name == '') {
       alert("Please Enter Your Name And Pick A Character.");
     } else {
-      let newPlayer: Player = new Player(name, prestige, hand, hp, initiative, chosenCharacter);
+      let newPlayer: Player = new Player(name, prestige, hp, initiative, chosenCharacter);
       this.players.push(newPlayer);
       this.localPlayers.push(newPlayer);
       return this.players;

@@ -1,5 +1,5 @@
 [{"deck": [
-    {"attack cards": [
+    {"attackCards": [
       {
         "name": "attack 40",
         "critical attack": 80,
@@ -24,7 +24,7 @@
         "null attack": 0
       }
     ]},
-    {"action cards": [
+    {"actionCards": [
       {
         "name": "Mixed Signal",
         "description": "Play at anytime. Swap another player's face downm 'Set' Attack Card with your dace down. 'Set' Attack Card"
@@ -35,7 +35,7 @@
       }
 
     ]},
-    {"item cards": [
+    {"itemCards": [
       {
         "name": "Potion Of Healing",
         "description": "Play this face up immediately when dealt. Tip to gain 25 life points. If used to heal a willing party member other than yourself, place the card in your scoring pile for 3 Prestige. "

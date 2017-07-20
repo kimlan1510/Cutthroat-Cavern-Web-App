@@ -40,7 +40,7 @@ export class LandingPageComponent implements OnInit {
     this.chosenCharacter = selectedCharacter;
   }
 
-  createPlayer(name: string){
+  createPlayer(name: string){    
     this.playerService.createPlayer(name, this.chosenCharacter);
     if(name != "" ) {
       this.characters.splice(this.characters.indexOf(this.chosenCharacter), 1);
