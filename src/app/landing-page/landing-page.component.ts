@@ -21,7 +21,7 @@ export class LandingPageComponent implements OnInit {
   characterSelect: boolean = null;
   players: FirebaseListObservable<any[]>;
   localPlayers: Player[] = [];
-
+  startGame: boolean = null;
 
   constructor(private firebaseService: FirebaseService, private playerService: PlayerService) { }
 
@@ -40,9 +40,14 @@ export class LandingPageComponent implements OnInit {
     this.chosenCharacter = selectedCharacter;
   }
 
-  createPlayer(name: string){
-    this.characters.splice(this.characters.indexOf(this.chosenCharacter), 1);
+  createPlayer(name: string){    
     this.playerService.createPlayer(name, this.chosenCharacter);
+    if(name != "") {
+      this.characters.splice(this.characters.indexOf(this.chosenCharacter), 1);
+    }
+    if(this.localPlayers.length === 4){
+      this.startGame = true;
+    }
   }
 
   getLocalPlayers(){
