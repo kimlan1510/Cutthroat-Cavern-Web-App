@@ -15,14 +15,13 @@ import { Character } from '../character.model';
 export class LandingPageComponent implements OnInit {
   characters;
   chosenCharacter: Character;
-  players: Player[] = null;
+  players: Player[] = [];
 
   constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit() {
     this.firebaseService.getCharacters().subscribe(response =>{
       this.characters = response[0];
-      // console.log(this.players);
     })
   }
 
@@ -42,7 +41,7 @@ export class LandingPageComponent implements OnInit {
     }
     else
     {
-      var newPlayer: Player = new Player(name, prestige, hand, hp, initiative, this.chosenCharacter);
+      let newPlayer: Player = new Player(name, prestige, hand, hp, initiative, this.chosenCharacter);
       console.log(newPlayer);
       console.log(newPlayer.name);
       console.log(newPlayer.character);
