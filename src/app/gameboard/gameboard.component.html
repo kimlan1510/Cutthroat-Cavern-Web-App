@@ -4,18 +4,18 @@
       <div class="profile">
         <div class="profile-picture">
         </div>
-        <div class="profile-stats">
+        <div class="profile-stats" *ngIf="localPlayers.length">
           <div class="profile-name">
-            <h2>Name: </h2>
+            <h2>Name: {{localPlayers[0].name}}</h2>
           </div>
           <div class="profile-health">
-            <h2>Hp:</h2>
+            <h2>Hp: {{localPlayers[0].hp}}</h2>
           </div>
           <div class="profile-turn">
-            <h2>Turn:</h2>
+            <h2>Initiative: {{localPlayers[0].initiative}}</h2>
           </div>
           <div class="profile-prestige">
-            <h2>Prestige:</h2>
+            <h2>Prestige: {{localPlayers[0].prestige}}</h2>
           </div>
         </div>
       </div>
@@ -40,18 +40,18 @@
       <div class="profile">
         <div class="profile-picture">
         </div>
-        <div class="profile-stats">
+        <div class="profile-stats" *ngIf="localPlayers.length">
           <div class="profile-name">
-            <h2>Name</h2>
+            <h2>Name: {{localPlayers[1].name}}</h2>
           </div>
           <div class="profile-health">
-            <h2>Health</h2>
+            <h2>Health: {{localPlayers[1].hp}}</h2>
           </div>
           <div class="profile-turn">
-            <h2>Turn</h2>
+            <h2>Initiative: {{localPlayers[1].initiative}}</h2>
           </div>
           <div class="profile-prestige">
-            <h2>Prestige</h2>
+            <h2>Prestige: {{localPlayers[1].prestige}}</h2>
           </div>
         </div>
       </div>
@@ -79,6 +79,7 @@
       <div class="monster">
         <div class="monster-name">
           <h2>Beast Name</h2>
+          <h2 (click)="dealCards()">Deal cards</h2>
         </div>
         <div class="monster-image">
         </div>
@@ -98,18 +99,18 @@
       <div class="profile">
         <div class="profile-picture">
         </div>
-        <div class="profile-stats">
+        <div class="profile-stats" *ngIf="localPlayers.length">
           <div class="profile-name">
-            <h2>Name</h2>
+            <h2>Name: {{localPlayers[2].name}}</h2>
           </div>
           <div class="profile-health">
-            <h2>Health</h2>
+            <h2>Health: {{localPlayers[2].hp}}</h2>
           </div>
           <div class="profile-turn">
-            <h2>Turn</h2>
+            <h2>Initiative: {{localPlayers[2].initiative}}</h2>
           </div>
           <div class="profile-prestige">
-            <h2>Prestige</h2>
+            <h2>Prestige: {{localPlayers[2].initiative}}</h2>
           </div>
         </div>
       </div>
@@ -134,18 +135,18 @@
       <div class="profile">
         <div class="profile-picture">
         </div>
-        <div class="profile-stats">
+        <div class="profile-stats" *ngIf="localPlayers.length">
           <div class="profile-name">
-            <h2>Name</h2>
+            <h2>Name: {{localPlayers[3].name}}</h2>
           </div>
           <div class="profile-health">
-            <h2>Health</h2>
+            <h2>Health: {{localPlayers[3].hp}}</h2>
           </div>
           <div class="profile-turn">
-            <h2>Turn</h2>
+            <h2>Initiative: {{localPlayers[3].initiative}}</h2>
           </div>
           <div class="profile-prestige">
-            <h2>Prestige</h2>
+            <h2>Prestige: {{localPlayers[3].prestige}}</h2>
           </div>
         </div>
       </div>

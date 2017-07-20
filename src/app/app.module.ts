@@ -7,7 +7,6 @@ import { routing } from './app.routing';
 
 //Firebase Imports
 import { masterFirebaseConfig } from './firebase-api-keys';
-import { masterFirebasePlayerConfig } from './firebase-player-api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
