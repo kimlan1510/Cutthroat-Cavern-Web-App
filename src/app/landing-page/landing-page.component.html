@@ -10,22 +10,7 @@
 </div>
 
 <div class="background" *ngIf="characterSelect">
-  <h1>Enter Your Name</h1>
-  <input type="text" name="name" #Name>
-  <button type="button" name="button" (click)="createPlayer(Name.value)" (click)="getLocalPlayers()">Create Player</button>
 
-  <h3 class="party">Your Party</h3>
-  <div class="selected" *ngIf="players != 'undefined'">
-    <div *ngFor="let player of localPlayers">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <img src={{player.character.image}} />
-          <h3>{{player.name}} as {{player.character.name}}</h3>
-          <p>{{player.character.description}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
     <h1>Choose Your Characters</h1>
@@ -38,7 +23,24 @@
         </div>
       </div>
     </div>
+
+    <h1>Enter Your Name</h1>
+    <input type="text" name="name" #Name>
+    <button type="button" name="button" (click)="createPlayer(Name.value)" (click)="getLocalPlayers()">Create Player</button>
+
+    <h3 class="party">Your Party</h3>
+    <div class="selected" *ngIf="players != 'undefined'">
+      <div *ngFor="let player of localPlayers">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <img src={{player.character.image}} />
+            <h3>{{player.name}} as {{player.character.name}}</h3>
+            <p>{{player.character.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-
-  <button type="button" name="button" routerLink='gameboard'>Start Game</button>
+  <div *ngIf="startGame">
+    <button type="button" name="start" routerLink='gameboard'>Start Game</button>
+  </div>
