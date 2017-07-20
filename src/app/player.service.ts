@@ -14,7 +14,7 @@ export class PlayerService {
 
   createPlayer(name: string, chosenCharacter: Character){
     var prestige: number = 0;
-    var hand: any[] = null;
+    var hand: any[] = ["cards"];
     var hp: number = 100;
     var initiative: number = null;
     if(chosenCharacter == null || name == '') {

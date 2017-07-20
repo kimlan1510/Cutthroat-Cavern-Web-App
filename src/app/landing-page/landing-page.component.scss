@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "magicBoy";
+  src: url("/fonts/magicy.ttf");
+}
 
 h1 {
   margin-top: 0;
@@ -24,11 +28,38 @@ h1 {
 
 .panel {
   width: 370px;
+  background-image: url('http://2.bp.blogspot.com/-hbtq61HGDJk/T2HQ-e4ieTI/AAAAAAAABNA/wvak1oNrur8/s1600/Seamless+marble+texture+%252814%2529.jpg');
   display: flex;
   justify-content: center;
   margin: 15px;
   box-shadow: 2px 2px 15px black;
   transition: all .3s ease-in-out;
+}
+
+.cardName {
+  font-family: magicBoy;
+  font-weight: bold;
+  padding: 7px;
+  border-radius: 5px;
+  border: 2.75px solid grey;
+  border-top: 2.75px white;
+  border-left: 2.75px white;
+  color: black;
+  background-image: url('https://s-media-cache-ak0.pinimg.com/originals/4d/f7/69/4df7691c0dbc30cf2a67e307a9a46dd9.jpg');
+  margin-top: 0px;
+  // border-left-radius: 100%;
+  // border-right-radius: 100%;
+}
+
+.cardDescription {
+  padding: 7px;
+  border-radius: 5px;
+  border: 2.75px solid grey;
+  border-top: 2.75px white;
+  border-left: 2.75px white;
+  color: black;
+  background-image: url('https://s-media-cache-ak0.pinimg.com/originals/4d/f7/69/4df7691c0dbc30cf2a67e307a9a46dd9.jpg');
+  margin-top: 10px;
 }
 
 img {
@@ -54,8 +85,8 @@ app-gameboard{
   position: relative;
   display: flex;
   transform: translate();
-  height: 600px;
-  width: 1100px;
+  height: 800px;
+  width: 1200px;
   align-self: center;
 }
 
@@ -97,4 +128,19 @@ app-gameboard{
 
 .party {
   text-align: center;
+}
+
+.startButton {
+  position: absolute;
+  background-image: url('http://img.cadnav.com/allimg/130925/1-130925122R1S6.jpg');
+  padding: 15px;
+  width: 250px;
+  height: 100px;
+  border-radius: 5px;
+  top: 500px;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+  font-family: magicBoy;
+  font-weight: bold white;
 }

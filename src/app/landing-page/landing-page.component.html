@@ -6,7 +6,7 @@
   <div class="border2">
     <img src="http://worldartsme.com/images/gold-filigree-clipart-1.jpg" alt="" />
   </div>
-  <img src="http://www.orderofgamers.com/wordpress/wp-content/uploads/2013/04/cutthroatcaverns.jpg" alt="" />
+  <img src="https://photos-2.dropbox.com/t/2/AACEf6Yb4kPtC28TCC_foikOAH6S8UI_ojpMdStPGCTiyQ/12/83363850/jpeg/32x32/1/_/1/2/splesh.jpg/EJia80AYUCAHKAc/2-xjKdl6DRsuG2ud1OTyoVqOumFJo8qICUa8tzcRqms?size=2048x1536&size_mode=3" alt="" />
 </div>
 
 <div class="background" *ngIf="characterSelect">
@@ -17,9 +17,9 @@
     <div class="panel-section">
       <div *ngFor="let character of characters" class="panel panel-default" (click)="selectThisCharacter(character)">
         <div class="panel-body">
+          <h3 class="cardName">{{character.name}}</h3>
           <img src={{character.image}} />
-          <h3>{{character.name}}</h3>
-          <p>{{character.description}}</p>
+          <p class="cardDescription">{{character.description}}</p>
         </div>
       </div>
     </div>
@@ -42,5 +42,5 @@
     </div>
   </div>
   <div *ngIf="startGame">
-    <button type="button" name="start" routerLink='gameboard'>Start Game</button>
+    <button class="startButton" type="button" name="start" routerLink='gameboard'>Start Game</button>
   </div>
