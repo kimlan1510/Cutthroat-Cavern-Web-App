@@ -1,23 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from "firebase";
-import { FirebaseService } from '../firebase.service';
 import { FirebaseListObservable } from 'angularfire2/database';
 import { Player } from '../player.model';
 import { Character } from '../character.model';
+//import services
+import { FirebaseService } from '../firebase.service';
+import { PlayerService } from '../player.service';
 
 
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss'],
-  providers: [ FirebaseService ]
+  providers: [ FirebaseService, PlayerService ]
 })
 export class LandingPageComponent implements OnInit {
   characters;
   chosenCharacter: Character;
   players: Player[] = [];
 
-  constructor(private firebaseService: FirebaseService) { }
+  constructor(private firebaseService: FirebaseService, private playerService: PlayerService) { }
 
   ngOnInit() {
     this.firebaseService.getCharacters().subscribe(response =>{
@@ -32,23 +34,8 @@ export class LandingPageComponent implements OnInit {
   }
 
   createPlayer(name: string){
-    var prestige: number = 0;
-    var hand: any[] = null;
-    var hp: number = 100;
-    var initiative: number = null;
-    if(this.chosenCharacter == null){
-      alert("Please select a character.");
-    }
-    else
-    {
-      let newPlayer: Player = new Player(name, prestige, hand, hp, initiative, this.chosenCharacter);
-      console.log(newPlayer);
-      console.log(newPlayer.name);
-      console.log(newPlayer.character);
-      console.log(this.chosenCharacter);
-      this.players.push(newPlayer);
-      console.log(this.players);
-    }
+    this.players = this.playerService.createPlayer(name, this.chosenCharacter);
+    console.log(this.players);
   }
 
 }
