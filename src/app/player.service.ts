@@ -4,7 +4,7 @@ import { Character } from './character.model';
 
 @Injectable()
 export class PlayerService {
-  players: Player[] = []
+  players: Player[] = [];
 
   constructor() { }
 

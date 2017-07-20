@@ -23,4 +23,7 @@
 <!-- <div class="" *ngIf="players != 'undefined && players.length >= 4'"> -->
 
   <button type="button" name="button" routerLink='gameboard'>Start Game</button>
+  <!-- <div *ngIf="players != 'undefined'"> -->
+    <app-gameboard [childPlayersList]="players"></app-gameboard>
+  <!-- </div> -->
 <!-- </div> -->

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 //import model
 import { Player } from '../player.model';
 import { Character } from '../character.model';
@@ -12,10 +12,11 @@ import { PlayerService } from '../player.service';
   providers: [ PlayerService]
 })
 export class GameboardComponent implements OnInit {
-
+  @Input() childPlayersList;
   constructor() { }
 
   ngOnInit() {
+    console.log(this.childPlayersList);
   }
 
 }
