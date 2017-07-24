@@ -80,7 +80,67 @@ export class GameboardComponent implements OnInit {
         this.shuffleDeck.splice(0, 1);
       }
     }
+
+    console.log(this.localPlayers);
     console.log(this.shuffleDeck);
+  }
+
+  discard(player: Player){
+    player.hand = ["cards"];
+    for(let i=0; i<7; i++){
+      player.hand.push(this.shuffleDeck[0]);
+      this.shuffleDeck.splice(0, 1);
+    }
+    console.log(this.shuffleDeck);
+  }
+
+  drawToMaxHand(player: Player){
+    if(player.hand.length < 8){
+      for(let i=player.hand.length; i < 8; i++){
+        player.hand.push(this.shuffleDeck[0]);
+        this.shuffleDeck.splice(0, 1);
+      }
+    }
+    else{
+      alert("Your hand is full.");
+    }
+  }
+
+  useCard(card: any, player: Player){
+    //use potion card
+    if(card.name == "Potion Of Healing"){
+      if(player.hp == 100){
+        alert("This player's hp is full.");
+      }
+      else
+      {
+        player.hp += 25;
+        if(player.hp > 100){
+          player.hp = 100;
+        }
+        player.hand.splice(player.hand.indexOf(card), 1);
+      }
+    }
+    //use attack card
+    else if(card.name == "attack 40"){
+      player.hand.splice(player.hand.indexOf(card), 1);
+      player.setAttackCard = card;
+      console.log(player);
+      console.log(player.setAttackCard);
+    }
+    else if(card.name == "attack 25"){
+      player.hand.splice(player.hand.indexOf(card), 1);
+      player.setAttackCard = card;
+      console.log(player);
+      console.log(player.setAttackCard);
+
+    }
+    else if(card.name == "poke with stick 0"){
+      player.hand.splice(player.hand.indexOf(card), 1);
+      player.setAttackCard = card;
+      console.log(player);
+      console.log(player.setAttackCard);
+    }
   }
 
 }

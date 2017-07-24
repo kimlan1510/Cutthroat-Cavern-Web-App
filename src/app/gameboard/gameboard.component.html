@@ -18,28 +18,33 @@
           <div class="profile-prestige">
             <h2>Prestige: {{localPlayers[0].prestige}}</h2>
           </div>
+          <div class="profile-draw-max-hand">
+            <button type="button" name="button" (click)="drawToMaxHand(localPlayers[0])">Draw Up to Max Hand</button>
+            <br>
+            <button type="button" name="button" (click)="discard(localPlayers[0])">Discard</button>
+          </div>
         </div>
       </div>
       <div class="hand" *ngIf="localPlayers[0].hand.length > 1">
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[0].hand[1], localPlayers[0])">
           <p>{{localPlayers[0].hand[1].name}}</p>
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[0].hand[2], localPlayers[0])">
           <p>{{localPlayers[0].hand[2].name}}</p>
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[0].hand[3], localPlayers[0])">
           <p>{{localPlayers[0].hand[3].name}}</p>
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[0].hand[4], localPlayers[0])">
           <p>{{localPlayers[0].hand[4].name}}</p>
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[0].hand[5], localPlayers[0])">
           <p>{{localPlayers[0].hand[5].name}}</p>
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[0].hand[6], localPlayers[0])">
           <p>{{localPlayers[0].hand[6].name}}</p>
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[0].hand[7], localPlayers[0])">
           <p>{{localPlayers[0].hand[7].name}}</p>
         </div>
       </div>
@@ -62,28 +67,33 @@
           <div class="profile-prestige">
             <h2>Prestige: {{localPlayers[1].prestige}}</h2>
           </div>
+          <div class="profile-draw-max-hand">
+            <button type="button" name="button" (click)="drawToMaxHand(localPlayers[1])">Draw Up to Max Hand</button>
+            <br>
+            <button type="button" name="button" (click)="discard(localPlayers[1])">Discard</button>
+          </div>
         </div>
       </div>
       <div class="hand"  *ngIf="localPlayers[1].hand.length > 1">
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[1].hand[1], localPlayers[1])">
           {{localPlayers[1].hand[1].name}}
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[1].hand[2], localPlayers[1])">
           {{localPlayers[1].hand[2].name}}
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[1].hand[3], localPlayers[1])">
           {{localPlayers[1].hand[3].name}}
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[1].hand[4], localPlayers[1])">
           {{localPlayers[1].hand[4].name}}
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[1].hand[5], localPlayers[1])">
           {{localPlayers[1].hand[5].name}}
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[1].hand[6], localPlayers[1])">
           {{localPlayers[1].hand[6].name}}
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[1].hand[7], localPlayers[1])">
           {{localPlayers[1].hand[7].name}}
         </div>
       </div>
@@ -107,6 +117,20 @@
         </div>
       </div>
       <div class="play-zone">
+        <div class="hand">
+          <div class="player-card" *ngIf="localPlayers[0].setAttackCard">
+            {{localPlayers[0].setAttackCard.name}}
+          </div>
+          <div class="player-card" *ngIf="localPlayers[1].setAttackCard">
+            {{localPlayers[1].setAttackCard.name}}
+          </div>
+          <div class="player-card" *ngIf="localPlayers[2].setAttackCard">
+            {{localPlayers[2].setAttackCard.name}}
+          </div>
+          <div class="player-card" *ngIf="localPlayers[3].setAttackCard">
+            {{localPlayers[3].setAttackCard.name}}
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -129,28 +153,33 @@
           <div class="profile-prestige">
             <h2>Prestige: {{localPlayers[2].initiative}}</h2>
           </div>
+          <div class="profile-draw-max-hand">
+            <button type="button" name="button" (click)="drawToMaxHand(localPlayers[2])">Draw Up to Max Hand</button>
+            <br>
+            <button type="button" name="button" (click)="discard(localPlayers[2])">Discard</button>
+          </div>
         </div>
       </div>
       <div class="hand" *ngIf="localPlayers[2].hand.length > 1">
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[2].hand[1], localPlayers[2])">
           {{localPlayers[2].hand[1].name}}
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[2].hand[2], localPlayers[2])">
           {{localPlayers[2].hand[2].name}}
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[2].hand[3], localPlayers[2])">
           {{localPlayers[2].hand[3].name}}
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[2].hand[4], localPlayers[2])">
           {{localPlayers[2].hand[4].name}}
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[2].hand[5], localPlayers[2])">
           {{localPlayers[2].hand[5].name}}
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[2].hand[6], localPlayers[2])">
           {{localPlayers[2].hand[6].name}}
         </div>
-        <div class="player-card">
+        <div class="player-card" (click)="useCard(localPlayers[2].hand[7], localPlayers[2])">
           {{localPlayers[2].hand[7].name}}
         </div>
       </div>
@@ -173,31 +202,36 @@
             <div class="profile-prestige">
               <h2>Prestige: {{localPlayers[3].prestige}}</h2>
             </div>
+            <div class="profile-draw-max-hand">
+              <button type="button" name="button" (click)="drawToMaxHand(localPlayers[3])">Draw Up to Max Hand</button>
+              <br>
+              <button type="button" name="button" (click)="discard(localPlayers[3])">Discard</button>
+            </div>
           </div>
         </div>
       <div class="hand" *ngIf="localPlayers[3].hand.length > 1">
-          <div class="player-card">
-            {{localPlayers[3].hand[1].name}}
-          </div>
-          <div class="player-card">
-            {{localPlayers[3].hand[2].name}}
-          </div>
-          <div class="player-card">
-            {{localPlayers[3].hand[3].name}}
-          </div>
-          <div class="player-card">
-            {{localPlayers[3].hand[4].name}}
-          </div>
-          <div class="player-card">
-            {{localPlayers[3].hand[5].name}}
-          </div>
-          <div class="player-card">
-            {{localPlayers[3].hand[6].name}}
-          </div>
-          <div class="player-card">
-            {{localPlayers[3].hand[7].name}}
-          </div>
+        <div class="player-card" (click)="useCard(localPlayers[3].hand[1], localPlayers[3])">
+          {{localPlayers[3].hand[1].name}}
         </div>
+        <div class="player-card" (click)="useCard(localPlayers[3].hand[2], localPlayers[3])">
+          {{localPlayers[3].hand[2].name}}
+        </div>
+        <div class="player-card" (click)="useCard(localPlayers[3].hand[3], localPlayers[3])">
+          {{localPlayers[3].hand[3].name}}
+        </div>
+        <div class="player-card" (click)="useCard(localPlayers[3].hand[4], localPlayers[3])">
+          {{localPlayers[3].hand[4].name}}
+        </div>
+        <div class="player-card" (click)="useCard(localPlayers[3].hand[5], localPlayers[3])">
+          {{localPlayers[3].hand[5].name}}
+        </div>
+        <div class="player-card" (click)="useCard(localPlayers[3].hand[6], localPlayers[3])">
+          {{localPlayers[3].hand[6].name}}
+        </div>
+        <div class="player-card" (click)="useCard(localPlayers[3].hand[7], localPlayers[3])">
+          {{localPlayers[3].hand[7].name}}
+        </div>
+      </div>
     </div>
   </div>
 </div>
