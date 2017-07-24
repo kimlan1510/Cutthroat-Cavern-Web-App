@@ -1,11 +1,11 @@
 <div class="wrapper">
   <div class="column">
-    <div class="player-panel">
-      <div class="profile">
+    <div class="player-panel" >
+      <div class="profile" *ngIf="localPlayers.length">
         <div class="profile-picture">
           <img src={{localPlayers[0].character.image}} alt="" />
         </div>
-        <div class="profile-stats" *ngIf="localPlayers.length">
+        <div class="profile-stats">
           <div class="profile-name">
             <h2>Name: {{localPlayers[0].name}}</h2>
           </div>
@@ -20,7 +20,7 @@
           </div>
         </div>
       </div>
-      <div class="hand" *ngIf="localPlayers.length">
+      <div class="hand" *ngIf="localPlayers[0].hand.length > 1">
         <div class="player-card">
           <p>{{localPlayers[0].hand[1].name}}</p>
         </div>
@@ -44,12 +44,12 @@
         </div>
       </div>
     </div>
-    <div class="player-panel" *ngIf="localPlayers.length">
-      <div class="profile">
+    <div class="player-panel" >
+      <div class="profile" *ngIf="localPlayers.length">
         <div class="profile-picture">
           <img src={{localPlayers[1].character.image}} alt="" />
         </div>
-        <div class="profile-stats" *ngIf="localPlayers.length">
+        <div class="profile-stats">
           <div class="profile-name">
             <h2>Name: {{localPlayers[1].name}}</h2>
           </div>
@@ -64,7 +64,7 @@
           </div>
         </div>
       </div>
-      <div class="hand">
+      <div class="hand"  *ngIf="localPlayers[1].hand.length > 1">
         <div class="player-card">
           {{localPlayers[1].hand[1].name}}
         </div>
@@ -111,8 +111,8 @@
     </div>
   </div>
   <div class="column">
-    <div class="player-panel" *ngIf="localPlayers.length">
-      <div class="profile">
+    <div class="player-panel" >
+      <div class="profile" *ngIf="localPlayers.length">
         <div class="profile-picture">
           <img src={{localPlayers[2].character.image}} alt="" />
         </div>
@@ -131,7 +131,7 @@
           </div>
         </div>
       </div>
-      <div class="hand">
+      <div class="hand" *ngIf="localPlayers[2].hand.length > 1">
         <div class="player-card">
           {{localPlayers[2].hand[1].name}}
         </div>
@@ -155,48 +155,49 @@
         </div>
       </div>
     </div>
-    <div class="player-panel" *ngIf="localPlayers.length">
-      <div class="profile">
-        <div class="profile-picture">
-          <img src={{localPlayers[3].character.image}} alt="" />
-        </div>
-        <div class="profile-stats" >
-          <div class="profile-name">
-            <h2>Name: {{localPlayers[3].name}}</h2>
+    <div class="player-panel" >
+      <div class="profile" *ngIf="localPlayers.length">
+          <div class="profile-picture">
+            <img src={{localPlayers[3].character.image}} alt="" />
           </div>
-          <div class="profile-health">
-            <h2>Health: {{localPlayers[3].hp}}</h2>
+          <div class="profile-stats" >
+            <div class="profile-name">
+              <h2>Name: {{localPlayers[3].name}}</h2>
+            </div>
+            <div class="profile-health">
+              <h2>Health: {{localPlayers[3].hp}}</h2>
+            </div>
+            <div class="profile-turn">
+              <h2>Initiative: {{localPlayers[3].initiative}}</h2>
+            </div>
+            <div class="profile-prestige">
+              <h2>Prestige: {{localPlayers[3].prestige}}</h2>
+            </div>
           </div>
-          <div class="profile-turn">
-            <h2>Initiative: {{localPlayers[3].initiative}}</h2>
+        </div>
+      <div class="hand" *ngIf="localPlayers[3].hand.length > 1">
+          <div class="player-card">
+            {{localPlayers[3].hand[1].name}}
           </div>
-          <div class="profile-prestige">
-            <h2>Prestige: {{localPlayers[3].prestige}}</h2>
+          <div class="player-card">
+            {{localPlayers[3].hand[2].name}}
+          </div>
+          <div class="player-card">
+            {{localPlayers[3].hand[3].name}}
+          </div>
+          <div class="player-card">
+            {{localPlayers[3].hand[4].name}}
+          </div>
+          <div class="player-card">
+            {{localPlayers[3].hand[5].name}}
+          </div>
+          <div class="player-card">
+            {{localPlayers[3].hand[6].name}}
+          </div>
+          <div class="player-card">
+            {{localPlayers[3].hand[7].name}}
           </div>
         </div>
-      </div>
-      <div class="hand">
-        <div class="player-card">
-          {{localPlayers[3].hand[1].name}}
-        </div>
-        <div class="player-card">
-          {{localPlayers[3].hand[2].name}}
-        </div>
-        <div class="player-card">
-          {{localPlayers[3].hand[3].name}}
-        </div>
-        <div class="player-card">
-          {{localPlayers[3].hand[4].name}}
-        </div>
-        <div class="player-card">
-          {{localPlayers[3].hand[5].name}}
-        </div>
-        <div class="player-card">
-          {{localPlayers[3].hand[6].name}}
-        </div>
-        <div class="player-card">
-          {{localPlayers[3].hand[7].name}}
-        </div>
-      </div>
     </div>
+  </div>
 </div>

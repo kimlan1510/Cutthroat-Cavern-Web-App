@@ -14,6 +14,7 @@ import { FirebaseService } from '../firebase.service';
   styleUrls: ['./gameboard.component.scss'],
   providers: [ PlayerService, FirebaseService ]
 })
+
 export class GameboardComponent implements OnInit {
   players;
   cards;
@@ -29,10 +30,12 @@ export class GameboardComponent implements OnInit {
       for(let i = this.players.length - 1; i > this.players.length - 5; i-- ){
         this.localPlayers.push(this.players[i]);
       }
+      console.log(this.localPlayers);
     });
 
     this.firebaseService.getCards().subscribe(response => {
       this.cards = response;
+      //Create a deck of cards from card types in database
       for(let card of this.cards[0][0].attackCards){
         for(let i = 1; i < 26; i++){
           this.deck.push(card);
@@ -51,7 +54,7 @@ export class GameboardComponent implements OnInit {
         }
       }
 
-      // console.log(this.deck);
+      //create a new shuffled deck from the deck of cards
       while(this.deck.length > 0){
         let i = this.deck.length;
         var randomNumber = Math.floor(Math.random() * i);
@@ -59,9 +62,8 @@ export class GameboardComponent implements OnInit {
         this.shuffleDeck.push(singleCard);
         this.deck.splice(this.deck.indexOf(singleCard), 1);
       }
-      console.log(this.shuffleDeck);
     });
-    console.log(this.localPlayers);
+
   }
 
   dealCards(){
@@ -71,7 +73,7 @@ export class GameboardComponent implements OnInit {
         this.shuffleDeck.splice(0, 1);
       }
     }
-    console.log(this.localPlayers);
+
     console.log(this.shuffleDeck);
   }
 
