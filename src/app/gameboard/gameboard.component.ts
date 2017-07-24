@@ -21,6 +21,7 @@ import { DeckService } from '../deck.service';
 export class GameboardComponent implements OnInit {
   players;
   cards;
+  actionCard;
   encounter;
   deck: any[] = [];
   shuffleDeck: any[] = [];
@@ -124,6 +125,11 @@ export class GameboardComponent implements OnInit {
         player.hand.splice(player.hand.indexOf(card), 1);
       }
     }
+    else if(card.name == "Edge Out" || card.name == "Mixed Signal"){
+      this.actionCard = card;
+      alert("Select a target.");
+      player.hand.splice(player.hand.indexOf(card), 1);
+    }
     //set attack card
     else if(card.name == "attack 40"){
       player.hand.splice(player.hand.indexOf(card), 1);
@@ -150,6 +156,12 @@ export class GameboardComponent implements OnInit {
   useAttackCard(player: Player){
     this.deckService.playAttackCards(player, this.encounter);
     player.setAttackCard = null;
+  }
+
+  //use action card
+  useActionCard(player: Player){
+    player.setActionCard = this.actionCard;
+    console.log(this.actionCard);
   }
 
 

@@ -33,4 +33,9 @@ export class DeckService {
     }
   }
 
+  //use Action card
+  playActionCards(player){
+
+  }
+
 }
