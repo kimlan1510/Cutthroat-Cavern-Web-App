@@ -115,22 +115,26 @@
           <h3>HP: {{encounter.hp[1]}}</h3>
         </div>
         <div class="monster-prestige">
-          <h3>Points: {{encounter.prestige}}</h3>
+          <h3>Prestige: {{encounter.prestige}}</h3>
         </div>
       </div>
       <div class="play-zone">
         <div class="hand">
-          <div class="player-card" *ngIf="localPlayers[0].setAttackCard" >
+          <div class="player-card" *ngIf="localPlayers[0].setAttackCard" (click)="useAttackCard(localPlayers[0])">
             <h4>{{localPlayers[0].setAttackCard.name}}</h4>
+            <p>{{localPlayers[0].initiative}}</p>
           </div>
-          <div class="player-card" *ngIf="localPlayers[1].setAttackCard">
-            {{localPlayers[1].setAttackCard.name}}
+          <div class="player-card" *ngIf="localPlayers[1].setAttackCard" (click)="useAttackCard(localPlayers[1])">
+            <h4>{{localPlayers[1].setAttackCard.name}}</h4>
+            <p>{{localPlayers[1].initiative}}</p>
           </div>
-          <div class="player-card" *ngIf="localPlayers[2].setAttackCard">
-            {{localPlayers[2].setAttackCard.name}}
+          <div class="player-card" *ngIf="localPlayers[2].setAttackCard" (click)="useAttackCard(localPlayers[2])">
+            <h4>{{localPlayers[2].setAttackCard.name}}</h4>
+            <p>{{localPlayers[2].initiative}}</p>
           </div>
-          <div class="player-card" *ngIf="localPlayers[3].setAttackCard">
-            {{localPlayers[3].setAttackCard.name}}
+          <div class="player-card" *ngIf="localPlayers[3].setAttackCard" (click)="useAttackCard(localPlayers[3])">
+            <h4>{{localPlayers[3].setAttackCard.name}}</h4>
+            <p>{{localPlayers[3].initiative}}</p>
           </div>
         </div>
       </div>
@@ -153,7 +157,7 @@
             <h2>Initiative: {{localPlayers[2].initiative}}</h2>
           </div>
           <div class="profile-prestige">
-            <h2>Prestige: {{localPlayers[2].initiative}}</h2>
+            <h2>Prestige: {{localPlayers[2].prestige}}</h2>
           </div>
           <div class="profile-draw-max-hand">
             <button type="button" name="button" (click)="drawToMaxHand(localPlayers[2])">Draw Up to Max Hand</button>

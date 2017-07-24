@@ -3,13 +3,14 @@ import { Player } from './player.model';
 import { Character } from './character.model';
 import { Creature } from './creature.model';
 
+
 @Injectable()
 export class BeginPhaseService {
   localPlayers: Player[] = [];
   encounterDeck: Creature[] = [];
 
 
-  constructor( ) { }
+  constructor() { }
 
   getInitiative(localPlayers) {
     console.log(localPlayers);
