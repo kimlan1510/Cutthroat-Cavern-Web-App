@@ -84,25 +84,29 @@
     "name": "RIPPER",
     "description": "When a player is damaged by RIPPER, remove a card at random from their hand.",
     "prestige": 3,
-    "hp":[150, 190, 240, 280]
+    "hp":[150, 190, 240, 280],
+    "image": "https://s-media-cache-ak0.pinimg.com/originals/c7/08/d8/c708d84fef02719ac5baa592919e80ff.jpg"
   },
   {
     "name": "BATTLE TROLL",
     "description": "The first PLAYER to damage BATTLE TROLL is attacked for 20 points. The last PLAYER to damage BATTLE TROLL is attacked for 10 points. If no one damages BATTLE TROLL, all PLAYERS are hit for 5 points.",
     "prestige": 4,
-    "hp": [160, 190, 220, 250]
+    "hp": [160, 190, 220, 250],
+    "image": "https://s-media-cache-ak0.pinimg.com/originals/c7/08/d8/c708d84fef02719ac5baa592919e80ff.jpg"
   },
   {
     "name": "ANTI-PALADIN",
     "description": "The ANTI-PALADIN attacks the entire party for 5 points and adds this total to his life Points.",
     "prestige": 3,
-    "hp": [95, 145, 195, 245]
+    "hp": [95, 145, 195, 245],
+    "image": "https://s-media-cache-ak0.pinimg.com/originals/c7/08/d8/c708d84fef02719ac5baa592919e80ff.jpg"
   },
   {
     "name": "IRON SKIN GARGOYLE",
     "description": "IRON SKIN GARGOYLE can not be damaged by attacks which cause 20 points of damage or less.",
     "prestige": 4,
-    "hp": [160, 190, 220, 250]
+    "hp": [160, 190, 220, 250],
+    "image": "https://s-media-cache-ak0.pinimg.com/originals/c7/08/d8/c708d84fef02719ac5baa592919e80ff.jpg"
   }
   ]
 }

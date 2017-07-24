@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Player } from './player.model';
 import { Creature } from './creature.model';
 
-
 @Injectable()
 export class DeckService {
   creature: Creature;
@@ -39,3 +38,7 @@ export class DeckService {
   }
 
 }
+
+
+
+

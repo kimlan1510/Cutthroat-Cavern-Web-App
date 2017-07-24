@@ -45,7 +45,7 @@ export class GameboardComponent implements OnInit {
 
     this.firebaseService.getCards().subscribe(response => {
       this.cards = response;
-      //Create a deck of cards from card types in database
+      //Retrieve cards from firebase
       for(let card of this.cards[0][0].attackCards){
         for(let i = 1; i < 26; i++){
           this.deck.push(card);
@@ -61,8 +61,7 @@ export class GameboardComponent implements OnInit {
           this.deck.push(card);
         }
       }
-
-      //create a new shuffled deck from the deck of cards
+      //Populate deck
       while(this.deck.length > 0){
         let i = this.deck.length;
         var randomNumber = Math.floor(Math.random() * i);
