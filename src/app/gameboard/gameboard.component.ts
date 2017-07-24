@@ -65,12 +65,17 @@ export class GameboardComponent implements OnInit {
         this.shuffleDeck.push(singleCard);
         this.deck.splice(this.deck.indexOf(singleCard), 1);
       }
+
+      console.log(this.shuffleDeck);
+    });
+  }
       //getInitiative, drawEncounter
       this.beginPhaseService.getInitiative(this.localPlayers);
       this.encounter = this.encounterDeck[0][0];
     });
 
   }//OnInit
+
 
   dealCards(){
     for(let player of this.localPlayers){
@@ -141,5 +146,6 @@ export class GameboardComponent implements OnInit {
       console.log(player.setAttackCard);
     }
   }
+
 
 }
