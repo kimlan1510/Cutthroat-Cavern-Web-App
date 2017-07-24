@@ -30,7 +30,8 @@ export class GameboardComponent implements OnInit {
       for(let i = this.players.length - 1; i > this.players.length - 5; i-- ){
         this.localPlayers.push(this.players[i]);
       }
-      console.log(this.localPlayers);
+      //Initiative is asigned here
+      this.getInitiative();
     });
 
     this.firebaseService.getCards().subscribe(response => {
@@ -63,6 +64,20 @@ export class GameboardComponent implements OnInit {
         this.deck.splice(this.deck.indexOf(singleCard), 1);
       }
     });
+
+  }//OnInit
+
+  //BeginPhase
+  getInitiative() {
+    let initiative: number[] = [1,2,3,4];
+    for(let player of this.localPlayers) {
+      var randomNumber = Math.floor(Math.random() * initiative.length);
+      player.initiative = initiative[randomNumber];
+      initiative.splice(randomNumber, 1)
+      // console.log(player.name + " " + player.initiative);
+    }
+  }
+  getEncounter() {
 
   }
 
