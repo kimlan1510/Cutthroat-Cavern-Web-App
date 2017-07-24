@@ -18,7 +18,6 @@ import { GameboardComponent } from './gameboard/gameboard.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CreatePlayerFormComponent } from './create-player-form/create-player-form.component';
 
-
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
   authDomain: masterFirebaseConfig.authDomain,
@@ -34,6 +33,7 @@ export const firebaseConfig = {
     LandingPageComponent,
     CreatePlayerFormComponent,
     LandingPageComponent
+
   ],
   imports: [
     BrowserModule,

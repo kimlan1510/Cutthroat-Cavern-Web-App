@@ -77,5 +77,33 @@
     "image": "http://thegeekwave.com/wp-content/uploads/2016/09/wizord.jpg"
   }
   ]
+},
+{
+  "creatures": [
+  {
+    "name": "RIPPER",
+    "description": "When a player is damaged by RIPPER, remove a card at random from their hand.",
+    "prestige": 3,
+    "hp":[150, 190, 240, 280]
+  },
+  {
+    "name": "BATTLE TROLL",
+    "description": "The first PLAYER to damage BATTLE TROLL is attacked for 20 points. The last PLAYER to damage BATTLE TROLL is attacked for 10 points. If no one damages BATTLE TROLL, all PLAYERS are hit for 5 points.",
+    "prestige": 4,
+    "hp": [160, 190, 220, 250]
+  },
+  {
+    "name": "ANTI-PALADIN",
+    "description": "The ANTI-PALADIN attacks the entire party for 5 points and adds this total to his life Points.",
+    "prestige": 3,
+    "hp": [95, 145, 195, 245]
+  },
+  {
+    "name": "IRON SKIN GARGOYLE",
+    "description": "IRON SKIN GARGOYLE can not be damaged by attacks which cause 20 points of damage or less.",
+    "prestige": 4,
+    "hp": [160, 190, 220, 250]
+  }
+  ]
 }
 ]
