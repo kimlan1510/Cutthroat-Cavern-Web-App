@@ -4,6 +4,7 @@ import * as firebase from "firebase";
 //import model
 import { Player } from '../player.model';
 import { Character } from '../character.model';
+import { Creature } from '../creature.model';
 //import services
 import { PlayerService } from '../player.service';
 import { FirebaseService } from '../firebase.service';
@@ -18,6 +19,7 @@ import { FirebaseService } from '../firebase.service';
 export class GameboardComponent implements OnInit {
   players;
   cards;
+  creatures;
   deck: any[] = [];
   shuffleDeck: any[] = [];
   localPlayers: Player[] = [];
@@ -30,8 +32,9 @@ export class GameboardComponent implements OnInit {
       for(let i = this.players.length - 1; i > this.players.length - 5; i-- ){
         this.localPlayers.push(this.players[i]);
       }
-      //Initiative is asigned here
       this.getInitiative();
+      this.getEncounter();
+      console.log("On Init " + this.creatures);
     });
 
     this.firebaseService.getCards().subscribe(response => {
@@ -67,20 +70,22 @@ export class GameboardComponent implements OnInit {
 
   }//OnInit
 
-  //BeginPhase
+//BeginPhase
   getInitiative() {
     let initiative: number[] = [1,2,3,4];
     for(let player of this.localPlayers) {
       var randomNumber = Math.floor(Math.random() * initiative.length);
       player.initiative = initiative[randomNumber];
       initiative.splice(randomNumber, 1)
-      // console.log(player.name + " " + player.initiative);
     }
   }
   getEncounter() {
-
+    this.firebaseService.getCreatures().subscribe(response => {
+      this.creatures = response[0][0];
+    })
   }
 
+// ------------
   dealCards(){
     for(let player of this.localPlayers){
       for(let i=0; i<7; i++){
