@@ -9,24 +9,26 @@ import { Creature } from '../creature.model';
 import { PlayerService } from '../player.service';
 import { FirebaseService } from '../firebase.service';
 import { BeginPhaseService } from '../begin-phase.service';
+import { DeckService } from '../deck.service';
 
 @Component({
   selector: 'app-gameboard',
   templateUrl: './gameboard.component.html',
   styleUrls: ['./gameboard.component.scss'],
-  providers: [ PlayerService, FirebaseService, BeginPhaseService ]
+  providers: [ PlayerService, FirebaseService, BeginPhaseService, DeckService ]
 })
 
 export class GameboardComponent implements OnInit {
   players;
   cards;
+  actionCard;
   encounter;
   deck: any[] = [];
   shuffleDeck: any[] = [];
   localPlayers: Player[] = [];
   encounterDeck: Creature[] = [];
 
-  constructor(private playerService: PlayerService, private firebaseService: FirebaseService, private beginPhaseService: BeginPhaseService) { }
+  constructor(private playerService: PlayerService, private firebaseService: FirebaseService, private beginPhaseService: BeginPhaseService, private deckService: DeckService) { }
 
   ngOnInit() {
     this.playerService.getPlayers().subscribe(response => {
@@ -36,7 +38,9 @@ export class GameboardComponent implements OnInit {
       }
     });
 
-    this.firebaseService.getCreatures().subscribe(response => {      this.encounterDeck = response;
+    this.firebaseService.getCreatures().subscribe(response => {
+      this.encounterDeck = response;
+      this.encounter = this.encounterDeck[0][0];
     })
 
     this.firebaseService.getCards().subscribe(response => {
@@ -67,15 +71,10 @@ export class GameboardComponent implements OnInit {
       }
 
       console.log(this.shuffleDeck);
-    });
-  }
       //getInitiative, drawEncounter
       this.beginPhaseService.getInitiative(this.localPlayers);
-      this.encounter = this.encounterDeck[0][0];
     });
-
-  }//OnInit
-
+  }
 
   dealCards(){
     for(let player of this.localPlayers){
@@ -125,7 +124,12 @@ export class GameboardComponent implements OnInit {
         player.hand.splice(player.hand.indexOf(card), 1);
       }
     }
-    //use attack card
+    else if(card.name == "Edge Out" || card.name == "Mixed Signal"){
+      this.actionCard = card;
+      alert("Select a target.");
+      player.hand.splice(player.hand.indexOf(card), 1);
+    }
+    //set attack card
     else if(card.name == "attack 40"){
       player.hand.splice(player.hand.indexOf(card), 1);
       player.setAttackCard = card;
@@ -145,6 +149,18 @@ export class GameboardComponent implements OnInit {
       console.log(player);
       console.log(player.setAttackCard);
     }
+  }
+
+  //Use attack card
+  useAttackCard(player: Player){
+    this.deckService.playAttackCards(player, this.encounter);
+    player.setAttackCard = null;
+  }
+
+  //use action card
+  useActionCard(player: Player){
+    player.setActionCard = this.actionCard;
+    console.log(this.actionCard);
   }
 
 
