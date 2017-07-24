@@ -23,7 +23,6 @@ export class PlayerService {
       let newPlayer: Player = new Player(name, prestige, hp, initiative, chosenCharacter);
       this.players.push(newPlayer);
       this.localPlayers.push(newPlayer);
-      return this.players;
     }
   }
 
