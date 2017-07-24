@@ -9,7 +9,7 @@ export class PlayerService {
   localPlayers: Player[] = [];
 
   constructor(private firebase: AngularFireDatabase) {
-    this.players = firebase.list('2')
+    this.players = firebase.list('3')
   }
 
   createPlayer(name: string, chosenCharacter: Character){
@@ -23,7 +23,6 @@ export class PlayerService {
       let newPlayer: Player = new Player(name, prestige, hp, initiative, chosenCharacter);
       this.players.push(newPlayer);
       this.localPlayers.push(newPlayer);
-      return this.players;
     }
   }
 
