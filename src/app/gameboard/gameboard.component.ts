@@ -4,25 +4,29 @@ import * as firebase from "firebase";
 //import model
 import { Player } from '../player.model';
 import { Character } from '../character.model';
+import { Creature } from '../creature.model';
 //import services
 import { PlayerService } from '../player.service';
 import { FirebaseService } from '../firebase.service';
+import { BeginPhaseService } from '../begin-phase.service';
 
 @Component({
   selector: 'app-gameboard',
   templateUrl: './gameboard.component.html',
   styleUrls: ['./gameboard.component.scss'],
-  providers: [ PlayerService, FirebaseService ]
+  providers: [ PlayerService, FirebaseService, BeginPhaseService ]
 })
 
 export class GameboardComponent implements OnInit {
   players;
   cards;
+  encounter;
   deck: any[] = [];
   shuffleDeck: any[] = [];
   localPlayers: Player[] = [];
+  encounterDeck: Creature[] = [];
 
-  constructor(private playerService: PlayerService, private firebaseService: FirebaseService) { }
+  constructor(private playerService: PlayerService, private firebaseService: FirebaseService, private beginPhaseService: BeginPhaseService) { }
 
   ngOnInit() {
     this.playerService.getPlayers().subscribe(response => {
@@ -32,6 +36,9 @@ export class GameboardComponent implements OnInit {
       }
     });
 
+    this.firebaseService.getCreatures().subscribe(response => {      this.encounterDeck = response;
+    })
+
     this.firebaseService.getCards().subscribe(response => {
       this.cards = response;
       //Create a deck of cards from card types in database
@@ -40,13 +47,11 @@ export class GameboardComponent implements OnInit {
           this.deck.push(card);
         }
       }
-
       for(let card of this.cards[0][1].actionCards){
         for(let i = 1; i < 8; i++){
           this.deck.push(card);
         }
       }
-
       for(let card of this.cards[0][2].itemCards){
         for(let i = 1; i < 8; i++){
           this.deck.push(card);
@@ -61,9 +66,17 @@ export class GameboardComponent implements OnInit {
         this.shuffleDeck.push(singleCard);
         this.deck.splice(this.deck.indexOf(singleCard), 1);
       }
+
       console.log(this.shuffleDeck);
     });
   }
+      //getInitiative, drawEncounter
+      this.beginPhaseService.getInitiative(this.localPlayers);
+      this.encounter = this.encounterDeck[0][0];
+    });
+
+  }//OnInit
+
 
   dealCards(){
     for(let player of this.localPlayers){
@@ -72,6 +85,7 @@ export class GameboardComponent implements OnInit {
         this.shuffleDeck.splice(0, 1);
       }
     }
+
     console.log(this.localPlayers);
     console.log(this.shuffleDeck);
   }
