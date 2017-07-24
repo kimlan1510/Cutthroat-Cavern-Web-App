@@ -8,23 +8,25 @@ import { Creature } from '../creature.model';
 //import services
 import { PlayerService } from '../player.service';
 import { FirebaseService } from '../firebase.service';
+import { BeginPhaseService } from '../begin-phase.service';
 
 @Component({
   selector: 'app-gameboard',
   templateUrl: './gameboard.component.html',
   styleUrls: ['./gameboard.component.scss'],
-  providers: [ PlayerService, FirebaseService ]
+  providers: [ PlayerService, FirebaseService, BeginPhaseService ]
 })
 
 export class GameboardComponent implements OnInit {
   players;
   cards;
-  creatures;
+  encounter;
   deck: any[] = [];
   shuffleDeck: any[] = [];
   localPlayers: Player[] = [];
+  encounterDeck: Creature[] = [];
 
-  constructor(private playerService: PlayerService, private firebaseService: FirebaseService) { }
+  constructor(private playerService: PlayerService, private firebaseService: FirebaseService, private beginPhaseService: BeginPhaseService) { }
 
   ngOnInit() {
     this.playerService.getPlayers().subscribe(response => {
@@ -32,10 +34,10 @@ export class GameboardComponent implements OnInit {
       for(let i = this.players.length - 1; i > this.players.length - 5; i-- ){
         this.localPlayers.push(this.players[i]);
       }
-      this.getInitiative();
-      this.getEncounter();
-      console.log("On Init " + this.creatures);
     });
+
+    this.firebaseService.getCreatures().subscribe(response => {      this.encounterDeck = response;
+    })
 
     this.firebaseService.getCards().subscribe(response => {
       this.cards = response;
@@ -45,13 +47,11 @@ export class GameboardComponent implements OnInit {
           this.deck.push(card);
         }
       }
-
       for(let card of this.cards[0][1].actionCards){
         for(let i = 1; i < 8; i++){
           this.deck.push(card);
         }
       }
-
       for(let card of this.cards[0][2].itemCards){
         for(let i = 1; i < 8; i++){
           this.deck.push(card);
@@ -66,26 +66,13 @@ export class GameboardComponent implements OnInit {
         this.shuffleDeck.push(singleCard);
         this.deck.splice(this.deck.indexOf(singleCard), 1);
       }
+      //getInitiative, drawEncounter
+      this.beginPhaseService.getInitiative(this.localPlayers);
+      this.encounter = this.encounterDeck[0][0];
     });
 
   }//OnInit
 
-//BeginPhase
-  getInitiative() {
-    let initiative: number[] = [1,2,3,4];
-    for(let player of this.localPlayers) {
-      var randomNumber = Math.floor(Math.random() * initiative.length);
-      player.initiative = initiative[randomNumber];
-      initiative.splice(randomNumber, 1)
-    }
-  }
-  getEncounter() {
-    this.firebaseService.getCreatures().subscribe(response => {
-      this.creatures = response[0][0];
-    })
-  }
-
-// ------------
   dealCards(){
     for(let player of this.localPlayers){
       for(let i=0; i<7; i++){
@@ -93,7 +80,6 @@ export class GameboardComponent implements OnInit {
         this.shuffleDeck.splice(0, 1);
       }
     }
-
     console.log(this.shuffleDeck);
   }
 

@@ -94,16 +94,16 @@
     <div class="battle-zone">
       <div class="monster">
         <div class="monster-name">
-          <h2>{{creatures.name}}</h2>
+          <h2>{{encounter.name}}</h2>
           <h2 (click)="dealCards()">Deal cards</h2>
         </div>
         <div class="monster-image">
         </div>
         <div class="monster-hp">
-          <h3>{{creatures.hp[1]}}</h3>
+          <h3>HP: {{encounter.hp[1]}}</h3>
         </div>
         <div class="monster-prestige">
-          <h3>{{creatures.prestige}}</h3>
+          <h3>Points: {{encounter.prestige}}</h3>
         </div>
       </div>
       <div class="play-zone">
