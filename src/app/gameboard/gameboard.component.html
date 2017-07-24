@@ -3,7 +3,7 @@
     <div class="player-panel" >
       <div class="profile" *ngIf="localPlayers.length">
         <div class="profile-picture">
-          <img src={{localPlayers[0].character.image}} alt="" />
+          <img src={{localPlayers[0].character.image}} alt=""/>
         </div>
         <div class="profile-stats">
           <div class="profile-name">
@@ -105,9 +105,9 @@
       <div class="monster">
         <div class="monster-name">
           <h2>{{encounter.name}}</h2>
-          <h2 (click)="dealCards()">Deal cards</h2>
         </div>
         <div class="monster-image">
+          <img src="{{encounter.image}}" alt="ripper">
         </div>
         <div class="monster-hp">
           <h3>HP: {{encounter.hp[1]}}</h3>
@@ -116,6 +116,7 @@
           <h3>Points: {{encounter.prestige}}</h3>
         </div>
       </div>
+      <h2 (click)="dealCards()">Deal cards</h2>
       <div class="play-zone">
         <div class="hand">
           <div class="player-card" *ngIf="localPlayers[0].setAttackCard">
@@ -151,7 +152,7 @@
             <h2>Initiative: {{localPlayers[2].initiative}}</h2>
           </div>
           <div class="profile-prestige">
-            <h2>Prestige: {{localPlayers[2].initiative}}</h2>
+            <h2>Prestige: {{localPlayers[2].prestige}}</h2>
           </div>
           <div class="profile-draw-max-hand">
             <button type="button" name="button" (click)="drawToMaxHand(localPlayers[2])">Draw Up to Max Hand</button>
