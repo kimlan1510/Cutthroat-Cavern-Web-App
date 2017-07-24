@@ -26,25 +26,26 @@
         </div>
       </div>
       <div class="hand" *ngIf="localPlayers[0].hand.length > 1">
-        <div class="player-card" (click)="useCard(localPlayers[0].hand[1], localPlayers[0])">
+
+        <div class="player-card" *ngIf="localPlayers[0].hand[1]" (click)="useCard(localPlayers[0].hand[1], localPlayers[0])">
           <p>{{localPlayers[0].hand[1].name}}</p>
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[0].hand[2], localPlayers[0])">
+        <div class="player-card" *ngIf="localPlayers[0].hand[2]" (click)="useCard(localPlayers[0].hand[2], localPlayers[0])">
           <p>{{localPlayers[0].hand[2].name}}</p>
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[0].hand[3], localPlayers[0])">
+        <div class="player-card" *ngIf="localPlayers[0].hand[3]" (click)="useCard(localPlayers[0].hand[3], localPlayers[0])">
           <p>{{localPlayers[0].hand[3].name}}</p>
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[0].hand[4], localPlayers[0])">
+        <div class="player-card" *ngIf="localPlayers[0].hand[4]" (click)="useCard(localPlayers[0].hand[4], localPlayers[0])">
           <p>{{localPlayers[0].hand[4].name}}</p>
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[0].hand[5], localPlayers[0])">
+        <div class="player-card" *ngIf="localPlayers[0].hand[5]" (click)="useCard(localPlayers[0].hand[5], localPlayers[0])">
           <p>{{localPlayers[0].hand[5].name}}</p>
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[0].hand[6], localPlayers[0])">
+        <div class="player-card" *ngIf="localPlayers[0].hand[6]" (click)="useCard(localPlayers[0].hand[6], localPlayers[0])">
           <p>{{localPlayers[0].hand[6].name}}</p>
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[0].hand[7], localPlayers[0])">
+        <div class="player-card" *ngIf="localPlayers[0].hand[7]" (click)="useCard(localPlayers[0].hand[7], localPlayers[0])">
           <p>{{localPlayers[0].hand[7].name}}</p>
         </div>
       </div>
@@ -75,25 +76,26 @@
         </div>
       </div>
       <div class="hand"  *ngIf="localPlayers[1].hand.length > 1">
-        <div class="player-card" (click)="useCard(localPlayers[1].hand[1], localPlayers[1])">
+
+        <div class="player-card" *ngIf="localPlayers[0].hand[1]" (click)="useCard(localPlayers[1].hand[1], localPlayers[1])">
           {{localPlayers[1].hand[1].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[1].hand[2], localPlayers[1])">
+        <div class="player-card" *ngIf="localPlayers[1].hand[2]" (click)="useCard(localPlayers[1].hand[2], localPlayers[1])">
           {{localPlayers[1].hand[2].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[1].hand[3], localPlayers[1])">
+        <div class="player-card" *ngIf="localPlayers[1].hand[3]" (click)="useCard(localPlayers[1].hand[3], localPlayers[1])">
           {{localPlayers[1].hand[3].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[1].hand[4], localPlayers[1])">
+        <div class="player-card" *ngIf="localPlayers[1].hand[4]" (click)="useCard(localPlayers[1].hand[4], localPlayers[1])">
           {{localPlayers[1].hand[4].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[1].hand[5], localPlayers[1])">
+        <div class="player-card" *ngIf="localPlayers[1].hand[5]" (click)="useCard(localPlayers[1].hand[5], localPlayers[1])">
           {{localPlayers[1].hand[5].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[1].hand[6], localPlayers[1])">
+        <div class="player-card" *ngIf="localPlayers[1].hand[6]" (click)="useCard(localPlayers[1].hand[6], localPlayers[1])">
           {{localPlayers[1].hand[6].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[1].hand[7], localPlayers[1])">
+        <div class="player-card" *ngIf="localPlayers[1].hand[7]" (click)="useCard(localPlayers[1].hand[7], localPlayers[1])">
           {{localPlayers[1].hand[7].name}}
         </div>
       </div>
@@ -118,8 +120,8 @@
       </div>
       <div class="play-zone">
         <div class="hand">
-          <div class="player-card" *ngIf="localPlayers[0].setAttackCard">
-            {{localPlayers[0].setAttackCard.name}}
+          <div class="player-card" *ngIf="localPlayers[0].setAttackCard" >
+            <h4>{{localPlayers[0].setAttackCard.name}}</h4>
           </div>
           <div class="player-card" *ngIf="localPlayers[1].setAttackCard">
             {{localPlayers[1].setAttackCard.name}}
@@ -161,25 +163,26 @@
         </div>
       </div>
       <div class="hand" *ngIf="localPlayers[2].hand.length > 1">
-        <div class="player-card" (click)="useCard(localPlayers[2].hand[1], localPlayers[2])">
+
+        <div class="player-card" *ngIf="localPlayers[2].hand[1]" (click)="useCard(localPlayers[2].hand[1], localPlayers[2])">
           {{localPlayers[2].hand[1].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[2].hand[2], localPlayers[2])">
+        <div class="player-card" *ngIf="localPlayers[2].hand[2]" (click)="useCard(localPlayers[2].hand[2], localPlayers[2])">
           {{localPlayers[2].hand[2].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[2].hand[3], localPlayers[2])">
+        <div class="player-card" *ngIf="localPlayers[2].hand[3]" (click)="useCard(localPlayers[2].hand[3], localPlayers[2])">
           {{localPlayers[2].hand[3].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[2].hand[4], localPlayers[2])">
+        <div class="player-card" *ngIf="localPlayers[2].hand[4]" (click)="useCard(localPlayers[2].hand[4], localPlayers[2])">
           {{localPlayers[2].hand[4].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[2].hand[5], localPlayers[2])">
+        <div class="player-card" *ngIf="localPlayers[2].hand[5]" (click)="useCard(localPlayers[2].hand[5], localPlayers[2])">
           {{localPlayers[2].hand[5].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[2].hand[6], localPlayers[2])">
+        <div class="player-card" *ngIf="localPlayers[2].hand[6]" (click)="useCard(localPlayers[2].hand[6], localPlayers[2])">
           {{localPlayers[2].hand[6].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[2].hand[7], localPlayers[2])">
+        <div class="player-card" *ngIf="localPlayers[2].hand[7]" (click)="useCard(localPlayers[2].hand[7], localPlayers[2])">
           {{localPlayers[2].hand[7].name}}
         </div>
       </div>
@@ -210,25 +213,25 @@
           </div>
         </div>
       <div class="hand" *ngIf="localPlayers[3].hand.length > 1">
-        <div class="player-card" (click)="useCard(localPlayers[3].hand[1], localPlayers[3])">
+        <div class="player-card" *ngIf="localPlayers[0].hand[1]" (click)="useCard(localPlayers[3].hand[1], localPlayers[3])">
           {{localPlayers[3].hand[1].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[3].hand[2], localPlayers[3])">
+        <div class="player-card" *ngIf="localPlayers[3].hand[2]" (click)="useCard(localPlayers[3].hand[2], localPlayers[3])">
           {{localPlayers[3].hand[2].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[3].hand[3], localPlayers[3])">
+        <div class="player-card" *ngIf="localPlayers[3].hand[3]" (click)="useCard(localPlayers[3].hand[3], localPlayers[3])">
           {{localPlayers[3].hand[3].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[3].hand[4], localPlayers[3])">
+        <div class="player-card" *ngIf="localPlayers[3].hand[4]" (click)="useCard(localPlayers[3].hand[4], localPlayers[3])">
           {{localPlayers[3].hand[4].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[3].hand[5], localPlayers[3])">
+        <div class="player-card" *ngIf="localPlayers[3].hand[5]" (click)="useCard(localPlayers[3].hand[5], localPlayers[3])">
           {{localPlayers[3].hand[5].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[3].hand[6], localPlayers[3])">
+        <div class="player-card" *ngIf="localPlayers[3].hand[6]" (click)="useCard(localPlayers[3].hand[6], localPlayers[3])">
           {{localPlayers[3].hand[6].name}}
         </div>
-        <div class="player-card" (click)="useCard(localPlayers[3].hand[7], localPlayers[3])">
+        <div class="player-card" *ngIf="localPlayers[3].hand[7]" (click)="useCard(localPlayers[3].hand[7], localPlayers[3])">
           {{localPlayers[3].hand[7].name}}
         </div>
       </div>

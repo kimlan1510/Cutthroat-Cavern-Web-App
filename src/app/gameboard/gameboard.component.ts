@@ -30,7 +30,6 @@ export class GameboardComponent implements OnInit {
       for(let i = this.players.length - 1; i > this.players.length - 5; i-- ){
         this.localPlayers.push(this.players[i]);
       }
-      console.log(this.localPlayers);
     });
 
     this.firebaseService.getCards().subscribe(response => {
@@ -62,8 +61,8 @@ export class GameboardComponent implements OnInit {
         this.shuffleDeck.push(singleCard);
         this.deck.splice(this.deck.indexOf(singleCard), 1);
       }
+      console.log(this.shuffleDeck);
     });
-
   }
 
   dealCards(){
@@ -134,5 +133,6 @@ export class GameboardComponent implements OnInit {
       console.log(player.setAttackCard);
     }
   }
+
 
 }
