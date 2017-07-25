@@ -1,44 +1,50 @@
 [{"deck": [
     {"attackCards": [
       {
-        "name": "attack 40",
+        "name": "Attack 40",
         "critical attack": 80,
         "normal attack": 40,
         "half attack": 20,
-        "null attack":0
+        "null attack":0,
+        "image": "https://image.flaticon.com/icons/svg/486/486975.svg"
 
       },
       {
-        "name": "attack 25",
+        "name": "Attack 25",
         "critical attack": 50,
         "normal attack": 25,
         "half attack": 15,
-        "null attack":0
+        "null attack":0,
+        "image":"https://image.flaticon.com/icons/svg/486/486975.svg"
 
       },
       {
-        "name": "poke with stick 0",
+        "name": "Poke With Stick 0",
         "critical attack": 0,
         "normal attack": 0,
         "half attack": 0,
-        "null attack": 0
+        "null attack": 0,
+        "image": "https://image.flaticon.com/icons/svg/486/486975.svg"
       }
     ]},
     {"actionCards": [
       {
         "name": "Mixed Signal",
-        "description": "Play at anytime. Swap another player's face downm 'Set' Attack Card with your dace down. 'Set' Attack Card"
+        "description": "Play at anytime. Swap another player's face downm 'Set' Attack Card with your dace down. 'Set' Attack Card",
+        "image": "https://image.flaticon.com/icons/svg/298/298322.svg"
       },
       {
         "name": "Edge Out",
-        "description": "Play on another player before they reveal their 'Set' Attack Card. Discard it. They may not attack this turn."
+        "description": "Play on another player before they reveal their 'Set' Attack Card. Discard it. They may not attack this turn.",
+        "image": "https://image.flaticon.com/icons/svg/298/298322.svg"
       }
 
     ]},
     {"itemCards": [
       {
         "name": "Potion Of Healing",
-        "description": "Play this face up immediately when dealt. Tip to gain 25 life points. If used to heal a willing party member other than yourself, place the card in your scoring pile for 3 Prestige. "
+        "description": "Play this face up immediately when dealt. Tip to gain 25 life points. If used to heal a willing party member other than yourself, place the card in your scoring pile for 3 Prestige. ",
+        "image":"https://image.flaticon.com/icons/svg/129/129094.svg"
       }
      ]
     }
