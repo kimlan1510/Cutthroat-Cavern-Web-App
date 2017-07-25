@@ -10,12 +10,13 @@ import { PlayerService } from '../player.service';
 import { FirebaseService } from '../firebase.service';
 import { BeginPhaseService } from '../begin-phase.service';
 import { DeckService } from '../deck.service';
+import { CreatureListService} from '../creature-list.service';
 
 @Component({
   selector: 'app-gameboard',
   templateUrl: './gameboard.component.html',
   styleUrls: ['./gameboard.component.scss'],
-  providers: [ PlayerService, FirebaseService, BeginPhaseService, DeckService ]
+  providers: [ PlayerService, FirebaseService, BeginPhaseService, DeckService, CreatureListService ]
 })
 
 export class GameboardComponent implements OnInit {
@@ -24,12 +25,14 @@ export class GameboardComponent implements OnInit {
   actionCard;
   standbyItemCards;
   encounter;
+  setCards: any[] =[];
+  selectedPlayer: Player;
   deck: any[] = [];
   shuffleDeck: any[] = [];
   localPlayers: Player[] = [];
   encounterDeck: Creature[] = [];
 
-  constructor(private playerService: PlayerService, private firebaseService: FirebaseService, private beginPhaseService: BeginPhaseService, private deckService: DeckService) { }
+  constructor(private playerService: PlayerService, private firebaseService: FirebaseService, private beginPhaseService: BeginPhaseService, private deckService: DeckService, private creatureListService: CreatureListService) { }
 
   ngOnInit() {
     this.playerService.getPlayers().subscribe(response => {
@@ -70,13 +73,28 @@ export class GameboardComponent implements OnInit {
     this.deckService.setCardInPlay(card, player);
   }
 
-  //Use attack card
-  useAttackCard(player: Player){
-    this.deckService.playAttackCards(player, this.encounter);
-    player.setAttackCard = null;
+  //Use potion
+  selectThisPotion(player: Player){
+    this.selectedPlayer = player;
   }
+
+  usePotion(player: Player){
+    this.deckService.usePotion(player, this.selectedPlayer);
+  }
+
   //use action card
-  useActionCard(player: Player){
-    this.deckService.playActionCards(player);
+  setActionCard(player: Player){
+    this.deckService.setActionCards(player);
+  }
+  //Creature's turn
+  play(){
+    this.setCards = this.deckService.getSetCards();
+    this.creatureListService.ripper(this.setCards, this.encounter, this.localPlayers);
+    for(let player of this.localPlayers){
+      player.setAttackCard = null;
+      player.hand.push(this.shuffleDeck[0]);
+      this.shuffleDeck.splice(0, 1);
+
+    }
   }
 }
