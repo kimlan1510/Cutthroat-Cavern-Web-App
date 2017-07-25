@@ -78,10 +78,12 @@ export class DeckService {
       this.setCards.push(player);
     }
   }
+
   //get set cards
   getSetCards(){
     console.log(this.setCards);
     return this.setCards;
+
   }
 
   //DealCards
