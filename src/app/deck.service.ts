@@ -5,7 +5,8 @@ import { Creature } from './creature.model';
 @Injectable()
 export class DeckService {
   actionCard;
-  itemCardInPlay;;
+  itemCardInPlay;
+  setCards: any[]=[];
   creature: Creature;
   player: Player;
   deck: any[] = [];
@@ -45,6 +46,9 @@ export class DeckService {
 
   //set cards in play
   setCardInPlay(card: any, player: Player){
+    if(this.setCards.length >= 4){
+      this.setCards = [];
+    }
     //set potion card
     if(card.name == "Potion Of Healing"){
       this.itemCardInPlay = card;
@@ -61,41 +65,23 @@ export class DeckService {
     else if(card.name == "Attack 40"){
       player.hand.splice(player.hand.indexOf(card), 1);
       player.setAttackCard = card;
-
+      this.setCards.push(player);
     }
     else if(card.name == "Attack 25"){
       player.hand.splice(player.hand.indexOf(card), 1);
       player.setAttackCard = card;
-
+      this.setCards.push(player);
     }
     else if(card.name == "Poke With Stick 0"){
       player.hand.splice(player.hand.indexOf(card), 1);
       player.setAttackCard = card;
-      
+      this.setCards.push(player);
     }
   }
-
-  //Regular attack cards
-  playAttackCards(player, creature){
-    if(creature.hp[1] > 0){
-      console.log(creature.hp[1]);
-      if(player.setAttackCard.name == "Attack 40"){
-        creature.hp[1] -= 40;
-        if(creature.hp[1] <= 0 ){
-          player.prestige += creature.prestige;
-        }
-      } else if(player.setAttackCard.name == "Attack 25"){
-        creature.hp[1] -= 25;
-        if(creature.hp[1] <= 0 ){
-          player.prestige += creature.prestige;
-        }
-      } else if(player.setAttackCard.name == "Poke With Stick 0"){
-        creature.hp[1] = creature.hp[1];
-        if(creature.hp[1] <= 0 ){
-          player.prestige += creature.prestige;
-        }
-      }
-    }
+  //get set cards
+  getSetCards(){
+    console.log(this.setCards);
+    return this.setCards;
   }
 
   //DealCards
