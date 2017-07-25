@@ -75,17 +75,18 @@ export class DeckService {
   //Regular attack cards
   playAttackCards(player, creature){
     if(creature.hp[1] > 0){
-      if(player.setAttackCard.name == "attack 40"){
+      console.log(creature.hp[1]);
+      if(player.setAttackCard.name == "Attack 40"){
         creature.hp[1] -= 40;
         if(creature.hp[1] <= 0 ){
           player.prestige += creature.prestige;
         }
-      } else if(player.setAttackCard.name == "attack 25"){
+      } else if(player.setAttackCard.name == "Attack 25"){
         creature.hp[1] -= 25;
         if(creature.hp[1] <= 0 ){
           player.prestige += creature.prestige;
         }
-      } else if(player.setAttackCard.name == "poke with stick 0"){
+      } else if(player.setAttackCard.name == "Poke With Stick 0"){
         creature.hp[1] = creature.hp[1];
         if(creature.hp[1] <= 0 ){
           player.prestige += creature.prestige;
