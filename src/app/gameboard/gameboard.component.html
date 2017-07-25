@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="column">
+  <div class="column column1">
     <div class="player-panel" >
       <div class="profile" *ngIf="localPlayers.length">
         <div class="profile-picture" (click)="useActionCard(localPlayers[0])">
@@ -18,10 +18,12 @@
           <div class="profile-prestige">
             <h2>Prestige: {{localPlayers[0].prestige}}</h2>
           </div>
+          <div class="item-area">
+          </div>
           <div class="profile-draw-max-hand">
             <button type="button" name="button" (click)="drawToMaxHand(localPlayers[0])">Draw Up to Max Hand</button>
             <br>
-            <button type="button" name="button" (click)="discard(localPlayers[0])">Discard</button>
+            <button type="button" name="button" (click)="discard(localPlayers[0])">Draw New Hand</button>
           </div>
         </div>
       </div>
@@ -29,24 +31,31 @@
 
         <div class="player-card" *ngIf="localPlayers[0].hand[1]" (click)="useCard(localPlayers[0].hand[1], localPlayers[0])">
           <p>{{localPlayers[0].hand[1].name}}</p>
+          <img src="{{localPlayers[0].hand[1].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[0].hand[2]" (click)="useCard(localPlayers[0].hand[2], localPlayers[0])">
           <p>{{localPlayers[0].hand[2].name}}</p>
+          <img src="{{localPlayers[0].hand[2].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[0].hand[3]" (click)="useCard(localPlayers[0].hand[3], localPlayers[0])">
           <p>{{localPlayers[0].hand[3].name}}</p>
+          <img src="{{localPlayers[0].hand[3].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[0].hand[4]" (click)="useCard(localPlayers[0].hand[4], localPlayers[0])">
           <p>{{localPlayers[0].hand[4].name}}</p>
+          <img src="{{localPlayers[0].hand[4].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[0].hand[5]" (click)="useCard(localPlayers[0].hand[5], localPlayers[0])">
           <p>{{localPlayers[0].hand[5].name}}</p>
+          <img src="{{localPlayers[0].hand[5].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[0].hand[6]" (click)="useCard(localPlayers[0].hand[6], localPlayers[0])">
           <p>{{localPlayers[0].hand[6].name}}</p>
+          <img src="{{localPlayers[0].hand[6].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[0].hand[7]" (click)="useCard(localPlayers[0].hand[7], localPlayers[0])">
           <p>{{localPlayers[0].hand[7].name}}</p>
+          <img src="{{localPlayers[0].hand[7].image}}" alt="">
         </div>
       </div>
     </div>
@@ -68,10 +77,12 @@
           <div class="profile-prestige">
             <h2>Prestige: {{localPlayers[1].prestige}}</h2>
           </div>
+          <div class="item-area">
+          </div>
           <div class="profile-draw-max-hand">
             <button type="button" name="button" (click)="drawToMaxHand(localPlayers[1])">Draw Up to Max Hand</button>
             <br>
-            <button type="button" name="button" (click)="discard(localPlayers[1])">Discard</button>
+            <button type="button" name="button" (click)="discard(localPlayers[1])">Draw New Hand</button>
           </div>
         </div>
       </div>
@@ -79,29 +90,36 @@
 
         <div class="player-card" *ngIf="localPlayers[0].hand[1]" (click)="useCard(localPlayers[1].hand[1], localPlayers[1])">
           {{localPlayers[1].hand[1].name}}
+          <img src="{{localPlayers[1].hand[1].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[1].hand[2]" (click)="useCard(localPlayers[1].hand[2], localPlayers[1])">
           {{localPlayers[1].hand[2].name}}
+          <img src="{{localPlayers[1].hand[2].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[1].hand[3]" (click)="useCard(localPlayers[1].hand[3], localPlayers[1])">
           {{localPlayers[1].hand[3].name}}
+          <img src="{{localPlayers[1].hand[3].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[1].hand[4]" (click)="useCard(localPlayers[1].hand[4], localPlayers[1])">
           {{localPlayers[1].hand[4].name}}
+          <img src="{{localPlayers[1].hand[4].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[1].hand[5]" (click)="useCard(localPlayers[1].hand[5], localPlayers[1])">
           {{localPlayers[1].hand[5].name}}
+          <img src="{{localPlayers[1].hand[5].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[1].hand[6]" (click)="useCard(localPlayers[1].hand[6], localPlayers[1])">
           {{localPlayers[1].hand[6].name}}
+          <img src="{{localPlayers[1].hand[6].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[1].hand[7]" (click)="useCard(localPlayers[1].hand[7], localPlayers[1])">
           {{localPlayers[1].hand[7].name}}
+          <img src="{{localPlayers[1].hand[7].image}}" alt="">
         </div>
       </div>
     </div>
   </div>
-  <div class="column">
+  <div class="column column2">
     <h1>Cutthroat Caverns</h1>
     <div class="battle-zone">
       <div class="monster">
@@ -118,12 +136,13 @@
           <h3>Prestige: {{encounter.prestige}}</h3>
         </div>
       </div>
-      <h2 (click)="dealCards()">Deal cards</h2>
+      <button id="deal" (click)="dealCards()">Deal cards</button>
       <div class="play-zone">
         <div class="hand">
           <div class="player-card" *ngIf="localPlayers[0].setAttackCard" (click)="useAttackCard(localPlayers[0])">
             <h4>{{localPlayers[0].setAttackCard.name}}</h4>
             <p>{{localPlayers[0].initiative}}</p>
+            <!-- <img src="{{localPlayers[0]setAttackCard.image}}" alt="logo"> -->
           </div>
           <div class="player-card" *ngIf="localPlayers[1].setAttackCard" (click)="useAttackCard(localPlayers[1])">
             <h4>{{localPlayers[1].setAttackCard.name}}</h4>
@@ -159,7 +178,7 @@
       </div>
     </div>
   </div>
-  <div class="column">
+  <div class="column column3">
     <div class="player-panel" >
       <div class="profile" *ngIf="localPlayers.length">
         <div class="profile-picture" (click)="useActionCard(localPlayers[3])">
@@ -178,10 +197,12 @@
           <div class="profile-prestige">
             <h2>Prestige: {{localPlayers[2].prestige}}</h2>
           </div>
+          <div class="item-area">
+          </div>
           <div class="profile-draw-max-hand">
             <button type="button" name="button" (click)="drawToMaxHand(localPlayers[2])">Draw Up to Max Hand</button>
             <br>
-            <button type="button" name="button" (click)="discard(localPlayers[2])">Discard</button>
+            <button type="button" name="button" (click)="discard(localPlayers[2])">Draw New Hand</button>
           </div>
         </div>
       </div>
@@ -189,24 +210,31 @@
 
         <div class="player-card" *ngIf="localPlayers[2].hand[1]" (click)="useCard(localPlayers[2].hand[1], localPlayers[2])">
           {{localPlayers[2].hand[1].name}}
+          <img src="{{localPlayers[2].hand[1].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[2].hand[2]" (click)="useCard(localPlayers[2].hand[2], localPlayers[2])">
           {{localPlayers[2].hand[2].name}}
+          <img src="{{localPlayers[2].hand[2].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[2].hand[3]" (click)="useCard(localPlayers[2].hand[3], localPlayers[2])">
           {{localPlayers[2].hand[3].name}}
+          <img src="{{localPlayers[2].hand[3].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[2].hand[4]" (click)="useCard(localPlayers[2].hand[4], localPlayers[2])">
           {{localPlayers[2].hand[4].name}}
+          <img src="{{localPlayers[2].hand[4].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[2].hand[5]" (click)="useCard(localPlayers[2].hand[5], localPlayers[2])">
           {{localPlayers[2].hand[5].name}}
+          <img src="{{localPlayers[2].hand[5].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[2].hand[6]" (click)="useCard(localPlayers[2].hand[6], localPlayers[2])">
           {{localPlayers[2].hand[6].name}}
+          <img src="{{localPlayers[2].hand[6].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[2].hand[7]" (click)="useCard(localPlayers[2].hand[7], localPlayers[2])">
           {{localPlayers[2].hand[7].name}}
+          <img src="{{localPlayers[2].hand[7].image}}" alt="">
         </div>
       </div>
     </div>
@@ -228,34 +256,43 @@
             <div class="profile-prestige">
               <h2>Prestige: {{localPlayers[3].prestige}}</h2>
             </div>
+            <div class="item-area">
+            </div>
             <div class="profile-draw-max-hand">
               <button type="button" name="button" (click)="drawToMaxHand(localPlayers[3])">Draw Up to Max Hand</button>
               <br>
-              <button type="button" name="button" (click)="discard(localPlayers[3])">Discard</button>
+              <button type="button" name="button" (click)="discard(localPlayers[3])">Draw New Hand</button>
             </div>
           </div>
         </div>
       <div class="hand" *ngIf="localPlayers[3].hand.length > 1">
         <div class="player-card" *ngIf="localPlayers[0].hand[1]" (click)="useCard(localPlayers[3].hand[1], localPlayers[3])">
           {{localPlayers[3].hand[1].name}}
+          <img src="{{localPlayers[3].hand[1].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[3].hand[2]" (click)="useCard(localPlayers[3].hand[2], localPlayers[3])">
           {{localPlayers[3].hand[2].name}}
+          <img src="{{localPlayers[3].hand[2].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[3].hand[3]" (click)="useCard(localPlayers[3].hand[3], localPlayers[3])">
           {{localPlayers[3].hand[3].name}}
+          <img src="{{localPlayers[3].hand[3].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[3].hand[4]" (click)="useCard(localPlayers[3].hand[4], localPlayers[3])">
           {{localPlayers[3].hand[4].name}}
+          <img src="{{localPlayers[3].hand[4].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[3].hand[5]" (click)="useCard(localPlayers[3].hand[5], localPlayers[3])">
           {{localPlayers[3].hand[5].name}}
+          <img src="{{localPlayers[3].hand[5].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[3].hand[6]" (click)="useCard(localPlayers[3].hand[6], localPlayers[3])">
           {{localPlayers[3].hand[6].name}}
+          <img src="{{localPlayers[3].hand[6].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[3].hand[7]" (click)="useCard(localPlayers[3].hand[7], localPlayers[3])">
           {{localPlayers[3].hand[7].name}}
+          <img src="{{localPlayers[3].hand[7].image}}" alt="">
         </div>
       </div>
     </div>
