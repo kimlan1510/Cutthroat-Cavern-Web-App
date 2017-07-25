@@ -2,7 +2,7 @@
   <div class="column column1">
     <div class="player-panel" >
       <div class="profile" *ngIf="localPlayers.length">
-        <div class="profile-picture" (click)="useActionCard(localPlayers[0])">
+        <div class="profile-picture" (click)="setActionCard(localPlayers[0])">
           <img src={{localPlayers[0].character.image}} alt="" />
         </div>
         <div class="profile-stats">
@@ -65,7 +65,7 @@
     </div>
     <div class="player-panel" >
       <div class="profile" *ngIf="localPlayers.length">
-        <div class="profile-picture" (click)="useActionCard(localPlayers[1])">
+        <div class="profile-picture" (click)="setActionCard(localPlayers[1])">
           <img src={{localPlayers[1].character.image}} alt="" />
         </div>
         <div class="profile-stats">
@@ -166,22 +166,20 @@
           </div>
         </div>
         <div class="hand">
+
           <div class="player-card" *ngIf="localPlayers[0].setActionCard">
             <h4>{{localPlayers[0].setActionCard.name}}</h4>
-
           </div>
           <div class="player-card" *ngIf="localPlayers[1].setActionCard">
             <h4>{{localPlayers[1].setActionCard.name}}</h4>
-
           </div>
           <div class="player-card" *ngIf="localPlayers[2].setActionCard">
             <h4>{{localPlayers[2].setActionCard.name}}</h4>
-
           </div>
           <div class="player-card" *ngIf="localPlayers[3].setActionCard">
             <h4>{{localPlayers[3].setActionCard.name}}</h4>
-
           </div>
+
         </div>
       </div>
     </div>
@@ -189,7 +187,7 @@
   <div class="column column3">
     <div class="player-panel" >
       <div class="profile" *ngIf="localPlayers.length">
-        <div class="profile-picture" (click)="useActionCard(localPlayers[3])">
+        <div class="profile-picture" (click)="setActionCard(localPlayers[3])">
           <img src={{localPlayers[2].character.image}} alt="" />
         </div>
         <div class="profile-stats" >
@@ -252,7 +250,7 @@
     </div>
     <div class="player-panel" >
       <div class="profile" *ngIf="localPlayers.length">
-          <div class="profile-picture" (click)="useActionCard(localPlayers[3])">
+          <div class="profile-picture" (click)="setActionCard(localPlayers[3])">
             <img src={{localPlayers[3].character.image}} alt="" />
           </div>
           <div class="profile-stats" >

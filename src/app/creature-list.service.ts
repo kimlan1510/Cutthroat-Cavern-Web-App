@@ -16,7 +16,7 @@ export class CreatureListService {
     return this.creatures;
   }
 
-  ripperAttack(localPlayers){
+  ripper(localPlayers: Player[]){
     for(let player of localPlayers) {
       if(player.initiative == 2)  {
         player.health -= 15;

@@ -86,7 +86,7 @@ export class GameboardComponent implements OnInit {
     player.setAttackCard = null;
   }
   //use action card
-  useActionCard(player: Player){
-    this.deckService.playActionCards(player);
+  setActionCard(player: Player){
+    this.deckService.setActionCards(player);
   }
 }

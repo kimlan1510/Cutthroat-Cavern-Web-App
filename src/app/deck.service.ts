@@ -61,14 +61,17 @@ export class DeckService {
     else if(card.name == "Attack 40"){
       player.hand.splice(player.hand.indexOf(card), 1);
       player.setAttackCard = card;
+
     }
     else if(card.name == "Attack 25"){
       player.hand.splice(player.hand.indexOf(card), 1);
       player.setAttackCard = card;
+
     }
     else if(card.name == "Poke With Stick 0"){
       player.hand.splice(player.hand.indexOf(card), 1);
       player.setAttackCard = card;
+      
     }
   }
 
@@ -128,10 +131,9 @@ export class DeckService {
     return this.shuffleDeck;
   }
 
-  //use Action card
-  playActionCards(player: Player){
+  //set Action card
+  setActionCards(player: Player){
     player.setActionCard = this.actionCard;
-    console.log(player);
   }
 
   //use Potion card
