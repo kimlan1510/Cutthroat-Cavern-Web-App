@@ -88,15 +88,16 @@ export class GameboardComponent implements OnInit {
   setActionCard(targetedPlayer: Player){
     this.deckService.useActionCards(targetedPlayer, this.attackingPlayer);
   }
+
   //Creature's turn
   play(){
     this.setCards = this.deckService.getSetCards();
     this.creatureListService.ripper(this.setCards, this.encounter, this.localPlayers);
     for(let player of this.localPlayers){
       player.setAttackCard = null;
+      player.setActionCard = null;
       player.hand.push(this.shuffleDeck[0]);
       this.shuffleDeck.splice(0, 1);
-      player.setActionCard = null;
     }
   }
 }

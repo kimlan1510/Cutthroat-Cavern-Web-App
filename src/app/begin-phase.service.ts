@@ -13,7 +13,6 @@ export class BeginPhaseService {
   constructor() { }
 
   getInitiative(localPlayers) {
-    console.log(localPlayers);
     let initiative: number[] = [1,2,3,4];
     for(let player of localPlayers) {
       var randomNumber = Math.floor(Math.random() * initiative.length);

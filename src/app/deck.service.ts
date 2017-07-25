@@ -126,8 +126,13 @@ export class DeckService {
     if(player.setActionCard.name == "Mixed Signal"){
       this.swapAttackCard = attackingPlayer.setAttackCard;
       attackingPlayer.setAttackCard = player.setAttackCard;
+
       player.setAttackCard = this.swapAttackCard;
     }
+    // else if(player.setActionCard.name == "Edge Out"){
+    //   player.setAttackCard = null;
+    //   this.setCards.splice(this.setCards.indexOf(player), 1);
+    // }
 
   }
 
@@ -150,7 +155,5 @@ export class DeckService {
       selectedPlayer.setItemCard = null;
     }
   }
-
-
 
 }
