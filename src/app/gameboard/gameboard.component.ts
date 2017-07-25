@@ -27,6 +27,7 @@ export class GameboardComponent implements OnInit {
   encounter;
   setCards: any[] =[];
   selectedPlayer: Player;
+  attackingPlayer: Player;
   deck: any[] = [];
   shuffleDeck: any[] = [];
   localPlayers: Player[] = [];
@@ -70,6 +71,7 @@ export class GameboardComponent implements OnInit {
 
   //Set card in play
   useCard(card: any, player: Player){
+    this.attackingPlayer = player;
     this.deckService.setCardInPlay(card, player);
   }
 
@@ -83,8 +85,8 @@ export class GameboardComponent implements OnInit {
   }
 
   //use action card
-  setActionCard(player: Player){
-    this.deckService.setActionCards(player);
+  setActionCard(targetedPlayer: Player){
+    this.deckService.useActionCards(targetedPlayer, this.attackingPlayer);
   }
   //Creature's turn
   play(){
@@ -94,7 +96,7 @@ export class GameboardComponent implements OnInit {
       player.setAttackCard = null;
       player.hand.push(this.shuffleDeck[0]);
       this.shuffleDeck.splice(0, 1);
-
+      player.setActionCard = null;
     }
   }
 }
