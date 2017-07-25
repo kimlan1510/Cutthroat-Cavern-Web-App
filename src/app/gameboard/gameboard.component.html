@@ -5,25 +5,26 @@
         <div class="profile-picture" (click)="useActionCard(localPlayers[0])">
           <img src={{localPlayers[0].character.image}} alt="" />
         </div>
-        <div class="profile-stats">
-          <div class="profile-name">
-            <h2>Name: {{localPlayers[0].name}}</h2>
-          </div>
-          <div class="profile-health">
-            <h2>Hp: {{localPlayers[0].hp}}</h2>
-          </div>
-          <div class="profile-turn">
-            <h2>Initiative: {{localPlayers[0].initiative}}</h2>
-          </div>
-          <div class="profile-prestige">
-            <h2>Prestige: {{localPlayers[0].prestige}}</h2>
+        <div class="profile-container">
+          <div class="profile-stats">
+            <div class="profile-name">
+              <h2>Name: {{localPlayers[0].name}}</h2>
+            </div>
+            <div class="profile-health">
+              <h2>Hp: {{localPlayers[0].hp}}</h2>
+            </div>
+            <div class="profile-turn">
+              <h2>Initiative: {{localPlayers[0].initiative}}</h2>
+            </div>
+            <div class="profile-prestige">
+              <h2>Prestige: {{localPlayers[0].prestige}}</h2>
+            </div>
+            <div class="profile-draw-max-hand">
+              <button class="cardBtns" type="button" name="button" (click)="drawToMaxHand(localPlayers[0])">Draw Up to Max Hand</button>
+              <button class="cardBtns" type="button" name="button" (click)="discard(localPlayers[0])">Draw New Hand</button>
+            </div>
           </div>
           <div class="item-area">
-          </div>
-          <div class="profile-draw-max-hand">
-            <button type="button" name="button" (click)="drawToMaxHand(localPlayers[0])">Draw Up to Max Hand</button>
-            <br>
-            <button type="button" name="button" (click)="discard(localPlayers[0])">Draw New Hand</button>
           </div>
         </div>
       </div>
@@ -64,25 +65,26 @@
         <div class="profile-picture" (click)="useActionCard(localPlayers[1])">
           <img src={{localPlayers[1].character.image}} alt="" />
         </div>
-        <div class="profile-stats">
-          <div class="profile-name">
-            <h2>Name: {{localPlayers[1].name}}</h2>
-          </div>
-          <div class="profile-health">
-            <h2>Health: {{localPlayers[1].hp}}</h2>
-          </div>
-          <div class="profile-turn">
-            <h2>Initiative: {{localPlayers[1].initiative}}</h2>
-          </div>
-          <div class="profile-prestige">
-            <h2>Prestige: {{localPlayers[1].prestige}}</h2>
+        <div class="profile-container">
+          <div class="profile-stats">
+            <div class="profile-name">
+              <h2>Name: {{localPlayers[1].name}}</h2>
+            </div>
+            <div class="profile-health">
+              <h2>Health: {{localPlayers[1].hp}}</h2>
+            </div>
+            <div class="profile-turn">
+              <h2>Initiative: {{localPlayers[1].initiative}}</h2>
+            </div>
+            <div class="profile-prestige">
+              <h2>Prestige: {{localPlayers[1].prestige}}</h2>
+            </div>
+            <div class="profile-draw-max-hand">
+              <button class="cardBtns" type="button" name="button" (click)="drawToMaxHand(localPlayers[1])">Draw Up to Max Hand</button>
+              <button class="cardBtns" type="button" name="button" (click)="discard(localPlayers[1])">Draw New Hand</button>
+            </div>
           </div>
           <div class="item-area">
-          </div>
-          <div class="profile-draw-max-hand">
-            <button type="button" name="button" (click)="drawToMaxHand(localPlayers[1])">Draw Up to Max Hand</button>
-            <br>
-            <button type="button" name="button" (click)="discard(localPlayers[1])">Draw New Hand</button>
           </div>
         </div>
       </div>
@@ -120,7 +122,7 @@
     </div>
   </div>
   <div class="column column2">
-    <h1>Cutthroat Caverns</h1>
+    <h1 id="head">Cutthroat Caverns</h1>
     <div class="battle-zone">
       <div class="monster">
         <div class="monster-name">
@@ -141,20 +143,26 @@
         <div class="hand">
           <div class="player-card" *ngIf="localPlayers[0].setAttackCard" (click)="useAttackCard(localPlayers[0])">
             <h4>{{localPlayers[0].setAttackCard.name}}</h4>
-            <p>{{localPlayers[0].initiative}}</p>
-            <!-- <img src="{{localPlayers[0]setAttackCard.image}}" alt="logo"> -->
+            <img src="{{localPlayers[0].setAttackCard.image}}" alt="logo">
+            <p>{{localPlayers[0].name}}</p>
           </div>
           <div class="player-card" *ngIf="localPlayers[1].setAttackCard" (click)="useAttackCard(localPlayers[1])">
             <h4>{{localPlayers[1].setAttackCard.name}}</h4>
-            <p>{{localPlayers[1].initiative}}</p>
+            <img src="{{localPlayers[1].setAttackCard.image}}" alt="logo">
+            <p>{{localPlayers[1].name}}</p>
+
           </div>
           <div class="player-card" *ngIf="localPlayers[2].setAttackCard" (click)="useAttackCard(localPlayers[2])">
             <h4>{{localPlayers[2].setAttackCard.name}}</h4>
-            <p>{{localPlayers[2].initiative}}</p>
+            <img src="{{localPlayers[2].setAttackCard.image}}" alt="logo">
+            <p>{{localPlayers[2].name}}</p>
+
           </div>
           <div class="player-card" *ngIf="localPlayers[3].setAttackCard" (click)="useAttackCard(localPlayers[3])">
             <h4>{{localPlayers[3].setAttackCard.name}}</h4>
-            <p>{{localPlayers[3].initiative}}</p>
+            <img src="{{localPlayers[3].setAttackCard.image}}" alt="logo">
+            <p>{{localPlayers[3].name}}</p>
+
           </div>
         </div>
         <div class="hand">
@@ -184,28 +192,29 @@
         <div class="profile-picture" (click)="useActionCard(localPlayers[3])">
           <img src={{localPlayers[2].character.image}} alt="" />
         </div>
-        <div class="profile-stats" >
-          <div class="profile-name">
-            <h2>Name: {{localPlayers[2].name}}</h2>
-          </div>
-          <div class="profile-health">
-            <h2>Health: {{localPlayers[2].hp}}</h2>
-          </div>
-          <div class="profile-turn">
-            <h2>Initiative: {{localPlayers[2].initiative}}</h2>
-          </div>
-          <div class="profile-prestige">
-            <h2>Prestige: {{localPlayers[2].prestige}}</h2>
+        <div class="profile-container">
+          <div class="profile-stats" >
+            <div class="profile-name">
+              <h2>Name: {{localPlayers[2].name}}</h2>
+            </div>
+            <div class="profile-health">
+              <h2>Health: {{localPlayers[2].hp}}</h2>
+            </div>
+            <div class="profile-turn">
+              <h2>Initiative: {{localPlayers[2].initiative}}</h2>
+            </div>
+            <div class="profile-prestige">
+              <h2>Prestige: {{localPlayers[2].prestige}}</h2>
+            </div>
+            <div class="profile-draw-max-hand">
+              <button class="cardBtns" type="button" name="button" (click)="drawToMaxHand(localPlayers[2])">Draw Up to Max Hand</button>
+              <button class="cardBtns" type="button" name="button" (click)="discard(localPlayers[2])">Draw New Hand</button>
+            </div>
           </div>
           <div class="item-area">
           </div>
-          <div class="profile-draw-max-hand">
-            <button type="button" name="button" (click)="drawToMaxHand(localPlayers[2])">Draw Up to Max Hand</button>
-            <br>
-            <button type="button" name="button" (click)="discard(localPlayers[2])">Draw New Hand</button>
-          </div>
         </div>
-      </div>
+    </div>
       <div class="hand" *ngIf="localPlayers[2].hand.length > 1">
 
         <div class="player-card" *ngIf="localPlayers[2].hand[1]" (click)="useCard(localPlayers[2].hand[1], localPlayers[2])">
@@ -243,6 +252,7 @@
           <div class="profile-picture" (click)="useActionCard(localPlayers[3])">
             <img src={{localPlayers[3].character.image}} alt="" />
           </div>
+        <div class="profile-container">
           <div class="profile-stats" >
             <div class="profile-name">
               <h2>Name: {{localPlayers[3].name}}</h2>
@@ -256,15 +266,15 @@
             <div class="profile-prestige">
               <h2>Prestige: {{localPlayers[3].prestige}}</h2>
             </div>
-            <div class="item-area">
-            </div>
             <div class="profile-draw-max-hand">
-              <button type="button" name="button" (click)="drawToMaxHand(localPlayers[3])">Draw Up to Max Hand</button>
-              <br>
-              <button type="button" name="button" (click)="discard(localPlayers[3])">Draw New Hand</button>
+              <button class="cardBtns" type="button" name="button" (click)="drawToMaxHand(localPlayers[3])">Draw Up to Max Hand</button>
+              <button class="cardBtns" type="button" name="button" (click)="discard(localPlayers[3])">Draw New Hand</button>
             </div>
           </div>
+          <div class="item-area">
+          </div>
         </div>
+      </div>
       <div class="hand" *ngIf="localPlayers[3].hand.length > 1">
         <div class="player-card" *ngIf="localPlayers[0].hand[1]" (click)="useCard(localPlayers[3].hand[1], localPlayers[3])">
           {{localPlayers[3].hand[1].name}}
