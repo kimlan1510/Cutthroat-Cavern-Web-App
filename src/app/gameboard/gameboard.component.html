@@ -282,20 +282,20 @@
               <h2>Prestige: {{localPlayers[3].prestige}}</h2>
             </div>
 
-            <div class="item-area" *ngIf="localPlayers[3].setItemCard">
-              <div class="player-card" (click)="selectThisPotion(localPlayers[3])">
-                <p>{{localPlayers[3].setItemCard.name}}</p>
-                <img src={{localPlayers[3].setItemCard.image}} alt="item">
-              </div>
-            </div>
 
             <div class="profile-draw-max-hand">
               <button class="cardBtns" type="button" name="button" (click)="drawToMaxHand(localPlayers[3])">Draw Up to Max Hand</button>
               <button class="cardBtns" type="button" name="button" (click)="discard(localPlayers[3])">Draw New Hand</button>
             </div>
           </div>
-          <div class="item-area">
+
+          <div class="item-area" *ngIf="localPlayers[3].setItemCard">
+            <div class="player-card" (click)="selectThisPotion(localPlayers[3])">
+              <p>{{localPlayers[3].setItemCard.name}}</p>
+              <img src={{localPlayers[3].setItemCard.image}} alt="item">
+            </div>
           </div>
+
         </div>
       </div>
       <div class="hand" *ngIf="localPlayers[3].hand.length > 1">
