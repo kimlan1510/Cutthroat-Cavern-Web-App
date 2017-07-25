@@ -9,7 +9,7 @@
           <div class="profile-name">
             <h2>Name: {{localPlayers[0].name}}</h2>
           </div>
-          <div class="profile-health">
+          <div class="profile-health" (click)="usePotion(localPlayers[0])">
             <h2>Hp: {{localPlayers[0].hp}}</h2>
           </div>
           <div class="profile-turn">
@@ -19,7 +19,7 @@
             <h2>Prestige: {{localPlayers[0].prestige}}</h2>
           </div>
           <div class="item-area" *ngIf="localPlayers[0].setItemCard">
-            <div class="player-card">
+            <div class="player-card" (click)="selectThisPotion(localPlayers[0])">
               <p>{{localPlayers[0].setItemCard.name}}</p>
               <img src={{localPlayers[0].setItemCard.image}} alt="item">
             </div>
@@ -72,7 +72,7 @@
           <div class="profile-name">
             <h2>Name: {{localPlayers[1].name}}</h2>
           </div>
-          <div class="profile-health">
+          <div class="profile-health" (click)="usePotion(localPlayers[1])">
             <h2>Health: {{localPlayers[1].hp}}</h2>
           </div>
           <div class="profile-turn">
@@ -82,7 +82,7 @@
             <h2>Prestige: {{localPlayers[1].prestige}}</h2>
           </div>
           <div class="item-area" *ngIf="localPlayers[1].setItemCard">
-            <div class="player-card">
+            <div class="player-card" (click)="selectThisPotion(localPlayers[1])">
               <p>{{localPlayers[1].setItemCard.name}}</p>
               <img src={{localPlayers[1].setItemCard.image}} alt="item">
             </div>
@@ -196,7 +196,7 @@
           <div class="profile-name">
             <h2>Name: {{localPlayers[2].name}}</h2>
           </div>
-          <div class="profile-health">
+          <div class="profile-health" (click)="usePotion(localPlayers[2])">
             <h2>Health: {{localPlayers[2].hp}}</h2>
           </div>
           <div class="profile-turn">
@@ -206,7 +206,7 @@
             <h2>Prestige: {{localPlayers[2].prestige}}</h2>
           </div>
           <div class="item-area" *ngIf="localPlayers[2].setItemCard">
-            <div class="player-card">
+            <div class="player-card" (click)="selectThisPotion(localPlayers[2])">
               <p>{{localPlayers[2].setItemCard.name}}</p>
               <img src={{localPlayers[2].setItemCard.image}} alt="item">
             </div>
@@ -259,7 +259,7 @@
             <div class="profile-name">
               <h2>Name: {{localPlayers[3].name}}</h2>
             </div>
-            <div class="profile-health">
+            <div class="profile-health" (click)="usePotion(localPlayers[3])">
               <h2>Health: {{localPlayers[3].hp}}</h2>
             </div>
             <div class="profile-turn">
@@ -269,7 +269,7 @@
               <h2>Prestige: {{localPlayers[3].prestige}}</h2>
             </div>
             <div class="item-area" *ngIf="localPlayers[3].setItemCard">
-              <div class="player-card">
+              <div class="player-card" (click)="selectThisPotion(localPlayers[3])">
                 <p>{{localPlayers[3].setItemCard.name}}</p>
                 <img src={{localPlayers[3].setItemCard.image}} alt="item">
               </div>

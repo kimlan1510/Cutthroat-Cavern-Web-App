@@ -133,4 +133,25 @@ export class DeckService {
     player.setActionCard = this.actionCard;
     console.log(player);
   }
+
+  //use Potion card
+  usePotion(player: Player, selectedPlayer: Player) {
+    if(player.hp >= 100) {
+      alert("This character's HP is full!");
+    }
+    else if (player.hp <= 0) {
+      alert("This player is super dead!");
+    }
+    else {
+      player.hp += 25;
+      if(player.hp > 100) {
+        player.hp = 100;
+        if(player != selectedPlayer){
+          selectedPlayer.prestige += 3;
+        }
+      }
+      selectedPlayer.setItemCard = null;
+    }
+  }
+
 }

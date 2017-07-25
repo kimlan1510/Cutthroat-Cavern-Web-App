@@ -24,6 +24,7 @@ export class GameboardComponent implements OnInit {
   actionCard;
   standbyItemCards;
   encounter;
+  selectedPlayer: Player;
   deck: any[] = [];
   shuffleDeck: any[] = [];
   localPlayers: Player[] = [];
@@ -68,6 +69,15 @@ export class GameboardComponent implements OnInit {
   //Set card in play
   useCard(card: any, player: Player){
     this.deckService.setCardInPlay(card, player);
+  }
+
+  //Use potion
+  selectThisPotion(player: Player){
+    this.selectedPlayer = player;
+  }
+
+  usePotion(player: Player){
+    this.deckService.usePotion(player, this.selectedPlayer);
   }
 
   //Use attack card
