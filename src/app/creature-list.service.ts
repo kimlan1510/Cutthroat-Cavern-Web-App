@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { Creature } from './creature.model';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database'
 import { Player } from './player.model';
+import { BeginPhaseService } from './begin-phase.service';
 
 @Injectable()
 export class CreatureListService {
   creatures: FirebaseListObservable<any[]>;
   localPlayers: Player[] = [];
 
-  constructor(private firebase: AngularFireDatabase) {
+  constructor(private firebase: AngularFireDatabase, private beginPhase: BeginPhaseService) {
     this.creatures = firebase.list('3')
   }
 
@@ -16,7 +17,7 @@ export class CreatureListService {
     return this.creatures;
   }
 
-  ripper(listPlayers: any[], creature: Creature){
+  ripper(listPlayers: any[], creature: Creature, localPlayers: Player[]){
     for(let i=1; i<5; i++){
       for(let player of listPlayers){
         if(player.initiative == i){
@@ -44,13 +45,14 @@ export class CreatureListService {
         }
       }
     }
-
-    // for(let player of listPlayers) {
-    //   if(player.initiative == 2)  {
-    //     player.health -= 15;
-    //   }
-    // }
-    // console.log(listPlayers);
+    this.beginPhase.getInitiative(localPlayers);
+    for(let player of localPlayers) {
+      if(creature.hp[1] > 0){
+        if(player.initiative == 2)  {
+          player.hp -= 15;
+        }
+      }
+    }
   }
 
 }
