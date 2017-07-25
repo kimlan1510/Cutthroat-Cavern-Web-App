@@ -50,6 +50,8 @@ export class CreatureListService {
       if(creature.hp[1] > 0){
         if(player.initiative == 2)  {
           player.hp -= 15;
+          let randomCard = Math.floor(Math.random() * player.hand.length);
+          player.hand.splice(randomCard, 1)
         }
       }
     }
