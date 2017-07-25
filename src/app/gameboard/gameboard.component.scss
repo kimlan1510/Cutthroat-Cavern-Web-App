@@ -1,11 +1,13 @@
-// @font-face {
-//   font-family: "magicBoy";
-//   src: url("/fonts/magicy.ttf");
-// }
+
 
 @font-face {
     font-family: magicBoy;
     src: url('../../fonts/magicy.ttf');
+}
+
+@font-face {
+  font-family: gothicBoy;
+  src: ('../../fonts/blackcastle.ttf');
 }
 
 
@@ -76,17 +78,15 @@
 .profile{
   width: 100%;
   display: flex;
-
 }
 .profile-picture {
   height: 450px;
   border-radius: 5px;
   width: 340px;
-  border: 1px solid black;
   margin: 10px;
   img {
-    height: 450px;
-    width: 340px;
+    height: 410px;
+    width: 305px;
     border-radius: 5px;
   }
 }
@@ -94,29 +94,32 @@
 .profile-stats {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .profile-name {
   height: 15%;
-  width: 450px;
+  width: 100%;
 }
 .profile-health {
   height: 15%;
-  width: 450px;
+  width: 100%;
 }
 .profile-turn {
   height: 15%;
-  width: 450px;
+  width: 100%;
 }
 .profile-prestige {
   height: 15%;
-  width: 450px;
+  width: 100%;
 }
 
 h1{
   text-align: center;
-  font-size: 70px;
-  font-family: medieval;
+  font-size: 80px;
+  font-family: gothic;
+  padding: 20px;
+
 }
 
 .battle-zone{
@@ -189,15 +192,34 @@ button {
     border-radius: 5px;
 }
 
-.item-area{
-  border: 1px solid purple;
-  height: 200px;
-  width: 300px;
+.item-area {
   display: flex;
-  align-self: flex-end;
+  border: 1px solid purple;
+  height: 50%;
+  width: 55%;
+  margin-right: 10%;
+  margin-top: 10%;
 }
 
 .player-card img {
   width: 60%;
   height: auto;
+}
+
+.cardBtns {
+  width: 170px;
+  font-family: gothicBoy;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.profile-container {
+  display: flex;
+  width: 100%;
+
+
 }
