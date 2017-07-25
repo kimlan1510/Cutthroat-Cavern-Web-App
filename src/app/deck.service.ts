@@ -5,6 +5,7 @@ import { Creature } from './creature.model';
 @Injectable()
 export class DeckService {
   actionCard;
+  itemCardInPlay;;
   creature: Creature;
   player: Player;
   deck: any[] = [];
@@ -44,19 +45,11 @@ export class DeckService {
 
   //set cards in play
   setCardInPlay(card: any, player: Player){
-    //use potion card
+    //set potion card
     if(card.name == "Potion Of Healing"){
-      if(player.hp == 100){
-        alert("This player's hp is full.");
-      }
-      else
-      {
-        player.hp += 25;
-        if(player.hp > 100){
-          player.hp = 100;
-        }
-        player.hand.splice(player.hand.indexOf(card), 1);
-      }
+      this.itemCardInPlay = card;
+      player.setItemCard = card;
+      player.hand.splice(player.hand.indexOf(card), 1);
     }
     //set action card
     else if(card.name == "Edge Out" || card.name == "Mixed Signal"){
