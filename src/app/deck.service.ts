@@ -86,7 +86,7 @@ export class DeckService {
   setCardInPlay(card: any, player: Player){
     if(this.setCards.length >= 4){
       //set potion card
-      if(card.name == "Potion Of Healing"){
+      if(card.name == "Potion Of Healing" || card.name == "Cure Wounds"){
         this.itemCardInPlay = card;
         player.setItemCard = card;
         player.hand.splice(player.hand.indexOf(card), 1);
@@ -279,14 +279,20 @@ export class DeckService {
       this.actionsInPlay.reverse();
       player.setActionCard = this.actionCard;
       console.log("Do action in the array of action cards");
-      for(let card of this.actionsInPlay){
+      for(let i = 0; i < this.actionsInPlay.length; i++){
         console.log(this.actionsInPlay);
-        if(card.name == "Mixed Signal"){
+        if(this.actionsInPlay[i].name == "Mixed Signal"){
           this.mixedSignal(player, attackingPlayer);
         }
-        else if(card.name == "Edge Out")
+        else if(this.actionsInPlay[i].name == "Edge Out")
         {
           this.edgeOut(player);
+        }
+        else if(this.actionsInPlay[i].name == "Not On My Watch!"){
+          this.notOnMyWatch(i);
+        }
+        else if(this.actionsInPlay[i].name == "Not So Fast!"){
+          this.notSoFast(i, attackingPlayer);
         }
       }
     }
@@ -329,6 +335,16 @@ export class DeckService {
   edgeOut(player){
     player.setAttackCard = null;
     this.setCards.splice(this.setCards.indexOf(player), 1);
+  }
+
+  notOnMyWatch(i){
+    this.actionsInPlay.splice(this.actionsInPlay[i + 1], 1);
+  }
+
+  notSoFast(i, player) {
+    let card = this.actionsInPlay[i + 1];
+    this.actionsInPlay.splice(this.actionsInPlay[i + 1], 1);
+    player.hand.push(card);
   }
 
   //use Potion card
