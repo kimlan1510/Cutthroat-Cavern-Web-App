@@ -115,6 +115,17 @@ app-gameboard{
   z-index: 1000;
   margin: 0;
   clear: both;
+  animation: slideIn 2.3s ease-in;
+  // animation-delay: 3s;
+}
+
+@keyframes slideIn {
+  0% {
+    left: -400px;
+  }
+  100% {
+    left: 625px;
+  }
 }
 
 .border2 {
@@ -126,6 +137,16 @@ app-gameboard{
   transform: scaleX(-1);
   filter: FlipV;
   transform: rotate(180deg);
+  animation: slideIn2 2.3s ease-in;
+}
+
+@keyframes slideIn2 {
+  0% {
+    right: -400px;
+  }
+  100% {
+    right: 625px;
+  }
 }
 
 .border2 img {
@@ -257,11 +278,25 @@ app-gameboard{
 
 #click-to-begin {
   // text-align: center;
+  color: #3d3d3d;
   align-self: center;
   height: 100px;
   font-size: 70px;
   margin-top: 100px;
   font-family: magicBoy;
+  animation: pulse 2s ease-in-out infinite
+}
+
+@keyframes pulse {
+  0% {
+    color: #3d3d3d;
+  }
+  50% {
+    color: #d1ba4b;
+  }
+  100% {
+    color: #3d3d3d;
+  }
 }
 
 #click-to-begin:hover {

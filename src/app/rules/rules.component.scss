@@ -8,6 +8,10 @@
   src: url('../../fonts/blackcastle.ttf');
 }
 
+a {
+  font-family: magicBoy;
+}
+
 .rule-wrap {
   display: flex;
   width: 100%;
@@ -20,11 +24,11 @@
 }
 .panel-body {
   width: 50%;
-  display: flex;
+  position: absolute;
+  top: 350px;
   font-family: magicBoy;
   letter-spacing: 1px;
   font-size: 18px;
-  flex-direction: column;
   z-index: 5;
   background-color: white;
   border-radius: 2px;
@@ -36,6 +40,16 @@
   border-top: 3px solid ivory;
   border-right: 3px solid darkgrey;
   border-bottom: 3px solid darkgrey;
+  animation: slider 3s ease;
+}
+
+@keyframes slider {
+  0% {
+    top: -500px;
+  }
+  100% {
+    top: 350px;
+  }
 }
 
 .panel-header {
