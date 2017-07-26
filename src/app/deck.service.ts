@@ -7,6 +7,7 @@ export class DeckService {
   actionCard;
   itemCardInPlay;
   swapAttackCard;
+  swapPlayer;
   setCards: any[]=[];
   creature: Creature;
   player: Player;
@@ -47,7 +48,7 @@ export class DeckService {
 
   //set cards in play
   setCardInPlay(card: any, player: Player){
-    if(this.setCards.length >= 4){
+    if(this.setCards.length > 4){
       this.setCards = [];
     }
     //set potion card
@@ -67,16 +68,19 @@ export class DeckService {
       player.hand.splice(player.hand.indexOf(card), 1);
       player.setAttackCard = card;
       this.setCards.push(player);
+      console.log(this.setCards);
     }
     else if(card.name == "Attack 25"){
       player.hand.splice(player.hand.indexOf(card), 1);
       player.setAttackCard = card;
       this.setCards.push(player);
+      console.log(this.setCards);
     }
     else if(card.name == "Poke With Stick 0"){
       player.hand.splice(player.hand.indexOf(card), 1);
       player.setAttackCard = card;
       this.setCards.push(player);
+      console.log(this.setCards);
     }
   }
 
@@ -122,12 +126,25 @@ export class DeckService {
 
   //use Action card
   useActionCards(player: Player, attackingPlayer: Player){
+    console.log(this.getSetCards());
+    console.log(player);
+    console.log(attackingPlayer);
     player.setActionCard = this.actionCard;
     if(player.setActionCard.name == "Mixed Signal"){
+      //swap player's set attack card
       this.swapAttackCard = attackingPlayer.setAttackCard;
       attackingPlayer.setAttackCard = player.setAttackCard;
-
       player.setAttackCard = this.swapAttackCard;
+      //swap player's positions in setCards array
+      let i = this.setCards.indexOf(attackingPlayer);
+      let ii = this.setCards.indexOf(player);
+      console.log(i);
+      console.log(ii);
+      this.setCards[i] = player;
+      this.setCards[ii] = attackingPlayer;
+      console.log(this.setCards.indexOf(attackingPlayer));
+      console.log(this.setCards[ii]);
+
     }
     // else if(player.setActionCard.name == "Edge Out"){
     //   player.setAttackCard = null;

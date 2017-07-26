@@ -154,24 +154,24 @@
       </div>
       <div class="play-zone">
         <div class="hand">
-          <div class="player-card" *ngIf="localPlayers[0].setAttackCard" (click)="useAttackCard(localPlayers[0])">
+          <div class="player-card" *ngIf="localPlayers[0].setAttackCard">
             <h4>{{localPlayers[0].setAttackCard.name}}</h4>
             <img src="{{localPlayers[0].setAttackCard.image}}" alt="logo">
             <p>{{localPlayers[0].name}}</p>
           </div>
-          <div class="player-card" *ngIf="localPlayers[1].setAttackCard" (click)="useAttackCard(localPlayers[1])">
+          <div class="player-card" *ngIf="localPlayers[1].setAttackCard">
             <h4>{{localPlayers[1].setAttackCard.name}}</h4>
             <img src="{{localPlayers[1].setAttackCard.image}}" alt="logo">
             <p>{{localPlayers[1].name}}</p>
 
           </div>
-          <div class="player-card" *ngIf="localPlayers[2].setAttackCard" (click)="useAttackCard(localPlayers[2])">
+          <div class="player-card" *ngIf="localPlayers[2].setAttackCard">
             <h4>{{localPlayers[2].setAttackCard.name}}</h4>
             <img src="{{localPlayers[2].setAttackCard.image}}" alt="logo">
             <p>{{localPlayers[2].name}}</p>
 
           </div>
-          <div class="player-card" *ngIf="localPlayers[3].setAttackCard" (click)="useAttackCard(localPlayers[3])">
+          <div class="player-card" *ngIf="localPlayers[3].setAttackCard">
             <h4>{{localPlayers[3].setAttackCard.name}}</h4>
             <img src="{{localPlayers[3].setAttackCard.image}}" alt="logo">
             <p>{{localPlayers[3].name}}</p>
