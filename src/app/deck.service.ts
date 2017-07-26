@@ -20,20 +20,55 @@ export class DeckService {
   //get cards from firebase
   getCards(cards: any){
     //Retrieve cards from firebase
-    for(let card of cards[0][0].attackCards){
-      for(let i = 1; i < 26; i++){
-        this.deck.push(card);
-      }
+    //attack 100
+    for(let i = 1; i < 4; i++){
+      this.deck.push(cards[0][0].attackCards[0]);
     }
+    //attack 50
+    for(let i = 1; i < 9; i++){
+      this.deck.push(cards[0][0].attackCards[1]);
+    }
+    //attack 40
+    for(let i = 1; i < 15; i++){
+      this.deck.push(cards[0][0].attackCards[2]);
+    }
+    //attack 30
+    for(let i = 1; i < 9; i++){
+      this.deck.push(cards[0][0].attackCards[3]);
+    }
+    //attack 25
+    for(let i = 1; i < 11; i++){
+      this.deck.push(cards[0][0].attackCards[4]);
+    }
+    //attack 20
+    for(let i = 1; i < 11; i++){
+      this.deck.push(cards[0][0].attackCards[5]);
+    }
+    //attack 10
+    for(let i = 1; i < 11; i++){
+      this.deck.push(cards[0][0].attackCards[6]);
+    }
+    //attack 5
+    for(let i = 1; i < 7; i++){
+      this.deck.push(cards[0][0].attackCards[7]);
+    }
+    //poke with Stick
+    for(let i = 1; i < 5; i++){
+      this.deck.push(cards[0][0].attackCards[8]);
+    }
+    //action Cards
     for(let card of cards[0][1].actionCards){
-      for(let i = 1; i < 8; i++){
+      for(let i = 1; i < 4; i++){
         this.deck.push(card);
       }
     }
-    for(let card of cards[0][2].itemCards){
-      for(let i = 1; i < 8; i++){
-        this.deck.push(card);
-      }
+    //potion of Healing
+    for(let i = 1; i < 2; i++){
+      this.deck.push(cards[0][2].itemCards[0]);
+    }
+    //cure wounds
+    for(let i = 1; i < 3; i++){
+      this.deck.push(cards[0][2].itemCards[1]);
     }
     //Populate deck
     while(this.deck.length > 0){
@@ -43,7 +78,7 @@ export class DeckService {
       this.shuffleDeck.push(singleCard);
       this.deck.splice(this.deck.indexOf(singleCard), 1);
     }
-      return this.shuffleDeck;
+    return this.shuffleDeck;
   }
 
   //set cards in play

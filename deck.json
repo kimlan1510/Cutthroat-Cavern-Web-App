@@ -1,6 +1,24 @@
 [{"deck": [
     {"attackCards": [
       {
+        "name": "Attack 100",
+        "critical attack": 200,
+        "normal attack": 100,
+        "half attack": 50,
+        "null attack":0,
+        "image": "https://image.flaticon.com/icons/svg/486/486975.svg"
+
+      },
+      {
+        "name": "Attack 50",
+        "critical attack": 100,
+        "normal attack": 50,
+        "half attack": 25,
+        "null attack":0,
+        "image": "https://image.flaticon.com/icons/svg/486/486975.svg"
+
+      },
+      {
         "name": "Attack 40",
         "critical attack": 80,
         "normal attack": 40,
@@ -10,10 +28,46 @@
 
       },
       {
+        "name": "Attack 30",
+        "critical attack": 60,
+        "normal attack": 30,
+        "half attack": 15,
+        "null attack":0,
+        "image": "https://image.flaticon.com/icons/svg/486/486975.svg"
+
+      },
+      {
         "name": "Attack 25",
         "critical attack": 50,
         "normal attack": 25,
         "half attack": 15,
+        "null attack":0,
+        "image":"https://image.flaticon.com/icons/svg/486/486975.svg"
+
+      },
+      {
+        "name": "Attack 20",
+        "critical attack": 40,
+        "normal attack": 20,
+        "half attack": 10,
+        "null attack":0,
+        "image":"https://image.flaticon.com/icons/svg/486/486975.svg"
+
+      },
+      {
+        "name": "Attack 10",
+        "critical attack": 20,
+        "normal attack": 10,
+        "half attack": 5,
+        "null attack":0,
+        "image":"https://image.flaticon.com/icons/svg/486/486975.svg"
+
+      },
+      {
+        "name": "Attack 5",
+        "critical attack": 10,
+        "normal attack": 5,
+        "half attack": 0,
         "null attack":0,
         "image":"https://image.flaticon.com/icons/svg/486/486975.svg"
 
@@ -34,6 +88,16 @@
         "image": "https://image.flaticon.com/icons/svg/428/428774.svg"
       },
       {
+        "name": "Not On My Watch!",
+        "description": "Cancel any Action Card. Not effective on Attack Cards or Potion/Item Cards.",
+        "image": "https://image.flaticon.com/icons/svg/237/237739.svg"
+      },
+      {
+        "name": "Not So Fast!",
+        "description": "Cancel ant Action Card and place that card into your hand. Not effective on Attack Cards or Potion/Item Cards.",
+        "image": "https://image.flaticon.com/icons/svg/372/372931.svg"
+      },
+      {
         "name": "Edge Out",
         "description": "Play on another player before they reveal their 'Set' Attack Card. Discard it. They may not attack this turn.",
         "image": "https://image.flaticon.com/icons/svg/298/298322.svg"
@@ -45,6 +109,11 @@
         "name": "Potion Of Healing",
         "description": "Play this face up immediately when dealt. Tip to gain 25 life points. If used to heal a willing party member other than yourself, place the card in your scoring pile for 3 Prestige. ",
         "image":"https://image.flaticon.com/icons/svg/129/129094.svg"
+      },
+      {
+        "name": "Cure Wounds",
+        "description": "Play this face up immediately when dealt. Tip to gain 15 life points. If used to heal a willing party member other than yourself, place the card in your scoring pile for 2 Prestige. ",
+        "image":"https://image.flaticon.com/icons/png/512/421/421256.png"
       }
      ]
     }

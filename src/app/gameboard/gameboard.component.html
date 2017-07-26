@@ -150,7 +150,7 @@
       </div>
       <div class="battle-buttons">
         <button id="deal" (click)="dealCards()">Deal cards</button>
-        <button id="deal" (click)="play()">Play</button>
+        <button id="deal" (click)="play()">Attack</button>
       </div>
       <div class="play-zone">
         <div class="hand">
@@ -163,19 +163,16 @@
             <h4>{{localPlayers[1].setAttackCard.name}}</h4>
             <img src="{{localPlayers[1].setAttackCard.image}}" alt="logo">
             <p>{{localPlayers[1].name}}</p>
-
           </div>
           <div class="player-card" *ngIf="localPlayers[2].setAttackCard">
             <h4>{{localPlayers[2].setAttackCard.name}}</h4>
             <img src="{{localPlayers[2].setAttackCard.image}}" alt="logo">
             <p>{{localPlayers[2].name}}</p>
-
           </div>
           <div class="player-card" *ngIf="localPlayers[3].setAttackCard">
             <h4>{{localPlayers[3].setAttackCard.name}}</h4>
             <img src="{{localPlayers[3].setAttackCard.image}}" alt="logo">
             <p>{{localPlayers[3].name}}</p>
-
           </div>
         </div>
         <div class="hand">
