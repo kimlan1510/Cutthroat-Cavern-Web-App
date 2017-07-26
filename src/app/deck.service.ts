@@ -98,6 +98,20 @@ export class DeckService {
         player.hand.splice(player.hand.indexOf(card), 1);
       }
       //set attack card
+      else if(card.name == "Attack 100"){
+        this.setCards = [];
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
+      else if(card.name == "Attack 50"){
+        this.setCards = [];
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
       else if(card.name == "Attack 40"){
         this.setCards = [];
         player.hand.splice(player.hand.indexOf(card), 1);
@@ -105,7 +119,35 @@ export class DeckService {
         this.setCards.push(player);
         console.log(this.setCards);
       }
+      else if(card.name == "Attack 30"){
+        this.setCards = [];
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
       else if(card.name == "Attack 25"){
+        this.setCards = [];
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
+      else if(card.name == "Attack 20"){
+        this.setCards = [];
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
+      else if(card.name == "Attack 10"){
+        this.setCards = [];
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
+      else if(card.name == "Attack 5"){
         this.setCards = [];
         player.hand.splice(player.hand.indexOf(card), 1);
         player.setAttackCard = card;
@@ -134,13 +176,49 @@ export class DeckService {
         player.hand.splice(player.hand.indexOf(card), 1);
       }
       //set attack card
+      else if(card.name == "Attack 100"){
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
+      else if(card.name == "Attack 50"){
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
       else if(card.name == "Attack 40"){
         player.hand.splice(player.hand.indexOf(card), 1);
         player.setAttackCard = card;
         this.setCards.push(player);
         console.log(this.setCards);
       }
+      else if(card.name == "Attack 30"){
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
       else if(card.name == "Attack 25"){
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
+      else if(card.name == "Attack 20"){
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
+      else if(card.name == "Attack 10"){
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
+      else if(card.name == "Attack 5"){
         player.hand.splice(player.hand.indexOf(card), 1);
         player.setAttackCard = card;
         this.setCards.push(player);
