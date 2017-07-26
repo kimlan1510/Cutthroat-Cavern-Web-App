@@ -90,7 +90,7 @@
       {
         "name": "Not On My Watch!",
         "description": "Cancel any Action Card. Not effective on Attack Cards or Potion/Item Cards.",
-        "image": "https://image.flaticon.com/icons/svg/237/237739.svg"
+        "image": "https://image.flaticon.com/icons/svg/190/190442.svg"
       },
       {
         "name": "Not So Fast!",
@@ -128,7 +128,7 @@
   },
   {
     "name": "Örn HammerFist",
-    "description": "Cold as mountain stone, Orn brawls when he can, levels axe when he must and trusts no one.",
+    "description": "Cold as mountain stone, Örn brawls when he can, levels axe when he must and trusts no one.",
     "image": "https://s-media-cache-ak0.pinimg.com/736x/ab/dd/14/abdd141cc41de36e78e77d8f7be02806--character-art-character-design.jpg"
   },
   {
@@ -147,8 +147,8 @@
     "image": "http://2.bp.blogspot.com/-_OQ6SnpoK3s/VWRhViHHmXI/AAAAAAAAANg/3ZmqDRu-4aE/s1600/Bayzog%2Bthe%2BHalf-Elf%2BWizard2.jpg"
   },
   {
-    "name": "Nephiedra",
-    "description": "Mage of the distant dunes. Nephiedra honors the dead, adds to their numbers and trusts no one.",
+    "name": "Valmort",
+    "description": "Mage of the distant dunes. Valmort honors the dead, adds to their numbers and trusts no one.",
     "image": "http://thegeekwave.com/wp-content/uploads/2016/09/wizord.jpg"
   }
   ]

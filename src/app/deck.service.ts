@@ -301,23 +301,6 @@ export class DeckService {
       player.setActionCard = this.actionCard;
       alert("Pick an action card");
     }
-    // player.setActionCard = this.actionCard;
-    // if(player.setActionCard.name == "Mixed Signal"){
-    //   //swap player's set attack card
-    //   this.swapAttackCard = attackingPlayer.setAttackCard;
-    //   attackingPlayer.setAttackCard = player.setAttackCard;
-    //   player.setAttackCard = this.swapAttackCard;
-    //   //swap player's positions in setCards array
-    //   let i = this.setCards.indexOf(attackingPlayer);
-    //   let ii = this.setCards.indexOf(player);
-    //   this.setCards[i] = player;
-    //   this.setCards[ii] = attackingPlayer;
-    //
-    // }
-    // else if(player.setActionCard.name == "Edge Out"){      player.setAttackCard = null;
-    //   this.setCards.splice(this.setCards.indexOf(player), 1);
-    // }
-
   }
 
   mixedSignal(player, attackingPlayer){
