@@ -6,6 +6,7 @@ import { Creature } from './creature.model';
 export class DeckService {
   actionCard;
   itemCardInPlay;
+  swapAttackCard;
   setCards: any[]=[];
   creature: Creature;
   player: Player;
@@ -119,9 +120,20 @@ export class DeckService {
     return this.shuffleDeck;
   }
 
-  //set Action card
-  setActionCards(player: Player){
+  //use Action card
+  useActionCards(player: Player, attackingPlayer: Player){
     player.setActionCard = this.actionCard;
+    if(player.setActionCard.name == "Mixed Signal"){
+      this.swapAttackCard = attackingPlayer.setAttackCard;
+      attackingPlayer.setAttackCard = player.setAttackCard;
+
+      player.setAttackCard = this.swapAttackCard;
+    }
+    // else if(player.setActionCard.name == "Edge Out"){
+    //   player.setAttackCard = null;
+    //   this.setCards.splice(this.setCards.indexOf(player), 1);
+    // }
+
   }
 
   //use Potion card
