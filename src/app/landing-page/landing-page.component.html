@@ -7,13 +7,15 @@
     <img src="http://worldartsme.com/images/gold-filigree-clipart-1.jpg" alt="" />
   </div>
   <img src="https://github.com/kimlan1510/Cutthroat-Cavern-Web-App/blob/master/src/app/img/splesh.jpg?raw=true" alt="" />
+  <h1 id="click-to-begin">Click Anywhere To Begin..</h1>
 </div>
 
 <div class="background" *ngIf="characterSelect">
-  <h1 class="choice">Choose Your Characters</h1>
+  <h1 *ngIf="hideForm" class="choice">Choose Your Characters</h1>
+  <h1 *ngIf="startGame" class="choice">Your Party</h1>
 
 
-    <div class="panel-section">
+    <div *ngIf="hideForm" class="panel-section">
       <div *ngFor="let character of characters" class="panel panel-default" (click)="selectThisCharacter(character)">
         <div class="panel-body">
           <h3 class="cardName">{{character.name}}</h3>
@@ -22,16 +24,17 @@
         </div>
       </div>
     </div>
+    <div *ngIf="hideForm" class="input">
+      <h1 class="choice">Enter Your Name</h1>
+      <input class="nameInput" type="text" name="name" #Name>
+      <button class="nameBtn" type="button" name="button" (click)="createPlayer(Name.value)" (click)="getLocalPlayers()">Create Player</button>
+    </div>
 
-    <h1 class="choice">Enter Your Name</h1>
-    <input class="nameInput" type="text" name="name" #Name>
-    <button class="nameBtn" type="button" name="button" (click)="createPlayer(Name.value)" (click)="getLocalPlayers()">Create Player</button>
-
-    <h3 class="party">Your Party</h3>
+    <!-- <h3 class="party" *ngIf="startGame">Your Party</h3> -->
     <div class="selected" *ngIf="players != 'undefined'">
       <div *ngFor="let player of localPlayers">
         <div class="panel panel-default">
-          <div class="panel-body">
+          <div class="panel-body" tabindex="1">
             <h3 class="cardName">{{player.name}} as {{player.character.name}}</h3>
             <img src={{player.character.image}} />
             <p class="cardDescription">{{player.character.description}}</p>

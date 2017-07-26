@@ -25,6 +25,8 @@
   width: 30%;
   background-image: url("http://pre07.deviantart.net/166f/th/pre/f/2008/287/8/9/black_texture___ray_by_ethenyl.jpg");
   background-position: center;
+  border-left: 3px solid ivory;
+  border-right: 3px solid lightgrey;
 }
 .wrapper{
   height: 100vh;
@@ -52,7 +54,7 @@
   height: 160px;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 3px;
+  margin-bottom: 15px;
 }
 .player-card{
   border: 1px solid black;
@@ -247,6 +249,12 @@ button {
     border-radius: 5px;
 }
 
+#head {
+  width: 100%;
+  align-self: center;
+  margin-top: -10px;
+}
+
 .item-area {
   display: flex;
   height: 50%;
@@ -292,6 +300,7 @@ button {
   padding-top: 10px;
 }
 
-// .card-description{
-//   display: none;
-// }
+li {
+  font-size: 30px;
+}
+

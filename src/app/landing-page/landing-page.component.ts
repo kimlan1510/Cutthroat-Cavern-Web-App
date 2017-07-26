@@ -22,6 +22,7 @@ export class LandingPageComponent implements OnInit {
   splash: boolean = true;
   startGame: boolean = null;
   characterSelect: boolean = null;
+  hideForm: boolean = true;
 
   constructor(private firebaseService: FirebaseService, private playerService: PlayerService) { }
 
@@ -40,14 +41,15 @@ export class LandingPageComponent implements OnInit {
     this.chosenCharacter = selectedCharacter;
   }
 
-  createPlayer(name: string){    
+  createPlayer(name: string){
     this.playerService.createPlayer(name, this.chosenCharacter);
     if(name != "" ) {
       this.characters.splice(this.characters.indexOf(this.chosenCharacter), 1);
     }
     this.chosenCharacter = Character;
-    if(this.localPlayers.length === 4){
+    if(this.localPlayers.length === 4){ //put back to four!
       this.startGame = true;
+      this.hideForm = null;
     }
     console.log(this.localPlayers);
   }
