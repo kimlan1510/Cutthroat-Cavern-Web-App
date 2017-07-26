@@ -23,19 +23,63 @@ export class CreatureListService {
       for(let player of listPlayers){
         if(player.initiative == i){
           if(creature.hp[1] > 0){
-            if(player.setAttackCard.name == "Attack 40"){
+            if(player.setAttackCard.name == "Attack 100"){
+              creature.hp[1] -= 100;
+              // console.log(player.initiative);
+              if(creature.hp[1] <= 0 ){
+                player.prestige += creature.prestige;
+              }
+            }
+            else if(player.setAttackCard.name == "Attack 50"){
+              creature.hp[1] -= 50;
+              // console.log(player.initiative);
+              if(creature.hp[1] <= 0 ){
+                player.prestige += creature.prestige;
+              }
+            }
+            else if(player.setAttackCard.name == "Attack 40"){
               creature.hp[1] -= 40;
               // console.log(player.initiative);
               if(creature.hp[1] <= 0 ){
                 player.prestige += creature.prestige;
               }
-            } else if(player.setAttackCard.name == "Attack 25"){
+            }
+            else if(player.setAttackCard.name == "Attack 30"){
+              creature.hp[1] -= 30;
+              // console.log(player.initiative);
+              if(creature.hp[1] <= 0 ){
+                player.prestige += creature.prestige;
+              }
+            }
+            else if(player.setAttackCard.name == "Attack 25"){
               creature.hp[1] -= 25;
               // console.log(player.initiative);
               if(creature.hp[1] <= 0 ){
                 player.prestige += creature.prestige;
               }
-            } else if(player.setAttackCard.name == "Poke With Stick 0"){
+            }
+            else if(player.setAttackCard.name == "Attack 20"){
+              creature.hp[1] -= 20;
+              // console.log(player.initiative);
+              if(creature.hp[1] <= 0 ){
+                player.prestige += creature.prestige;
+              }
+            }
+            else if(player.setAttackCard.name == "Attack 10"){
+              creature.hp[1] -= 10;
+              // console.log(player.initiative);
+              if(creature.hp[1] <= 0 ){
+                player.prestige += creature.prestige;
+              }
+            }
+            else if(player.setAttackCard.name == "Attack 5"){
+              creature.hp[1] -= 5;
+              // console.log(player.initiative);
+              if(creature.hp[1] <= 0 ){
+                player.prestige += creature.prestige;
+              }
+            }
+            else if(player.setAttackCard.name == "Poke With Stick 0"){
               creature.hp[1] = creature.hp[1];
               // console.log(player.initiative);
               if(creature.hp[1] <= 0 ){
@@ -57,5 +101,4 @@ export class CreatureListService {
       }
     }
   }
-
 }

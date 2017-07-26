@@ -64,10 +64,10 @@ export class GameboardComponent implements OnInit {
   discard(player: Player){
     this.shuffleDeck = this.deckService.discard(player);
   }
+
   drawToMaxHand(player: Player){
     this.shuffleDeck = this.deckService.drawToMaxHand(player);
   }
-
 
   //Set card in play
   useCard(card: any, player: Player){
