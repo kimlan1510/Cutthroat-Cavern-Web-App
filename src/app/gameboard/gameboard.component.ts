@@ -59,6 +59,9 @@ export class GameboardComponent implements OnInit {
 
   dealCards(){
     this.shuffleDeck = this.deckService.dealCards(this.localPlayers);
+    for(let player of this.localPlayers){
+      player.hp -= 25;
+    }
    }
 
   discard(player: Player){

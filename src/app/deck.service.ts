@@ -164,7 +164,7 @@ export class DeckService {
     }
     else{
       //set potion card
-      if(card.name == "Potion Of Healing"){
+      if(card.name == "Potion Of Healing" || card.name == "Cure Wounds"){
         this.itemCardInPlay = card;
         player.setItemCard = card;
         player.hand.splice(player.hand.indexOf(card), 1);
@@ -311,21 +311,41 @@ export class DeckService {
 
   //use Potion card
   usePotion(player: Player, selectedPlayer: Player) {
-    if(player.hp >= 100) {
-      alert("This character's HP is full!");
-    }
-    else if (player.hp <= 0) {
-      alert("This player is super dead!");
-    }
-    else {
-      player.hp += 25;
-      if(player.hp > 100) {
-        player.hp = 100;
+    if(selectedPlayer.setItemCard.name == "Potion Of Healing"){
+      if(player.hp >= 100) {
+        alert("This character's HP is full!");
+      }
+      else if (player.hp <= 0) {
+        alert("This character is super dead!");
+      }
+      else {
+        player.hp += 25;
         if(player != selectedPlayer){
           selectedPlayer.prestige += 3;
         }
+        if(player.hp > 100) {
+          player.hp = 100;
+        }
+        selectedPlayer.setItemCard = null;
       }
-      selectedPlayer.setItemCard = null;
+    }
+    else if(selectedPlayer.setItemCard.name == "Cure Wounds"){
+      if(player.hp >= 100) {
+        alert("This character's HP is full!");
+      }
+      else if (player.hp <= 0) {
+        alert("This player is super dead!");
+      }
+      else {
+        player.hp += 15;
+        if(player != selectedPlayer){
+          selectedPlayer.prestige += 2;
+        }
+        if(player.hp > 100) {
+          player.hp = 100;
+        }
+        selectedPlayer.setItemCard = null;
+      }
     }
   }
 
