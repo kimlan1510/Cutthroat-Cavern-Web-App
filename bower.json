@@ -13,5 +13,8 @@
   ],
   "dependencies": {
     "bootstrap": "^3.3.7"
-  }
+  },
+  "authors": [
+    "kimlan nguyen <kimlan1510@yahoo.com>"
+  ]
 }

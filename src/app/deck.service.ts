@@ -7,6 +7,7 @@ export class DeckService {
   actionCard;
   itemCardInPlay;
   swapAttackCard;
+  swapPlayer;
   setCards: any[]=[];
   creature: Creature;
   player: Player;
@@ -48,35 +49,74 @@ export class DeckService {
   //set cards in play
   setCardInPlay(card: any, player: Player){
     if(this.setCards.length >= 4){
-      this.setCards = [];
+      console.log(this.setCards.length);
+      //set potion card
+      if(card.name == "Potion Of Healing"){
+        this.itemCardInPlay = card;
+        player.setItemCard = card;
+        player.hand.splice(player.hand.indexOf(card), 1);
+      }
+      //set action card
+      else if(card.name == "Edge Out" || card.name == "Mixed Signal"){
+        this.actionCard = card;
+        alert("Select a target.");
+        player.hand.splice(player.hand.indexOf(card), 1);
+      }
+      //set attack card
+      else if(card.name == "Attack 40"){
+        this.setCards = [];
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
+      else if(card.name == "Attack 25"){
+        this.setCards = [];
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
+      else if(card.name == "Poke With Stick 0"){
+        this.setCards = [];
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
     }
-    //set potion card
-    if(card.name == "Potion Of Healing"){
-      this.itemCardInPlay = card;
-      player.setItemCard = card;
-      player.hand.splice(player.hand.indexOf(card), 1);
-    }
-    //set action card
-    else if(card.name == "Edge Out" || card.name == "Mixed Signal"){
-      this.actionCard = card;
-      alert("Select a target.");
-      player.hand.splice(player.hand.indexOf(card), 1);
-    }
-    //set attack card
-    else if(card.name == "Attack 40"){
-      player.hand.splice(player.hand.indexOf(card), 1);
-      player.setAttackCard = card;
-      this.setCards.push(player);
-    }
-    else if(card.name == "Attack 25"){
-      player.hand.splice(player.hand.indexOf(card), 1);
-      player.setAttackCard = card;
-      this.setCards.push(player);
-    }
-    else if(card.name == "Poke With Stick 0"){
-      player.hand.splice(player.hand.indexOf(card), 1);
-      player.setAttackCard = card;
-      this.setCards.push(player);
+    else{
+      //set potion card
+      if(card.name == "Potion Of Healing"){
+        this.itemCardInPlay = card;
+        player.setItemCard = card;
+        player.hand.splice(player.hand.indexOf(card), 1);
+      }
+      //set action card
+      else if(card.name == "Edge Out" || card.name == "Mixed Signal"){
+        this.actionCard = card;
+        alert("Select a target.");
+        player.hand.splice(player.hand.indexOf(card), 1);
+      }
+      //set attack card
+      else if(card.name == "Attack 40"){
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
+      else if(card.name == "Attack 25"){
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
+      else if(card.name == "Poke With Stick 0"){
+        player.hand.splice(player.hand.indexOf(card), 1);
+        player.setAttackCard = card;
+        this.setCards.push(player);
+        console.log(this.setCards);
+      }
     }
   }
 
@@ -85,6 +125,11 @@ export class DeckService {
     console.log(this.setCards);
     return this.setCards;
 
+  }
+
+  //resetSetCards
+  resetSetCards(setCards){
+    return setCards;
   }
 
   //DealCards
@@ -122,17 +167,32 @@ export class DeckService {
 
   //use Action card
   useActionCards(player: Player, attackingPlayer: Player){
+    console.log(this.getSetCards());
+    console.log(player);
+    console.log(attackingPlayer);
     player.setActionCard = this.actionCard;
     if(player.setActionCard.name == "Mixed Signal"){
+      //swap player's set attack card
       this.swapAttackCard = attackingPlayer.setAttackCard;
       attackingPlayer.setAttackCard = player.setAttackCard;
-
       player.setAttackCard = this.swapAttackCard;
+      //swap player's positions in setCards array
+      let i = this.setCards.indexOf(attackingPlayer);
+      let ii = this.setCards.indexOf(player);
+      console.log(i);
+      console.log(ii);
+      this.setCards[i] = player;
+      this.setCards[ii] = attackingPlayer;
+      console.log(this.setCards.indexOf(attackingPlayer));
+      console.log(this.setCards[ii]);
+
     }
-    // else if(player.setActionCard.name == "Edge Out"){
-    //   player.setAttackCard = null;
-    //   this.setCards.splice(this.setCards.indexOf(player), 1);
-    // }
+    else if(player.setActionCard.name == "Edge Out"){
+      console.log(this.setCards);
+      player.setAttackCard = null;
+      this.setCards.splice(this.setCards.indexOf(player), 1);
+      console.log(this.setCards);
+    }
 
   }
 
