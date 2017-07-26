@@ -25,6 +25,7 @@ export class GameboardComponent implements OnInit {
   actionCard;
   standbyItemCards;
   encounter;
+  description: boolean = true;
   setCards: any[] =[];
   selectedPlayer: Player;
   attackingPlayer: Player;
@@ -64,10 +65,15 @@ export class GameboardComponent implements OnInit {
   discard(player: Player){
     this.shuffleDeck = this.deckService.discard(player);
   }
+
   drawToMaxHand(player: Player){
     this.shuffleDeck = this.deckService.drawToMaxHand(player);
   }
 
+  showDescription(){
+    console.log("asfdas");
+    this.description = false;
+  }
 
   //Set card in play
   useCard(card: any, player: Player){

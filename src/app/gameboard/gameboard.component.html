@@ -37,30 +37,37 @@
 
         <div class="player-card" *ngIf="localPlayers[0].hand[1]" (click)="useCard(localPlayers[0].hand[1], localPlayers[0])">
           <p>{{localPlayers[0].hand[1].name}}</p>
+
           <img src="{{localPlayers[0].hand[1].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[0].hand[2]" (click)="useCard(localPlayers[0].hand[2], localPlayers[0])">
           <p>{{localPlayers[0].hand[2].name}}</p>
+
           <img src="{{localPlayers[0].hand[2].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[0].hand[3]" (click)="useCard(localPlayers[0].hand[3], localPlayers[0])">
           <p>{{localPlayers[0].hand[3].name}}</p>
+
           <img src="{{localPlayers[0].hand[3].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[0].hand[4]" (click)="useCard(localPlayers[0].hand[4], localPlayers[0])">
           <p>{{localPlayers[0].hand[4].name}}</p>
+
           <img src="{{localPlayers[0].hand[4].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[0].hand[5]" (click)="useCard(localPlayers[0].hand[5], localPlayers[0])">
           <p>{{localPlayers[0].hand[5].name}}</p>
+
           <img src="{{localPlayers[0].hand[5].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[0].hand[6]" (click)="useCard(localPlayers[0].hand[6], localPlayers[0])">
           <p>{{localPlayers[0].hand[6].name}}</p>
+
           <img src="{{localPlayers[0].hand[6].image}}" alt="">
         </div>
         <div class="player-card" *ngIf="localPlayers[0].hand[7]" (click)="useCard(localPlayers[0].hand[7], localPlayers[0])">
           <p>{{localPlayers[0].hand[7].name}}</p>
+
           <img src="{{localPlayers[0].hand[7].image}}" alt="">
         </div>
       </div>
@@ -150,7 +157,7 @@
       </div>
       <div class="battle-buttons">
         <button id="deal" (click)="dealCards()">Deal cards</button>
-        <button id="deal" (click)="play()">Play</button>
+        <button id="deal" (click)="play()">Attack</button>
       </div>
       <div class="play-zone">
         <div class="hand">
@@ -163,34 +170,39 @@
             <h4>{{localPlayers[1].setAttackCard.name}}</h4>
             <img src="{{localPlayers[1].setAttackCard.image}}" alt="logo">
             <p>{{localPlayers[1].name}}</p>
-
           </div>
           <div class="player-card" *ngIf="localPlayers[2].setAttackCard">
             <h4>{{localPlayers[2].setAttackCard.name}}</h4>
             <img src="{{localPlayers[2].setAttackCard.image}}" alt="logo">
             <p>{{localPlayers[2].name}}</p>
-
           </div>
           <div class="player-card" *ngIf="localPlayers[3].setAttackCard">
             <h4>{{localPlayers[3].setAttackCard.name}}</h4>
             <img src="{{localPlayers[3].setAttackCard.image}}" alt="logo">
             <p>{{localPlayers[3].name}}</p>
-
           </div>
         </div>
         <div class="hand">
 
           <div class="player-card" *ngIf="localPlayers[0].setActionCard">
             <h4>{{localPlayers[0].setActionCard.name}}</h4>
+            <img src={{localPlayers[0].setActionCard.image}}>
+            <h4>{{localPlayers[0].name}}</h4>
           </div>
           <div class="player-card" *ngIf="localPlayers[1].setActionCard">
             <h4>{{localPlayers[1].setActionCard.name}}</h4>
+            <img src={{localPlayers[1].setActionCard.image}}>
+            <h4>{{localPlayers[1].name}}</h4>
           </div>
           <div class="player-card" *ngIf="localPlayers[2].setActionCard">
             <h4>{{localPlayers[2].setActionCard.name}}</h4>
+            <img src={{localPlayers[2].setActionCard.image}}>
+            <h4>{{localPlayers[2].name}}</h4>
           </div>
           <div class="player-card" *ngIf="localPlayers[3].setActionCard">
             <h4>{{localPlayers[3].setActionCard.name}}</h4>
+            <img src={{localPlayers[3].setActionCard.image}}>
+            <h4>{{localPlayers[3].name}}</h4>
           </div>
 
         </div>
