@@ -16,6 +16,9 @@ import { AppComponent } from './app.component';
 import { GameboardComponent } from './gameboard/gameboard.component';
 
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { RulesComponent } from './rules/rules.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -30,7 +33,10 @@ export const firebaseConfig = {
     AppComponent,
     GameboardComponent,
     LandingPageComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    RulesComponent,
+    HomeComponent,
+    AboutComponent
 
   ],
   imports: [

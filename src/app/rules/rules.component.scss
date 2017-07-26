@@ -1,0 +1,87 @@
+@font-face {
+    font-family: magicBoy;
+    src: url('../../fonts/magicy.ttf');
+}
+
+@font-face {
+  font-family: gothicBoy;
+  src: url('../../fonts/blackcastle.ttf');
+}
+
+.rule-wrap {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url('http://pre10.deviantart.net/7f78/th/pre/i/2005/312/4/9/fire_caves_ii___concept_by_antifan_real.jpg');
+  background-size: cover;
+  margin-top: -100px;
+}
+.panel-body {
+  width: 50%;
+  display: flex;
+  font-family: magicBoy;
+  letter-spacing: 1px;
+  font-size: 18px;
+  flex-direction: column;
+  z-index: 5;
+  background-color: white;
+  border-radius: 2px;
+  opacity: 1;
+  box-shadow: 3px 3px 10px black;
+  background-image: url('http://2.bp.blogspot.com/-hbtq61HGDJk/T2HQ-e4ieTI/AAAAAAAABNA/wvak1oNrur8/s1600/Seamless+marble+texture+%252814%2529.jpg');
+  // transition: all .3s ease-in-out;
+  border-left: 3px solid ivory;
+  border-top: 3px solid ivory;
+  border-right: 3px solid darkgrey;
+  border-bottom: 3px solid darkgrey;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  margin-top: 0px;
+  background-color: grey;
+  border-radius: 2px;
+  opacity: 1;
+  color: #330603;
+  font-family: gothicBoy;
+  margin-bottom: 35px;
+  background-image: url('https://s-media-cache-ak0.pinimg.com/originals/4d/f7/69/4df7691c0dbc30cf2a67e307a9a46dd9.jpg');
+  border-left: 3px solid ivory;
+  border-top: 3px solid ivory;
+  border-right: 3px solid darkgrey;
+  border-bottom: 3px solid darkgrey;
+  box-shadow: 3px 3px 10px black;
+  h2{
+    text-align: center;
+    font-size: 44px;
+  }
+}
+
+ul {
+  width: 100%;
+  text-align: center;
+  display: inline;
+}
+
+li {
+  width: 33%;
+  a {
+    color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
+  }
+}
+
+nav {
+  background-color: darkgrey;
+  border: black;
+}
+
+#body {
+  margin: 40px;
+}
