@@ -32,22 +32,41 @@ https://github.com/kimlan1510/Cutthroat-Cavern-Web-App
 + Sound Effects on actions.
 + More elaboration on layout styling.
 + Health meters implemented.
++ Leaderboard.
 
 ## Setup/Installation Requirements
 
-<!-- + Clone the repository
-+ Make account with firebase to obtain API credentials
-+ Upload deck.jos
-+ Insert your personal API credentials in project to Serve
-+ Run ng serve
++ Use Terminal (on Mac) or Windows PowerShell (on Windows), enter the following to clone the repository:
+<br>
+<code> git clone </code> https://github.com/kimlan1510/Cutthroat-Cavern-Web-App
+
++ Make account with firebase to obtain API credentials.
++ Import deck.json.
++ Create a file called firebase-api-keys.ts in src/app.
++ Insert your personal Firebase API credentials in firebase-api-keys.ts
+<pre>
+export const masterFirebaseConfig= {
+  apiKey: xxx,
+  authDomain: xxx,
+  databaseURL: xxx,
+  projectId: xxx,
+  storageBucket: xxx,
+  messagingSenderId: xxx
+}
+</pre>
 + Run npm install
-+ Run bower install -->
++ Run bower install
++ Run ng serve
++ In a web browser, navigate to localhost:4200.
 
 
 
 ## Known Bugs
 
-_No known bugs._
+_The attack feature only works correctly of there are four attack cards in play._
+_Clicking on the character's profile picture alerts player to select an counter action card even though the players have not selected an action card._
+
+
 
 ## Support and contact details
 
