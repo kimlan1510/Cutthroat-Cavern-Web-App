@@ -26,7 +26,7 @@
             </div>
           </div>
           <div class="item-area" *ngIf="localPlayers[0].setItemCard">
-            <div class="player-card" (click)="selectThisPotion(localPlayers[0])">
+            <div class="player-card" (click)="selectThisPotion(localPlayers[0])" mdTooltip={{localPlayers[0].setItemCard.description}} mdTooltipPosition="right">
               <p>{{localPlayers[0].setItemCard.name}}</p>
               <img src={{localPlayers[0].setItemCard.image}} alt="item">
             </div>
@@ -97,7 +97,7 @@
             </div>
           </div>
           <div class="item-area" *ngIf="localPlayers[1].setItemCard">
-            <div class="player-card" (click)="selectThisPotion(localPlayers[1])">
+            <div class="player-card" (click)="selectThisPotion(localPlayers[1])" mdTooltip={{localPlayers[1].setItemCard.description}} mdTooltipPosition="right">
               <p>{{localPlayers[1].setItemCard.name}}</p>
               <img src={{localPlayers[1].setItemCard.image}} alt="item">
             </div>
@@ -126,7 +126,7 @@
           {{localPlayers[1].hand[5].name}}
           <img src="{{localPlayers[1].hand[5].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[1].hand[6]" (click)="useCard(localPlayers[1].hand[6], localPlayers[1])" mdTooltip={{localPlayers[1].hand[7].description}} mdTooltipPosition="right">
+        <div class="player-card" *ngIf="localPlayers[1].hand[6]" (click)="useCard(localPlayers[1].hand[6], localPlayers[1])" mdTooltip={{localPlayers[1].hand[6].description}} mdTooltipPosition="right">
           {{localPlayers[1].hand[6].name}}
           <img src="{{localPlayers[1].hand[6].image}}" alt="">
         </div>
@@ -211,7 +211,7 @@
   <div class="column column3">
     <div class="player-panel" >
       <div class="profile" *ngIf="localPlayers.length">
-        <div class="profile-picture" (click)="setActionCard(localPlayers[3])">
+        <div class="profile-picture" (click)="setActionCard(localPlayers[2])">
           <img src={{localPlayers[2].character.image}} alt="" />
         </div>
         <div class="profile-container">
@@ -234,7 +234,7 @@
             </div>
           </div>
           <div class="item-area" *ngIf="localPlayers[2].setItemCard">
-            <div class="player-card" (click)="selectThisPotion(localPlayers[2])">
+            <div class="player-card" (click)="selectThisPotion(localPlayers[2])" mdTooltip={{localPlayers[2].setItemCard.description}} mdTooltipPosition="left">
               <p>{{localPlayers[2].setItemCard.name}}</p>
               <img src={{localPlayers[2].setItemCard.image}} alt="item">
             </div>
@@ -301,7 +301,7 @@
           </div>
 
           <div class="item-area" *ngIf="localPlayers[3].setItemCard">
-            <div class="player-card" (click)="selectThisPotion(localPlayers[3])">
+            <div class="player-card" (click)="selectThisPotion(localPlayers[3])" mdTooltip={{localPlayers[3].setItemCard.description}} mdTooltipPosition="left">
               <p>{{localPlayers[3].setItemCard.name}}</p>
               <img src={{localPlayers[3].setItemCard.image}} alt="item">
             </div>
