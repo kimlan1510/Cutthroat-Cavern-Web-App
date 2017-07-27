@@ -106,7 +106,7 @@ export class GameboardComponent implements OnInit {
   //Creature's turn
   play(){
     this.setCards = this.deckService.getSetCards();
-    this.creatureListService.ripper(this.setCards, this.encounter, this.localPlayers);
+    this.creatureListService.killCreatures(this.setCards, this.encounterDeck, this.localPlayers);
     for(let player of this.localPlayers){
       player.setAttackCard = null;
       player.setActionCard = null;

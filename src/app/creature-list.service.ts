@@ -17,7 +17,21 @@ export class CreatureListService {
     return this.creatures;
   }
 
-  ripper(listPlayers: any[], creature: Creature, localPlayers: Player[]){
+  killCreatures(listPlayers: any[], encounterDeck: Creature[], localPlayers: Player[]){
+    for(let i=1; i<encounterDeck.length; i++){
+      let creature = encounterDeck[0];
+      console.log(creature);
+      if(encounterDeck[i].hp[1] > 0 && encounterDeck[i-1].hp[1] <= 0)
+      {
+        creature = encounterDeck[i];
+      }
+      if(creature.name == "RIPPER")
+      {
+        this.ripper(listPlayers, creature, localPlayers);
+      }
+    }
+  }
+  ripper(listPlayers, creature, localPlayers){
     console.log(listPlayers);
     for(let i=1; i<5; i++){
       for(let player of listPlayers){
