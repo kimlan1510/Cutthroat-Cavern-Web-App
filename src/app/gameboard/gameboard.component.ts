@@ -47,21 +47,22 @@ export class GameboardComponent implements OnInit {
     this.firebaseService.getCreatures().subscribe(response => {
       this.encounterDeck.push(response[0][0]);
       this.encounterDeck.push(response[0][2]);
+      this.encounter = this.encounterDeck[0];
+      //getInitiative, drawEncounter
+      this.beginPhaseService.getInitiative(this.localPlayers);
       //show current creature on html
-      for(let i=1; i<this.encounterDeck.length; i++){
-        this.encounter = this.encounterDeck[0];
-        if(this.encounterDeck[i].hp[1] > 0 && this.encounterDeck[i-1].hp[1] <=0){
-          this.encounter = this.encounterDeck[i];
-        }
-      }
+      // for(let i=1; i<this.encounterDeck.length; i++){
+      //   if(this.encounterDeck[i].hp[1] > 0 && this.encounterDeck[i-1].hp[1] <=0){
+      //     this.encounter = this.encounterDeck[i];
+      //     this.beginPhaseService.getInitiative(this.localPlayers);
+      //   }
+      // }
     })
 
     this.firebaseService.getCards().subscribe(response => {
       this.cards = response;
       //Retrieve cards from firebase
       this.shuffleDeck = this.deckService.getCards(this.cards);
-      //getInitiative, drawEncounter
-      this.beginPhaseService.getInitiative(this.localPlayers);
     });
   }
 
@@ -106,12 +107,14 @@ export class GameboardComponent implements OnInit {
   //Creature's turn
   play(){
     this.setCards = this.deckService.getSetCards();
-    this.creatureListService.killCreatures(this.setCards, this.encounterDeck, this.localPlayers);
+    this.encounter = this.creatureListService.killCreatures(this.setCards, this.encounterDeck, this.localPlayers);
+    console.log(this.encounter);
     for(let player of this.localPlayers){
       player.setAttackCard = null;
       player.setActionCard = null;
       player.hand.push(this.shuffleDeck[0]);
       this.shuffleDeck.splice(0, 1);
     }
+    return this.encounter;
   }
 }
