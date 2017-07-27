@@ -45,8 +45,15 @@ export class GameboardComponent implements OnInit {
     });
 
     this.firebaseService.getCreatures().subscribe(response => {
-      this.encounterDeck = response;
-      this.encounter = this.encounterDeck[0][0];
+      this.encounterDeck.push(response[0][0]);
+      this.encounterDeck.push(response[0][2]);
+      //show current creature on html
+      for(let i=1; i<this.encounterDeck.length; i++){
+        this.encounter = this.encounterDeck[0];
+        if(this.encounterDeck[i].hp[1] > 0 && this.encounterDeck[i-1].hp[1] <=0){
+          this.encounter = this.encounterDeck[i];
+        }
+      }
     })
 
     this.firebaseService.getCards().subscribe(response => {
