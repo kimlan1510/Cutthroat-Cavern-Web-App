@@ -34,42 +34,41 @@
         </div>
       </div>
       <div class="hand" *ngIf="localPlayers[0].hand.length > 1">
+          <div class="player-card" *ngIf="localPlayers[0].hand[1]" (click)="useCard(localPlayers[0].hand[1], localPlayers[0])" mdTooltip={{localPlayers[0].hand[1].description}} mdTooltipPosition="right">
+            <p>{{localPlayers[0].hand[1].name}}</p>
 
-        <div class="player-card" *ngIf="localPlayers[0].hand[1]" (click)="useCard(localPlayers[0].hand[1], localPlayers[0])">
-          <p>{{localPlayers[0].hand[1].name}}</p>
+            <img src="{{localPlayers[0].hand[1].image}}" alt="">
+          </div>
+          <div class="player-card" *ngIf="localPlayers[0].hand[2]" (click)="useCard(localPlayers[0].hand[2], localPlayers[0])" mdTooltip={{localPlayers[0].hand[2].description}} mdTooltipPosition="right">
+            <p>{{localPlayers[0].hand[2].name}}</p>
 
-          <img src="{{localPlayers[0].hand[1].image}}" alt="">
-        </div>
-        <div class="player-card" *ngIf="localPlayers[0].hand[2]" (click)="useCard(localPlayers[0].hand[2], localPlayers[0])">
-          <p>{{localPlayers[0].hand[2].name}}</p>
+            <img src="{{localPlayers[0].hand[2].image}}" alt="">
+          </div>
+          <div class="player-card" *ngIf="localPlayers[0].hand[3]" (click)="useCard(localPlayers[0].hand[3], localPlayers[0])" mdTooltip={{localPlayers[0].hand[3].description}} mdTooltipPosition="right">
+            <p>{{localPlayers[0].hand[3].name}}</p>
 
-          <img src="{{localPlayers[0].hand[2].image}}" alt="">
-        </div>
-        <div class="player-card" *ngIf="localPlayers[0].hand[3]" (click)="useCard(localPlayers[0].hand[3], localPlayers[0])">
-          <p>{{localPlayers[0].hand[3].name}}</p>
+            <img src="{{localPlayers[0].hand[3].image}}" alt="">
+          </div>
+          <div class="player-card" *ngIf="localPlayers[0].hand[4]" (click)="useCard(localPlayers[0].hand[4], localPlayers[0])" mdTooltip={{localPlayers[0].hand[4].description}} mdTooltipPosition="right">
+            <p>{{localPlayers[0].hand[4].name}}</p>
 
-          <img src="{{localPlayers[0].hand[3].image}}" alt="">
-        </div>
-        <div class="player-card" *ngIf="localPlayers[0].hand[4]" (click)="useCard(localPlayers[0].hand[4], localPlayers[0])">
-          <p>{{localPlayers[0].hand[4].name}}</p>
+            <img src="{{localPlayers[0].hand[4].image}}" alt="">
+          </div>
+          <div class="player-card" *ngIf="localPlayers[0].hand[5]" (click)="useCard(localPlayers[0].hand[5], localPlayers[0])" mdTooltip={{localPlayers[0].hand[5].description}} mdTooltipPosition="right">
+            <p>{{localPlayers[0].hand[5].name}}</p>
 
-          <img src="{{localPlayers[0].hand[4].image}}" alt="">
-        </div>
-        <div class="player-card" *ngIf="localPlayers[0].hand[5]" (click)="useCard(localPlayers[0].hand[5], localPlayers[0])">
-          <p>{{localPlayers[0].hand[5].name}}</p>
+            <img src="{{localPlayers[0].hand[5].image}}" alt="">
+          </div>
+          <div class="player-card" *ngIf="localPlayers[0].hand[6]" (click)="useCard(localPlayers[0].hand[6], localPlayers[0])" mdTooltip={{localPlayers[0].hand[6].description}} mdTooltipPosition="right">
+            <p>{{localPlayers[0].hand[6].name}}</p>
 
-          <img src="{{localPlayers[0].hand[5].image}}" alt="">
-        </div>
-        <div class="player-card" *ngIf="localPlayers[0].hand[6]" (click)="useCard(localPlayers[0].hand[6], localPlayers[0])">
-          <p>{{localPlayers[0].hand[6].name}}</p>
+            <img src="{{localPlayers[0].hand[6].image}}" alt="">
+          </div>
+          <div class="player-card" *ngIf="localPlayers[0].hand[7]" (click)="useCard(localPlayers[0].hand[7], localPlayers[0])" mdTooltip={{localPlayers[0].hand[7].description}} mdTooltipPosition="right">
+            <p>{{localPlayers[0].hand[7].name}}</p>
 
-          <img src="{{localPlayers[0].hand[6].image}}" alt="">
-        </div>
-        <div class="player-card" *ngIf="localPlayers[0].hand[7]" (click)="useCard(localPlayers[0].hand[7], localPlayers[0])">
-          <p>{{localPlayers[0].hand[7].name}}</p>
-
-          <img src="{{localPlayers[0].hand[7].image}}" alt="">
-        </div>
+            <img src="{{localPlayers[0].hand[7].image}}" alt="">
+          </div>
       </div>
     </div>
     <div class="player-panel" >
@@ -107,31 +106,31 @@
       </div>
       <div class="hand"  *ngIf="localPlayers[1].hand.length > 1">
 
-        <div class="player-card" *ngIf="localPlayers[0].hand[1]" (click)="useCard(localPlayers[1].hand[1], localPlayers[1])">
+        <div class="player-card" *ngIf="localPlayers[0].hand[1]" (click)="useCard(localPlayers[1].hand[1], localPlayers[1])" mdTooltip={{localPlayers[1].hand[1].description}} mdTooltipPosition="right">
           {{localPlayers[1].hand[1].name}}
           <img src="{{localPlayers[1].hand[1].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[1].hand[2]" (click)="useCard(localPlayers[1].hand[2], localPlayers[1])">
+        <div class="player-card" *ngIf="localPlayers[1].hand[2]" (click)="useCard(localPlayers[1].hand[2], localPlayers[1])" mdTooltip={{localPlayers[1].hand[2].description}} mdTooltipPosition="right">
           {{localPlayers[1].hand[2].name}}
           <img src="{{localPlayers[1].hand[2].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[1].hand[3]" (click)="useCard(localPlayers[1].hand[3], localPlayers[1])">
+        <div class="player-card" *ngIf="localPlayers[1].hand[3]" (click)="useCard(localPlayers[1].hand[3], localPlayers[1])" mdTooltip={{localPlayers[1].hand[3].description}} mdTooltipPosition="right">
           {{localPlayers[1].hand[3].name}}
           <img src="{{localPlayers[1].hand[3].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[1].hand[4]" (click)="useCard(localPlayers[1].hand[4], localPlayers[1])">
+        <div class="player-card" *ngIf="localPlayers[1].hand[4]" (click)="useCard(localPlayers[1].hand[4], localPlayers[1])" mdTooltip={{localPlayers[1].hand[4].description}} mdTooltipPosition="right">
           {{localPlayers[1].hand[4].name}}
           <img src="{{localPlayers[1].hand[4].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[1].hand[5]" (click)="useCard(localPlayers[1].hand[5], localPlayers[1])">
+        <div class="player-card" *ngIf="localPlayers[1].hand[5]" (click)="useCard(localPlayers[1].hand[5], localPlayers[1])" mdTooltip={{localPlayers[1].hand[5].description}} mdTooltipPosition="right">
           {{localPlayers[1].hand[5].name}}
           <img src="{{localPlayers[1].hand[5].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[1].hand[6]" (click)="useCard(localPlayers[1].hand[6], localPlayers[1])">
+        <div class="player-card" *ngIf="localPlayers[1].hand[6]" (click)="useCard(localPlayers[1].hand[6], localPlayers[1])" mdTooltip={{localPlayers[1].hand[7].description}} mdTooltipPosition="right">
           {{localPlayers[1].hand[6].name}}
           <img src="{{localPlayers[1].hand[6].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[1].hand[7]" (click)="useCard(localPlayers[1].hand[7], localPlayers[1])">
+        <div class="player-card" *ngIf="localPlayers[1].hand[7]" (click)="useCard(localPlayers[1].hand[7], localPlayers[1])" mdTooltip={{localPlayers[1].hand[7].description}} mdTooltipPosition="right">
           {{localPlayers[1].hand[7].name}}
           <img src="{{localPlayers[1].hand[7].image}}" alt="">
         </div>
@@ -244,31 +243,31 @@
     </div>
       <div class="hand" *ngIf="localPlayers[2].hand.length > 1">
 
-        <div class="player-card" *ngIf="localPlayers[2].hand[1]" (click)="useCard(localPlayers[2].hand[1], localPlayers[2])">
+        <div class="player-card" *ngIf="localPlayers[2].hand[1]" (click)="useCard(localPlayers[2].hand[1], localPlayers[2])" mdTooltip={{localPlayers[2].hand[1].description}} mdTooltipPosition="left">
           {{localPlayers[2].hand[1].name}}
           <img src="{{localPlayers[2].hand[1].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[2].hand[2]" (click)="useCard(localPlayers[2].hand[2], localPlayers[2])">
+        <div class="player-card" *ngIf="localPlayers[2].hand[2]" (click)="useCard(localPlayers[2].hand[2], localPlayers[2])" mdTooltip={{localPlayers[2].hand[2].description}} mdTooltipPosition="left">
           {{localPlayers[2].hand[2].name}}
           <img src="{{localPlayers[2].hand[2].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[2].hand[3]" (click)="useCard(localPlayers[2].hand[3], localPlayers[2])">
+        <div class="player-card" *ngIf="localPlayers[2].hand[3]" (click)="useCard(localPlayers[2].hand[3], localPlayers[2])" mdTooltip={{localPlayers[2].hand[3].description}} mdTooltipPosition="left">
           {{localPlayers[2].hand[3].name}}
           <img src="{{localPlayers[2].hand[3].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[2].hand[4]" (click)="useCard(localPlayers[2].hand[4], localPlayers[2])">
+        <div class="player-card" *ngIf="localPlayers[2].hand[4]" (click)="useCard(localPlayers[2].hand[4], localPlayers[2])" mdTooltip={{localPlayers[2].hand[4].description}} mdTooltipPosition="left">
           {{localPlayers[2].hand[4].name}}
           <img src="{{localPlayers[2].hand[4].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[2].hand[5]" (click)="useCard(localPlayers[2].hand[5], localPlayers[2])">
+        <div class="player-card" *ngIf="localPlayers[2].hand[5]" (click)="useCard(localPlayers[2].hand[5], localPlayers[2])" mdTooltip={{localPlayers[2].hand[5].description}} mdTooltipPosition="left">
           {{localPlayers[2].hand[5].name}}
           <img src="{{localPlayers[2].hand[5].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[2].hand[6]" (click)="useCard(localPlayers[2].hand[6], localPlayers[2])">
+        <div class="player-card" *ngIf="localPlayers[2].hand[6]" (click)="useCard(localPlayers[2].hand[6], localPlayers[2])" mdTooltip={{localPlayers[2].hand[6].description}} mdTooltipPosition="left">
           {{localPlayers[2].hand[6].name}}
           <img src="{{localPlayers[2].hand[6].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[2].hand[7]" (click)="useCard(localPlayers[2].hand[7], localPlayers[2])">
+        <div class="player-card" *ngIf="localPlayers[2].hand[7]" (click)="useCard(localPlayers[2].hand[7], localPlayers[2])" mdTooltip={{localPlayers[2].hand[7].description}} mdTooltipPosition="left">
           {{localPlayers[2].hand[7].name}}
           <img src="{{localPlayers[2].hand[7].image}}" alt="">
         </div>
@@ -311,31 +310,31 @@
         </div>
       </div>
       <div class="hand" *ngIf="localPlayers[3].hand.length > 1">
-        <div class="player-card" *ngIf="localPlayers[0].hand[1]" (click)="useCard(localPlayers[3].hand[1], localPlayers[3])">
+        <div class="player-card" *ngIf="localPlayers[0].hand[1]" (click)="useCard(localPlayers[3].hand[1], localPlayers[3])" mdTooltip={{localPlayers[3].hand[1].description}} mdTooltipPosition="left">
           {{localPlayers[3].hand[1].name}}
           <img src="{{localPlayers[3].hand[1].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[3].hand[2]" (click)="useCard(localPlayers[3].hand[2], localPlayers[3])">
+        <div class="player-card" *ngIf="localPlayers[3].hand[2]" (click)="useCard(localPlayers[3].hand[2], localPlayers[3])" mdTooltip={{localPlayers[3].hand[2].description}} mdTooltipPosition="left">
           {{localPlayers[3].hand[2].name}}
           <img src="{{localPlayers[3].hand[2].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[3].hand[3]" (click)="useCard(localPlayers[3].hand[3], localPlayers[3])">
+        <div class="player-card" *ngIf="localPlayers[3].hand[3]" (click)="useCard(localPlayers[3].hand[3], localPlayers[3])" mdTooltip={{localPlayers[3].hand[3].description}} mdTooltipPosition="left">
           {{localPlayers[3].hand[3].name}}
           <img src="{{localPlayers[3].hand[3].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[3].hand[4]" (click)="useCard(localPlayers[3].hand[4], localPlayers[3])">
+        <div class="player-card" *ngIf="localPlayers[3].hand[4]" (click)="useCard(localPlayers[3].hand[4], localPlayers[3])" mdTooltip={{localPlayers[3].hand[4].description}} mdTooltipPosition="left">
           {{localPlayers[3].hand[4].name}}
           <img src="{{localPlayers[3].hand[4].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[3].hand[5]" (click)="useCard(localPlayers[3].hand[5], localPlayers[3])">
+        <div class="player-card" *ngIf="localPlayers[3].hand[5]" (click)="useCard(localPlayers[3].hand[5], localPlayers[3])" mdTooltip={{localPlayers[3].hand[5].description}} mdTooltipPosition="left">
           {{localPlayers[3].hand[5].name}}
           <img src="{{localPlayers[3].hand[5].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[3].hand[6]" (click)="useCard(localPlayers[3].hand[6], localPlayers[3])">
+        <div class="player-card" *ngIf="localPlayers[3].hand[6]" (click)="useCard(localPlayers[3].hand[6], localPlayers[3])" mdTooltip={{localPlayers[3].hand[6].description}} mdTooltipPosition="left">
           {{localPlayers[3].hand[6].name}}
           <img src="{{localPlayers[3].hand[6].image}}" alt="">
         </div>
-        <div class="player-card" *ngIf="localPlayers[3].hand[7]" (click)="useCard(localPlayers[3].hand[7], localPlayers[3])">
+        <div class="player-card" *ngIf="localPlayers[3].hand[7]" (click)="useCard(localPlayers[3].hand[7], localPlayers[3])" mdTooltip={{localPlayers[3].hand[7].description}} mdTooltipPosition="left">
           {{localPlayers[3].hand[7].name}}
           <img src="{{localPlayers[3].hand[7].image}}" alt="">
         </div>

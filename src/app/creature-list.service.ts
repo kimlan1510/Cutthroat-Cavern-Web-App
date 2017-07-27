@@ -9,15 +9,16 @@ export class CreatureListService {
   creatures: FirebaseListObservable<any[]>;
   creature;
   localPlayers: Player[] = [];
+  attackArray: string[] = ["Attack 100", "Attack 50", "Attack 40", "Attack 30", "Attack 25", "Attack 20", "Attack 10", "Attack 5", "Poke With Stick 0"];
 
   constructor(private firebase: AngularFireDatabase, private beginPhase: BeginPhaseService) {
     this.creatures = firebase.list('3')
   }
-
+  //get creatures from Firebase
   getCreatures(){
     return this.creatures;
   }
-
+  //Loops through array of creatures, eliminate creature whose hp is > 0
   killCreatures(listPlayers: any[], encounterDeck: Creature[], localPlayers: Player[]){
     for(let i=1; i<encounterDeck.length; i++){
       this.creature = encounterDeck[0];
@@ -48,41 +49,11 @@ export class CreatureListService {
       for(let player of listPlayers){
         if(player.initiative == i){
           if(creature.hp[1] > 0){
-            if(player.setAttackCard.name == "Attack 100"){
-              creature.hp[1] -= 100;
-              this.checkHP(player, creature);
-            }
-            else if(player.setAttackCard.name == "Attack 50"){
-              creature.hp[1] -= 50;
-              this.checkHP(player, creature);
-            }
-            else if(player.setAttackCard.name == "Attack 40"){
-              creature.hp[1] -= 40;
-              this.checkHP(player, creature);
-            }
-            else if(player.setAttackCard.name == "Attack 30"){
-              creature.hp[1] -= 30;
-              this.checkHP(player, creature);
-            }
-            else if(player.setAttackCard.name == "Attack 25"){
-              creature.hp[1] -= 25;
-              this.checkHP(player, creature);
-            }
-            else if(player.setAttackCard.name == "Attack 20"){
-              creature.hp[1] -= 20;
-              this.checkHP(player, creature);
-            }
-            else if(player.setAttackCard.name == "Attack 10"){
-              creature.hp[1] -= 10;
-              this.checkHP(player, creature);
-            }
-            else if(player.setAttackCard.name == "Attack 5"){
-              creature.hp[1] -= 5;
-              this.checkHP(player, creature);
-            }
-            else if(player.setAttackCard.name == "Poke With Stick 0"){
-              creature.hp[1] = creature.hp[1];
-              this.checkHP(player, creature);
+            for(let attack of this.attackArray) {
+              if(player.setAttackCard.name == attack){
+                creature.hp[1] -= player.setAttackCard.normalAttack;
+                this.checkHP(player, creature);
+              }
             }
           }
         }
@@ -100,7 +71,6 @@ export class CreatureListService {
   ripper(listPlayers, creature, localPlayers){
     console.log(listPlayers);
     this.doDamage(listPlayers, creature);
-
     this.beginPhase.getInitiative(localPlayers);
     for(let player of localPlayers) {
       if(creature.hp[1] > 0){
