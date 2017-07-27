@@ -46,6 +46,7 @@ export class LandingPageComponent implements OnInit {
     if(name != "" ) {
       this.characters.splice(this.characters.indexOf(this.chosenCharacter), 1);
     }
+    // nameInput.value = '';
     this.chosenCharacter = Character;
     if(this.localPlayers.length === 4){ //put back to four!
       this.startGame = true;

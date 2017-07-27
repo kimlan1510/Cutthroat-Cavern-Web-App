@@ -92,10 +92,16 @@ li {
 }
 
 nav {
-  background-color: darkgrey;
-  border: black;
+  background-color: #631010;
+  border-bottom: 1px solid black;
+  border-radius: 0px;
+  box-shadow: 2px 2px 10px black;
 }
 
 #body {
   margin: 40px;
+}
+
+.play {
+  color: gold;
 }
