@@ -124,9 +124,6 @@ export class GameboardComponent implements OnInit, DoCheck {
     // return this.localPlayers;
   }
 
-
-
-
   ngDoCheck(){
    if(this.encounterDeck[this.encounterDeck.length - 1].hp[1] <= 0) {
      this.winningPlayer = this.localPlayers[0];
@@ -139,4 +136,5 @@ export class GameboardComponent implements OnInit, DoCheck {
      this.router.navigate(['landing-page/gameboard/winner', this.winningPlayer.name]);
    }
   }
+
 }
