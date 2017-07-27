@@ -9,19 +9,19 @@ export class CreatureListService {
   creatures: FirebaseListObservable<any[]>;
   creature;
   localPlayers: Player[] = [];
+  attackArray: string[] = ["Attack 100", "Attack 50", "Attack 40", "Attack 30", "Attack 25", "Attack 20", "Attack 10", "Attack 5", "Poke With Stick 0"];
 
   constructor(private firebase: AngularFireDatabase, private beginPhase: BeginPhaseService) {
     this.creatures = firebase.list('3')
   }
-
+  //get creatures from Firebase
   getCreatures(){
     return this.creatures;
   }
-
+  //Loops through array of creatures, eliminate creature whose hp is > 0
   killCreatures(listPlayers: any[], encounterDeck: Creature[], localPlayers: Player[]){
     for(let i=1; i<encounterDeck.length; i++){
       this.creature = encounterDeck[0];
-      console.log(this.creature);
       if(encounterDeck[i].hp[1] > 0 && encounterDeck[i-1].hp[1] <= 0)
       {
         this.creature = encounterDeck[i];
@@ -39,85 +39,38 @@ export class CreatureListService {
       }
       else if(this.creature.name == "ANTI-PALADIN"){
         this.antiPaladin(listPlayers, this.creature, localPlayers);
-        console.log(this.creature.name);
         return this.creature;
       }
     }
   }
-  //RIPPER functionality
-  ripper(listPlayers, creature, localPlayers){
-    console.log(listPlayers);
+  //do damage to creature
+  doDamage(listPlayers, creature){
     for(let i=1; i<5; i++){
       for(let player of listPlayers){
         if(player.initiative == i){
           if(creature.hp[1] > 0){
-            if(player.setAttackCard.name == "Attack 100"){
-              creature.hp[1] -= 100;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Attack 50"){
-              creature.hp[1] -= 50;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Attack 40"){
-              creature.hp[1] -= 40;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Attack 30"){
-              creature.hp[1] -= 30;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Attack 25"){
-              creature.hp[1] -= 25;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Attack 20"){
-              creature.hp[1] -= 20;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Attack 10"){
-              creature.hp[1] -= 10;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Attack 5"){
-              creature.hp[1] -= 5;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Poke With Stick 0"){
-              creature.hp[1] = creature.hp[1];
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
+            for(let attack of this.attackArray) {
+              if(player.setAttackCard.name == attack){
+                creature.hp[1] -= player.setAttackCard.normalAttack;
+                this.checkHP(player, creature);
               }
             }
           }
         }
       }
     }
+  }
+  //Checks if creature is dead
+  checkHP(player, creature) {
+    if(creature.hp[1] <= 0 ){
+      player.prestige += creature.prestige;
+      creature.hp[1] = 0;
+    }
+  }
+  //RIPPER functionality
+  ripper(listPlayers, creature, localPlayers){
+    console.log(listPlayers);
+    this.doDamage(listPlayers, creature);
     this.beginPhase.getInitiative(localPlayers);
     for(let player of localPlayers) {
       if(creature.hp[1] > 0){
@@ -132,77 +85,7 @@ export class CreatureListService {
   //ANTI-PALADIN functionality
   antiPaladin(listPlayers, creature, localPlayers){
     console.log(creature);
-    for(let i=1; i<5; i++){
-      for(let player of listPlayers){
-        if(player.initiative == i){
-          if(creature.hp[1] > 0){
-            if(player.setAttackCard.name == "Attack 100"){
-              creature.hp[1] -= 100;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Attack 50"){
-              creature.hp[1] -= 50;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Attack 40"){
-              creature.hp[1] -= 40;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Attack 30"){
-              creature.hp[1] -= 30;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Attack 25"){
-              creature.hp[1] -= 25;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Attack 20"){
-              creature.hp[1] -= 20;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Attack 10"){
-              creature.hp[1] -= 10;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Attack 5"){
-              creature.hp[1] -= 5;
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-            else if(player.setAttackCard.name == "Poke With Stick 0"){
-              creature.hp[1] = creature.hp[1];
-              // console.log(player.initiative);
-              if(creature.hp[1] <= 0 ){
-                player.prestige += creature.prestige;
-              }
-            }
-          }
-        }
-      }
-    }
+    this.doDamage(listPlayers, creature);
     this.beginPhase.getInitiative(localPlayers);
     for(let player of localPlayers) {
       if(creature.hp[1] > 0){

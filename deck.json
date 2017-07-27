@@ -2,82 +2,82 @@
     {"attackCards": [
       {
         "name": "Attack 100",
-        "critical attack": 200,
-        "normal attack": 100,
-        "half attack": 50,
-        "null attack":0,
+        "criticalAttack": 200,
+        "normalAttack": 100,
+        "halfAttack": 50,
+        "nullAttack":0,
         "image": "https://image.flaticon.com/icons/svg/486/486975.svg"
 
       },
       {
         "name": "Attack 50",
-        "critical attack": 100,
-        "normal attack": 50,
-        "half attack": 25,
-        "null attack":0,
+        "criticalAttack": 100,
+        "normalAttack": 50,
+        "halfAttack": 25,
+        "nullAttack":0,
         "image": "https://image.flaticon.com/icons/svg/486/486975.svg"
 
       },
       {
         "name": "Attack 40",
-        "critical attack": 80,
-        "normal attack": 40,
-        "half attack": 20,
-        "null attack":0,
+        "criticalAttack": 80,
+        "normalAttack": 40,
+        "halfAttack": 20,
+        "nullAttack":0,
         "image": "https://image.flaticon.com/icons/svg/486/486975.svg"
 
       },
       {
         "name": "Attack 30",
-        "critical attack": 60,
-        "normal attack": 30,
-        "half attack": 15,
-        "null attack":0,
+        "criticalAttack": 60,
+        "normalAttack": 30,
+        "halfAttack": 15,
+        "nullAttack":0,
         "image": "https://image.flaticon.com/icons/svg/486/486975.svg"
 
       },
       {
         "name": "Attack 25",
-        "critical attack": 50,
-        "normal attack": 25,
-        "half attack": 15,
-        "null attack":0,
+        "criticalAttack": 50,
+        "normalAttack": 25,
+        "halfAttack": 15,
+        "nullAttack":0,
         "image":"https://image.flaticon.com/icons/svg/486/486975.svg"
 
       },
       {
         "name": "Attack 20",
-        "critical attack": 40,
-        "normal attack": 20,
-        "half attack": 10,
-        "null attack":0,
+        "criticalAttack": 40,
+        "normalAttack": 20,
+        "halfAttack": 10,
+        "nullAttack":0,
         "image":"https://image.flaticon.com/icons/svg/486/486975.svg"
 
       },
       {
         "name": "Attack 10",
-        "critical attack": 20,
-        "normal attack": 10,
-        "half attack": 5,
-        "null attack":0,
+        "criticalAttack": 20,
+        "normalAttack": 10,
+        "halfAttack": 5,
+        "nullAttack":0,
         "image":"https://image.flaticon.com/icons/svg/486/486975.svg"
 
       },
       {
         "name": "Attack 5",
-        "critical attack": 10,
-        "normal attack": 5,
-        "half attack": 0,
-        "null attack":0,
+        "criticalAttack": 10,
+        "normalAttack": 5,
+        "halfAttack": 0,
+        "nullAttack":0,
         "image":"https://image.flaticon.com/icons/svg/486/486975.svg"
 
       },
       {
         "name": "Poke With Stick 0",
-        "critical attack": 0,
-        "normal attack": 0,
-        "half attack": 0,
-        "null attack": 0,
+        "criticalAttack": 0,
+        "normalAttack": 0,
+        "halfAttack": 0,
+        "nullAttack": 0,
         "image": "https://image.flaticon.com/icons/svg/486/486975.svg"
       }
     ]},

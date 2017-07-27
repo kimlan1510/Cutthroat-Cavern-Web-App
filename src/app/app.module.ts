@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MdToolbarModule, MdTooltipModule } from '@angular/material';
+
 
 //Firebase Imports
 import { masterFirebaseConfig } from './firebase-api-keys';
@@ -47,7 +50,10 @@ export const firebaseConfig = {
     HttpModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    BrowserAnimationsModule,
+    MdToolbarModule,
+    MdTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
