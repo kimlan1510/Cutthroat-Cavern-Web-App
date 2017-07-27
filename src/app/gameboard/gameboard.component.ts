@@ -2,6 +2,7 @@ import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import * as firebase from "firebase";
 import {MdTooltipModule} from '@angular/material';
+import { Router } from '@angular/router';
 //import model
 import { Player } from '../player.model';
 import { Character } from '../character.model';
@@ -12,7 +13,6 @@ import { FirebaseService } from '../firebase.service';
 import { BeginPhaseService } from '../begin-phase.service';
 import { DeckService } from '../deck.service';
 import { CreatureListService} from '../creature-list.service';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -28,6 +28,7 @@ export class GameboardComponent implements OnInit, DoCheck {
   actionCard;
   standbyItemCards;
   encounter;
+  winningPlayer;
   description: boolean = true;
   setCards: any[] =[];
   selectedPlayer: Player;
@@ -122,12 +123,4 @@ export class GameboardComponent implements OnInit, DoCheck {
     return this.encounter;
   }
 
-
-  ngDoCheck(){
-   if(this.encounterDeck[this.encounterDeck.length - 1].hp[1] <= 0) {
-     alert('Hello');
-     this.router.navigate(['landing-page/gameboard/winner']);
-     console.log("this.router.navigate['winner']");
-   }
-  }
 }

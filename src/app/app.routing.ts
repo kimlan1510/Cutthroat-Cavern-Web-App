@@ -26,7 +26,7 @@ const appRoutes: Routes= [
     component: AboutComponent
   },
   {
-    path: 'landing-page/gameboard/winner',
+    path: 'landing-page/gameboard/winner/:name',
     component: WinnerComponent
   }
 ];
