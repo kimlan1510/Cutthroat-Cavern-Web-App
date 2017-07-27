@@ -1,18 +1,46 @@
+@font-face {
+    font-family: magicBoy;
+    src: url('../../fonts/magicy.ttf');
+}
+
+@font-face {
+  font-family: gothicBoy;
+  src: url('../../fonts/blackcastle.ttf');
+}
+
 div .well{
-  width: 50%;
-  height: 400px;
+  width: 20%;
+  height: 600px;
+  background-image: url('http://2.bp.blogspot.com/-hbtq61HGDJk/T2HQ-e4ieTI/AAAAAAAABNA/wvak1oNrur8/s1600/Seamless+marble+texture+%252814%2529.jpg');
+  box-shadow: 2px 2px 15px black;
+  // transition: all .3s ease-in-out;
+  border-left: 3px solid ivory;
+  border-top: 3px solid ivory;
+  border-right: 3px solid darkgrey;
+  border-bottom: 3px solid darkgrey;
+}
+
+.aboutUs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .about-wrapper{
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
+  align-self: center;
 }
 
 #creators{
   padding: 100px;
+  font-size: 64px;
+  color: ivory;
+  text-shadow: 2px 2px 15px black;
 }
 
 ul {
@@ -31,6 +59,33 @@ li {
 }
 
 nav {
-  background-color: darkgrey;
+  background-color: #631010;
   border: black;
+  border-radius: 0px;
+  font-family: magicBoy;
+  box-shadow: 2px 2px 10px black;
+}
+
+.about {
+  background-image: url('https://s-media-cache-ak0.pinimg.com/originals/52/03/3e/52033e48235b9c6959394db2396ee61a.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  margin-top: -40px;
+}
+
+h3 {
+  font-size: 18px;
+  font-family: magicBoy;
+  line-height: 25px;
+  text-align: justify;
+}
+
+h1 {
+  font-family: gothicBoy;
+  text-align: center;
+}
+
+.play {
+  color: gold;
 }

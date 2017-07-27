@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, DoCheck } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import * as firebase from "firebase";
 import {MdTooltipModule} from '@angular/material';
@@ -12,6 +12,8 @@ import { FirebaseService } from '../firebase.service';
 import { BeginPhaseService } from '../begin-phase.service';
 import { DeckService } from '../deck.service';
 import { CreatureListService} from '../creature-list.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-gameboard',
@@ -20,7 +22,7 @@ import { CreatureListService} from '../creature-list.service';
   providers: [ PlayerService, FirebaseService, BeginPhaseService, DeckService, CreatureListService ]
 })
 
-export class GameboardComponent implements OnInit {
+export class GameboardComponent implements OnInit, DoCheck {
   players;
   cards;
   actionCard;
@@ -35,7 +37,7 @@ export class GameboardComponent implements OnInit {
   localPlayers: Player[] = [];
   encounterDeck: Creature[] = [];
 
-  constructor(private playerService: PlayerService, private firebaseService: FirebaseService, private beginPhaseService: BeginPhaseService, private deckService: DeckService, private creatureListService: CreatureListService) { }
+  constructor(private playerService: PlayerService, private firebaseService: FirebaseService, private beginPhaseService: BeginPhaseService, private deckService: DeckService, private creatureListService: CreatureListService, private router: Router) { }
 
   ngOnInit() {
     this.playerService.getPlayers().subscribe(response => {
@@ -57,8 +59,9 @@ export class GameboardComponent implements OnInit {
       //     this.encounter = this.encounterDeck[i];
       //     this.beginPhaseService.getInitiative(this.localPlayers);
       //   }
-      // }
+      //
     })
+
 
     this.firebaseService.getCards().subscribe(response => {
       this.cards = response;
@@ -117,5 +120,14 @@ export class GameboardComponent implements OnInit {
       this.shuffleDeck.splice(0, 1);
     }
     return this.encounter;
+  }
+
+
+  ngDoCheck(){
+   if(this.encounterDeck[this.encounterDeck.length - 1].hp[1] <= 0) {
+     alert('Hello');
+     this.router.navigate(['landing-page/gameboard/winner']);
+     console.log("this.router.navigate['winner']");
+   }
   }
 }
