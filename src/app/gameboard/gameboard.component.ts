@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import * as firebase from "firebase";
+import {MdTooltipModule} from '@angular/material';
 //import model
 import { Player } from '../player.model';
 import { Character } from '../character.model';
