@@ -120,7 +120,21 @@ export class GameboardComponent implements OnInit, DoCheck {
       player.hand.push(this.shuffleDeck[0]);
       this.shuffleDeck.splice(0, 1);
     }
-    return this.encounter;
+    console.log(this.localPlayers);
+    // return this.localPlayers;
+  }
+
+  ngDoCheck(){
+   if(this.encounterDeck[this.encounterDeck.length - 1].hp[1] <= 0) {
+     this.winningPlayer = this.localPlayers[0];
+     for(let i=0; i<this.localPlayers.length; i++){
+       if(this.localPlayers[i].prestige > this.winningPlayer.prestige){
+         this.winningPlayer = this.localPlayers[i]
+       }
+     }
+     console.log(this.winningPlayer);
+     this.router.navigate(['landing-page/gameboard/winner', this.winningPlayer.name]);
+   }
   }
 
 }

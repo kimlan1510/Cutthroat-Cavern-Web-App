@@ -1,22 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { GameboardComponent } from '../gameboard/gameboard.component';
-import { PlayerService } from '../player.service';
+
+import { ActivatedRoute, Params } from '@angular/router';
+import { Location } from '@angular/common';
 import { Player } from '../player.model';
+
+
+
 
 
 @Component({
   selector: 'app-winner',
   templateUrl: './winner.component.html',
   styleUrls: ['./winner.component.scss'],
-  providers: [ PlayerService ]
 })
 export class WinnerComponent implements OnInit {
-
-  localPlayers: Player[] = [];
-
-  constructor(private playerService: PlayerService) { }
+  playerName;
+  
+  constructor(private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit() {
+    this.route.params.forEach((urlParameters) => {
+      this.playerName = (urlParameters['name']);
+    });
   }
-
 }
