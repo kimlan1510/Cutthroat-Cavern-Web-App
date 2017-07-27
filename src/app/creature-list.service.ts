@@ -29,11 +29,17 @@ export class CreatureListService {
       if(this.creature.name == "RIPPER")
       {
         this.ripper(listPlayers, this.creature, localPlayers);
-        return this.creature;
+        if(this.creature.hp[1] <= 0){
+          alert("Ready for the next battle!");
+          return encounterDeck[i];
+        }
+        else{
+          return this.creature;
+        }
       }
       else if(this.creature.name == "ANTI-PALADIN"){
-        console.log(this.creature.name);
         this.antiPaladin(listPlayers, this.creature, localPlayers);
+        console.log(this.creature.name);
         return this.creature;
       }
     }
@@ -201,7 +207,7 @@ export class CreatureListService {
     for(let player of localPlayers) {
       if(creature.hp[1] > 0){
         player.hp -= 5;
-        creature.hp[1] += 20;
+        creature.hp[1] += 5;
       }
     }
   }
