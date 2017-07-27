@@ -18,6 +18,10 @@ div .well{
   border-top: 3px solid ivory;
   border-right: 3px solid darkgrey;
   border-bottom: 3px solid darkgrey;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .aboutUs {
@@ -41,6 +45,7 @@ div .well{
   font-size: 64px;
   color: ivory;
   text-shadow: 2px 2px 15px black;
+  font-family: gothicBoy;
 }
 
 ul {
@@ -49,13 +54,26 @@ ul {
   display: inline;
 }
 
+// li {
+//   width: 33%;
+//   font-size: 20px;
+//   letter-spacing: 3px;
+//   a {
+//     color: white;
+//   }
+// }
+
 li {
   width: 33%;
-  font-size: 20px;
-  letter-spacing: 3px;
   a {
     color: white;
+    font-size: 20px;
+    letter-spacing: 3px;
   }
+}
+
+li .aboutNav:hover {
+  color: #ffd700;
 }
 
 nav {
@@ -84,8 +102,25 @@ h3 {
 h1 {
   font-family: gothicBoy;
   text-align: center;
+  background-image: url('https://s-media-cache-ak0.pinimg.com/originals/4d/f7/69/4df7691c0dbc30cf2a67e307a9a46dd9.jpg');
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 15px black;
+  // transition: all .3s ease-in-out;
+  border-left: 3px solid ivory;
+  border-top: 3px solid ivory;
+  border-right: 3px solid darkgrey;
+  border-bottom: 3px solid darkgrey;
+  width: 75%;
 }
 
 .play {
   color: gold;
+}
+
+
+.shield {
+  width: 30%;
+  align-self: center;
+  // align-self: stretch;
 }
