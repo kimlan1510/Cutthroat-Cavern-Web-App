@@ -11,6 +11,13 @@ This game is a recreation of a board game called Cutthroat Caverns. Four players
 https://github.com/kimlan1510/Cutthroat-Cavern-Web-App
 
 
+## Images
+
+Sample images can be found in src/app/img
+
+
+
+
 ## Specifications
 
 + Player selection page.
